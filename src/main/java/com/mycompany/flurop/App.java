@@ -11,4 +11,9 @@ public class App
         System.out.println( "Hello World!" ); //gitlola
         System.out.println( ":(hgdföhgösf" ); //detta är en kommentar
     }
+    
+    public void func()
+    {
+        int i = 5;
+    }
 }
