@@ -15,6 +15,7 @@ public class App
         System.out.println( "Hello World!" );
         System.out.println( ":(hgdföhgösf" ); //detta är en kommentar
         System.out.println( "Hello " );
+        System.out.println("ghfuioshlg");
     }
     
     public void func()
