@@ -1,7 +1,7 @@
 //kolla mail
 $git config user.mail
 //står rätt emali här så är det bra annars
-$git config --global user.email"mailen här"
+$git config --global user.email "mailen här"
 
 git add filensNamn
 git commit -m 'nåt här'
