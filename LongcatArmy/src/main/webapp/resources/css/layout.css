@@ -8,13 +8,16 @@
 
 body{
     display: block;
-    color: burlywood;
+    background-color: burlywood;
 }
 
-.menu ul{
-    color: red;
+#menu {
+    alignment-adjust: central;
+    width: 50%;
+    height: 10%;
+    background-color: red;
 }
 
-.body ul{
-    color: green;
+#body {
+    background-color: green;
 }
