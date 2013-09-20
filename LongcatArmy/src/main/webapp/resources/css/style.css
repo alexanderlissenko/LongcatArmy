@@ -1,0 +1,13 @@
+/* 
+    Document   : style
+    Created on : Sep 20, 2013, 3:37:35 PM
+    Author     : emesven
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+border{
+    border-style:double;
+    border-width:medium;
+}
+
