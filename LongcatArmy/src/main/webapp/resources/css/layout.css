@@ -5,19 +5,41 @@
     Description:
         Purpose of the stylesheet follows.
 */
-
+html{
+    padding: 0px;
+    margin: 0px;
+}
 body{
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-top: 0px;
     display: block;
     background-color: burlywood;
 }
-
+header{
+    padding: 0px;
+    margin: 0px
+}
 #menu {
-    alignment-adjust: central;
+    padding: 0px;
+    margin: 0px;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-color: black;
+    margin-left: auto;
+    margin-right: auto;
     width: 50%;
-    height: 10%;
+    height: 50px;
     background-color: red;
 }
 
-#body {
+#content {
+    border-radius: 20px;
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
     background-color: green;
 }
