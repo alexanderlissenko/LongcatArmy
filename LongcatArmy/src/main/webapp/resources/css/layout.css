@@ -1,0 +1,20 @@
+/* 
+    Document   : layout
+    Created on : Sep 20, 2013, 3:22:00 PM
+    Author     : emesven
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body{
+    display: block;
+    color: burlywood;
+}
+
+.menu ul{
+    color: red;
+}
+
+.body ul{
+    color: green;
+}
