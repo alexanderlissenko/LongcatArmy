@@ -61,8 +61,8 @@ public class Auction {
     public Customer getCreator(){
         return creator;
     }
-    public List<Customer> getBidder(){
-        return bidder;
+    public List<HashMap> getBidder(){
+        return bidderList;
     }
     public List<Customer> getFlagList(){
         return flagList;
