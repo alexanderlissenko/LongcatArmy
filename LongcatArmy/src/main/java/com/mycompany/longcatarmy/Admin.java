@@ -23,12 +23,13 @@ public class Admin implements User{
         return email;
     }
     public void setEmail(String email){
-        
+        this.email = email;
     }
     public String getPassword() {
         return password;
-    } public void setPassword(String password){
-    
+    } 
+    public void setPassword(String password){
+        this.password = password;
     }  
     public String getName() {
         return name;
@@ -38,25 +39,25 @@ public class Admin implements User{
         return phoneNr;
     }
     public void setPhoneNr(String phoneNr) {
-        
+        this.phoneNr = phoneNr;
     }
     public String getSeqQuest() {
         return seqQuest;
     }
     public void setQuest(String seqQuest) {
-    
+        this.seqQuest = seqQuest;
     }
     public String getAddress() {
         return address;
     }
     public void setAddress(String address) {
-    
+        this.address = address;
     }
     public Boolean getAccess() {
         return access;
     }
     public void setAccess(Boolean access) {
-    
+        this.access = access;
     }
     public void changeAccess(Customer c, Boolean b){
         c.setAccess(b);
