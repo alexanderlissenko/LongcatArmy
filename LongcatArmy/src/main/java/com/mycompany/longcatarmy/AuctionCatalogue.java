@@ -14,6 +14,18 @@ public class AuctionCatalogue {
     public List<Auction> auctionList;
     public int auctionsExpired; //Date?********
     
+    public AuctionCatalogue(List<Auction> auction, Int auctionExpired){
+        
+    }
+    public Auction getAuction(Long id){
+        return
+    }
+    public void addAuction(Auction auction){
+        
+    }
+    public void removeAuction (Auction auction){
+        
+    }
     
     
     //Metoder?? inte klart??
