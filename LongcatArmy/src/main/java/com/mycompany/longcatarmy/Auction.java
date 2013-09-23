@@ -15,10 +15,11 @@ public class Auction {
     public String title;
     public String info;
     public Double price;
-    public Date expireDate; //datum hur?
+    public Date expireDate; 
     public Customer creator;
     public List<Customer> bidder;
     public List<Customer> flagList;
+    public Long id;
     
     public Auction(Customer creator, String title, String info, Double price, Date expireDate){
         
@@ -29,5 +30,29 @@ public class Auction {
     }
     public void setBid(Double price){
         
+    }
+    public String getTitle(){
+        return title;
+    }
+    public String getInfo(){
+        return info;
+    }
+    public Double getPrice(){
+        return price;
+    }
+    public Date getExpire() {
+        return expireDate;
+    }
+    public Customer getCreator(){
+        return creator;
+    }
+    public List<Customer> getBidder(){
+        return bidder;
+    }
+    public List<Customer> getFlagList(){
+        return flagList;
+    }
+    public Long getId(){
+        return id;
     }
 }
