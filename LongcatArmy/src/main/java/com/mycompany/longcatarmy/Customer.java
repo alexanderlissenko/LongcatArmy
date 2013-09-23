@@ -88,7 +88,7 @@ public class Customer implements User {
         }
         else
         {
-            System.out.print("Illegal operation no sells yet registerd");
+            System.out.print("Illegal operation no sells yet registerd");//tillfälligt error medelande
         }
     }
     public void addMySellAuctionList(Auction auction) {
