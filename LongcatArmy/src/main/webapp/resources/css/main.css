@@ -31,11 +31,11 @@ table{
 }
 #header{
     padding:5px 10px;
-    background:#ddd;
+    background:#B2B2B2;
 }
 #nav{
     padding:5px 10px;
-    background:#c99;
+    background:	#CCCCCC;
 }
 #nav ul{
     margin:0;
@@ -51,7 +51,7 @@ table{
     float:auto;
     width:940px;
     padding:10px;
-    background:#9c9;
+    background:#E6E6E6;
 }
 
 #main ul{
@@ -86,7 +86,7 @@ table{
 #footer{
     clear:both;
     padding:5px 10px;
-    background:#cc9;
+    background:	#CCCCCC;
 }
 #footer p{
     margin:0;
