@@ -12,7 +12,7 @@ import java.util.HashMap;
  *
  * @author emesven
  */
-public class Auction {
+public class AuctionObject {
     public String title;
     public String info;
     public Double price;
@@ -23,7 +23,7 @@ public class Auction {
     public List<Customer> flagList;
     public Long id;
     
-    public Auction(Customer creator, String title, String info, Double price, Date expireDate){
+    public AuctionObject(Customer creator, String title, String info, Double price, Date expireDate){
         this.creator = creator;
         this.title = title;
         this.info = info;

@@ -18,8 +18,8 @@ public class Customer implements User {
     private String seqQuest;   
     private String address;
     private Boolean access; //Ligga i User
-    private List<Auction> mySellAuctionList;
-    private List<Auction> myBuyAuctionList;
+    private List<AuctionObject> mySellAuctionList;
+    private List<AuctionObject> myBuyAuctionList;
     private int nrOfSells;
     private Double rating;
     
@@ -91,26 +91,26 @@ public class Customer implements User {
             System.out.print("Illegal operation no sells yet registerd");//tillfälligt error medelande
         }
     }
-    public void addMySellAuctionList(Auction auction) {
+    public void addMySellAuctionList(AuctionObject auction) {
         mySellAuctionList.add(auction);
     }
-    public void removeMySellAuctionList(Auction auction,boolean sold) {
+    public void removeMySellAuctionList(AuctionObject auction,boolean sold) {
         mySellAuctionList.remove(auction);
         if(sold)
         {
             nrOfSells++;
         }
     }
-    public List<Auction> getMySellAuctionList() {
+    public List<AuctionObject> getMySellAuctionList() {
         return mySellAuctionList;
     }
-    public void addMyBuyAuctionList(Auction auction) {
+    public void addMyBuyAuctionList(AuctionObject auction) {
         myBuyAuctionList.add(auction);
     }
-    public void removeMyBuyAuctionList(Auction auction) {
+    public void removeMyBuyAuctionList(AuctionObject auction) {
         myBuyAuctionList.remove(auction);
     }
-    public List<Auction> getMyBuyAuctionList() {
+    public List<AuctionObject> getMyBuyAuctionList() {
         return myBuyAuctionList;
     }
     

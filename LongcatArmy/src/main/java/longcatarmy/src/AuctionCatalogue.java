@@ -12,19 +12,19 @@ import java.util.List;
  * @author emesven
  */
 public class AuctionCatalogue {
-    public HashMap<Long,Auction> auctionList;
+    public HashMap<Long,AuctionObject> auctionList;
     public int auctionsExpired; //Date?********
-    private Auction auctionInList;
+    private AuctionObject auctionInList;
     
     public AuctionCatalogue(){
-        auctionList = new HashMap<Long,Auction>();
+        auctionList = new HashMap<Long,AuctionObject>();
         this.auctionsExpired= 0;
     }
-    public Auction getAuction(Long id){
+    public AuctionObject getAuction(Long id){
         auctionInList = auctionList.get(id);
         return auctionInList;
     }
-    public void addAuction(Long id, Auction auction){
+    public void addAuction(Long id, AuctionObject auction){
         auctionList.put(id, auction);
     }
     public void removeAuction (Long id){
