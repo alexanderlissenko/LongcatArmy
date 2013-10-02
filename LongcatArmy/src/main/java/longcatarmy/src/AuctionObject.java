@@ -23,7 +23,7 @@ public class AuctionObject {
     public List<Customer> flagList;
     public Long id;
     
-    public AuctionObject(Customer creator, String title, String info, Double price, Date expireDate){
+    public AuctionObject(String title, String info, Double price, Date expireDate){
         this.creator = creator;
         this.title = title;
         this.info = info;

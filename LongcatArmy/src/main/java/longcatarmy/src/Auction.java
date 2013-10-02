@@ -8,6 +8,6 @@ package longcatarmy.src;
  *
  * @author emesven
  */
-public class Auction {
+public class Auction implements IAuction {
     
 }
