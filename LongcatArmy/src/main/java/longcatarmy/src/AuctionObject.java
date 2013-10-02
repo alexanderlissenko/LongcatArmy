@@ -32,12 +32,12 @@ public class AuctionObject {
     }
     
     public void addFlag(Customer c){
-        //kolla sen när vi vet hur admin och customer ser ut
+        //implementeras senare om tid finns
     }
     
     public void setBid(Customer bidder, Double price){
         if(this.price < price) {
-            //eventuellt semaforer för att förhindra att två budar samtidigt?? kolla med handledare!
+            //concurrency-problem! löses av ejb senare
             bidderMap.put(bidder, price);
             bidderList.add(bidderMap);
             this.price += price;
