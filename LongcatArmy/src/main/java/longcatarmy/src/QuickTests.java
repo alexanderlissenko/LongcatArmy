@@ -25,11 +25,11 @@ public class QuickTests {
         
         //Customer creator, String title, String info, Double price, Date expireDate
         AuctionObject obj1 = new AuctionObject("hus","hus i pool",3131.3,today);
-        System.out.println("test");
+        //System.out.println("test");
         //testCust.addMySellAuctionList(obj1);
         
         site.newAuction(testCust, obj1);
-        System.out.println("test");
+        //System.out.println("test");
         System.out.println(site.getAllAuctionsForUser(testCust).get(0).getTitle());
         System.out.println(site.getAllAuctions().get(0).getTitle());
     }

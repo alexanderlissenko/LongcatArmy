@@ -4,6 +4,7 @@
  */
 package longcatarmy.src;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -32,6 +33,8 @@ public class Customer implements User {
         this.seqQuest = seQuest;
         this.address = address;
         rating = 0.0;
+        mySellAuctionList = new ArrayList<AuctionObject>();
+        myBuyAuctionList = new ArrayList<AuctionObject>();
         
     }
     

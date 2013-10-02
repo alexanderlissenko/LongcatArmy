@@ -6,7 +6,8 @@ package longcatarmy.bb;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
-import longcatarmy.src.IAuction;
+import longcatarmy.src.AuctionFactory;
+import longcatarmy.src.SuperSite;
 
 /**
  *
@@ -15,10 +16,10 @@ import longcatarmy.src.IAuction;
 @Singleton
 @Named("auction")
 public class AuctionBB {
-    private final IAuction auction;
+    private final SuperSite auction; 
     
     public AuctionBB(){
-        auction = AuctionFactory.getAuction(true); //inte implementerad ännu
+        auction = AuctionFactory.getAuction(true);
     }
     
 }

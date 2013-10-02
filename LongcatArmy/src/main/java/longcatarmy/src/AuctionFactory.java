@@ -11,8 +11,8 @@ import java.util.Date;
  */
 public class AuctionFactory {
     
-    public static IAuction getAuction(boolean initTestData) {
-        Auction au = new Auction();
+    public static SuperSite getAuction(boolean initTestData) {
+        SuperSite au = new SuperSite();
         if (initTestData) {
             initTestData(au);
         }
@@ -23,13 +23,13 @@ public class AuctionFactory {
 
         Date today = new Date();
        
-        auction.newAution(new Customer("apa@hej.com", "apa", "password", "11111", 
+        auction.newAuction(new Customer("apa@hej.com", "apa", "password", "11111", 
                         "seQuest", "addressgatan1") , new AuctionObject("fisk", "info", 100.00, today));
-        auction.newAution(new Customer("bepa@hej.com", "bepa", "password", "22222", 
+        auction.newAuction(new Customer("bepa@hej.com", "bepa", "password", "22222", 
                         "seQuest", "addressgatan2") , new AuctionObject("ko", "info", 101.00, today));
-        auction.newAution(new Customer("cepa@hej.com", "cepa", "password", "33333", 
+        auction.newAuction(new Customer("cepa@hej.com", "cepa", "password", "33333", 
                         "seQuest", "addressgatan3") , new AuctionObject("häst", "info", 102.00, today));
-        auction.newAution(new Customer("depa@hej.com", "depa", "password", "44444", 
+        auction.newAuction(new Customer("depa@hej.com", "depa", "password", "44444", 
                         "seQuest", "addressgatan4") , new AuctionObject("katt", "info", 103.00, today));
         
         
