@@ -15,11 +15,12 @@ import java.util.List;
  * @author William Axhav Bratt, Emelie Svensson
  */
 public class SuperSite {
-    
+
     
     ArrayList<Customer> customers;
     HashMap<Customer, List<AuctionObject>> auctionMap;
-            
+    Boolean t
+    
     
     //ArrayList<AuctionObject> auctObj = new ArrayList<AuctionObject>();
     
@@ -30,12 +31,12 @@ public class SuperSite {
     }
     
     public void newAuction(Customer cust,AuctionObject obj)
-    {
-        customers.get(customers.indexOf(cust)).addMySellAuctionList(obj);
-        auctionMap.get(cust).add(obj);
-        
-        //auctObj.add(obj);
-        
+    {   
+        t =cust.getAccess();
+        if(t== true){    
+            customers.get(customers.indexOf(cust)).addMySellAuctionList(obj);
+            auctionMap.get(cust).add(obj);   
+        }
     }
     
     public void removeAuction(Customer cust,AuctionObject obj){

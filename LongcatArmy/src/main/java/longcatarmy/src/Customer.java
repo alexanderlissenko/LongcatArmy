@@ -35,6 +35,7 @@ public class Customer implements User {
         rating = 0.0;
         mySellAuctionList = new ArrayList<AuctionObject>();
         myBuyAuctionList = new ArrayList<AuctionObject>();
+        access = true;
         
     }
     

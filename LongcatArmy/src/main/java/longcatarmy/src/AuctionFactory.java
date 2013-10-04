@@ -11,6 +11,9 @@ import java.util.Date;
  */
 public class AuctionFactory {
     
+    
+    //Change this when starting using the database
+    
     public static SuperSite getAuction(boolean initTestData) {
         SuperSite au = new SuperSite();
         if (initTestData) {
@@ -18,7 +21,7 @@ public class AuctionFactory {
         }
         return au;
     }
-
+//Behöver vi nåt slag customerregistry? Kolla i shopFactory för att se vad jag menar.
     private static void initTestData(SuperSite auction) {
 
         Date today = new Date();

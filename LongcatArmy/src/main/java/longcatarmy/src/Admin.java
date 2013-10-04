@@ -18,6 +18,19 @@ public class Admin implements User{
     private Boolean access; 
     
     
+    public Admin(String email, String name, String pass, String phone, 
+                        String seQuest, String address){
+        this.email = email;
+        this.name = name;
+        this.password = pass;
+        this.phoneNr = phone;
+        this.seqQuest = seQuest;
+        this.address = address;
+        access = true;
+        
+        
+    }
+    
     
     public String getEmail(){
         return email;
