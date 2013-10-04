@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <!--
+    
+      THIS IS THE OVERALL LAYOUT FOR THE SITE (not accessible from outside)
+    
+    -->
+    
+    
+    <!-- DENNA MÅSTE FIXAS TILL
+        används för att få JSF att funka, funkar inte med "simpel" html-->
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet library="css" name="main.css"  />
+        <!--<h:outputStylesheet library="css" name="layout.css"  />
+        <h:outputStylesheet library="css" name="style.css"  />-->
+        <title>Auctions</title>
+    </h:head>
+
+    <h:body>
+        <header>
+            <hgroup>
+                <h1>Auktion</h1>
+                <h2>Kom igen, det blir kul!</h2>
+            </hgroup>
+        </header>
+        <nav class="menu"> 
+            <ul>          
+                <li><h:button outcome="home" value="Home" class="button" /></li>
+                <li><h:button outcome="products" value="Products" class="button" /></li>        
+                <li><h:button outcome="customers" value="Customers" class="button" /></li>
+                <li><h:button outcome="orders" value="Orders" class="button" /></li>
+            </ul>
+        </nav>
+        <div id="content" class="right_content">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+        <footer>
+            <p> ThisIsFooter</p> 
+        </footer>
+    </h:body>
+
+</html>
