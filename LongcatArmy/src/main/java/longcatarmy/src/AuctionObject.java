@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author emesven
+ * @author Emelie Svensson, Alexander Lissenko
  */
 public class AuctionObject {
     public String title;

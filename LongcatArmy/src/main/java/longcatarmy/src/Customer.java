@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author emesven
+ * @author Emelie Svensson, Alexander Lissenko
  */
 public class Customer implements User {
     private String email;
