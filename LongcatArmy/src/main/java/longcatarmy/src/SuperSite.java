@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * @author William Axhav Bratt
+ * @author William Axhav Bratt, Emelie Svensson
  */
 public class SuperSite {
     
@@ -68,4 +68,6 @@ public class SuperSite {
         }
         return allList;
     }
+    
+    //Vi kan behöva att man letar efter namnet på auktionen med
 }

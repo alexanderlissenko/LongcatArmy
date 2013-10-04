@@ -70,4 +70,8 @@ public class AuctionObject {
     public Long getId(){
         return id;
     }
+    //Behöver kunna ändra pris om tex ingen budar
+    public void setPrice(Double price){
+        this.price = price;
+    }
 }
