@@ -20,7 +20,7 @@ public class CustomerBB implements Serializable {
     
     private AuctionBB auction;
     @Inject
-    private void setAuctiom(AuctionBB ab){
+    private void setAuction(AuctionBB ab){
         auction = ab;
     }
     
