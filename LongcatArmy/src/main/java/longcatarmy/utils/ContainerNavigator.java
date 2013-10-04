@@ -12,7 +12,7 @@ import longcatarmy.src.AuctionObject;
 
 /**
  *
- * @author lissal
+ * @author Alexander Lissenko
  * 
  * 
  * OBS! Tveksam till om denna funkar som den ska, men borde kunna ses som ett vettigt utkast.
