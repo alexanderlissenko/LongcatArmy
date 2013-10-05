@@ -21,7 +21,7 @@ public class Customer implements User {
     private Boolean access; //Ligga i User
     private List<AuctionObject> mySellAuctionList;
     private List<AuctionObject> myBuyAuctionList;
-    private int nrOfSells;
+    private int nrOfSells; //FInns denna som set/get?
     private Double rating;
     
     public Customer(String email, String name, String pass, String phone, 
@@ -36,6 +36,7 @@ public class Customer implements User {
         mySellAuctionList = new ArrayList<AuctionObject>();
         myBuyAuctionList = new ArrayList<AuctionObject>();
         access = true;
+        nrOfSells = 0;
         
     }
     
@@ -118,6 +119,8 @@ public class Customer implements User {
         return myBuyAuctionList;
     }
     
-    
-    
+    //nrOfSales??????? ***********************************Detta var inte med något vi har bestämt?
+    public int getNrOfSells(){
+        return nrOfSells;
+    }
 }

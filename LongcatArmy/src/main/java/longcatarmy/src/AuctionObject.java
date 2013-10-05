@@ -44,6 +44,7 @@ public class AuctionObject {
         }
         else {
             //nåt felmeddelande, bud kan ej vara under aktuellt bud
+            System.out.println("Bud kan ej vara under " + this.price);//tillfälligt
         }
     }
     public String getTitle(){
