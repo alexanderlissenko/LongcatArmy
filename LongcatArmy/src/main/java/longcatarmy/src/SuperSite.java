@@ -97,7 +97,7 @@ public class SuperSite {
     }
     
     public void soldObject(AuctionObject obj){
-        obj.getBidder()
+        obj.getBidder();
     }
     
     //Vi kan behöva att man letar efter namnet på auktionen med
