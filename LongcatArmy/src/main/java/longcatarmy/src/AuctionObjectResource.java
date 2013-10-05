@@ -29,6 +29,7 @@ public class AuctionObjectResource {
     
     AuctionObjectProxy objectP;
     private UriInfo uriInfo;
+
     
     /*@PUT
     @Path("??") //TODO
@@ -95,12 +96,10 @@ public class AuctionObjectResource {
         return Response.ok(ge).build();
     }
     
-    @GET
-    @Path("??") //TODO
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getFlagList() {
         List<Customer> cList = objectP.getFlagList(); //byts till site.något.getFlagList
         GenericEntity<List<Customer>> gc = new GenericEntity<List<Customer>>(cList){};
         return Response.ok(gc).build();
     }
+
 }

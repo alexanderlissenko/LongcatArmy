@@ -36,7 +36,7 @@ public class SuperSite {
     }
     
     public static SuperSite getInstance() {
-        return SuperSite.getInstance();
+        return SuperSiteSingleton.instance;
     }
     
     public void newAuction(Customer cust,AuctionObject obj)
@@ -95,9 +95,17 @@ public class SuperSite {
         }
         
     }
-    
-    public void soldObject(AuctionObject obj){
-        obj.getBidder();
+    //HELP!!!!!!!!!!!!!!!!!*************************************************!!!!!!!!!!!!!!!!!!!!!!!!!**************************
+    public void soldObject(AuctionObject obj, Double price){
+        for ( HashMap<Customer, Double> o : obj.bidderList){
+      
+            for ( Double p:o.values()){
+                if (price.equals(p)){
+                    //**************************************************FFFFFEEEEEEEEEEEEELLLLLLLLLLLLLLLL typ
+                    System.out.println("object is sold"); //Remove object from the buyList of winning customer and from seller selllist
+                }
+            }
+        }
     }
     
     //Vi kan behöva att man letar efter namnet på auktionen med
