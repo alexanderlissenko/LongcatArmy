@@ -7,6 +7,7 @@ package longcatarmy.src;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import javax.inject.Singleton;
 
 
 
@@ -14,6 +15,8 @@ import java.util.List;
  *
  * @author William Axhav Bratt, Emelie Svensson
  */
+
+@Singleton
 public class SuperSite {
 
     
