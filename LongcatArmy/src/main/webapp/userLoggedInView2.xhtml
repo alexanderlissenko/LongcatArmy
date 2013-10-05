@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
     <!-- Will create new user for every request
     <f:metadata>
         <f:viewParam name="request" value="#{auth.setUser(request.remoteUser)}"  valueChangeListener="#{auth.listen}"/>
@@ -15,44 +16,66 @@
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
                 <h:form>
-                    <div>
-                        <h:commandButton actionListener="#{customer.getExpiring}" value="Utgående" class="small-button"/>
-                        <h:commandButton actionListener="#{customer.getMyBids}" value="Mina bud/auktioner" class="small-button"/>
-                        <h:button outcome="profile" value="Min Profil" class="small-button"/>
-                        <h:commandButton action="#{auth.logout}" value="Logout" class="small-button"/>
-                        <h:outputText value="Logged in as DEFAULT_USER" />                       
-                        <br/>
-                    </div>
-                    <div class="product-table">
-                        <h:dataTable var="p" value="#{products.range}">
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText  value="Id"/>
-                                </f:facet>
-                                <h:outputText value="#{p.id}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText  value="Name"/> 
-                                </f:facet>
-                                <h:outputText value="#{p.name}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText  value="Price"/>
-                                </f:facet>
-                                <h:outputText value="#{p.price}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText  value="Action"/>
-                                </f:facet>
-                                <h:commandButton actionListener="#{editProduct.setSelected(p.id)}" 
-                                                 action="#{products.navigate('edit')}" value="Edit"/>
-                                <h:commandButton actionListener="#{deleteProduct.setSelected(p.id)}"      
-                                                 action="#{products.navigate('del')}" value="Delete" />
-                            </h:column>
-                        </h:dataTable>
+                    <div id="main">
+                        <div>
+                            <h:commandButton actionListener="#{customer.getExpiring}" value="Utgående" class="small-button"/>
+                            <h:commandButton actionListener="#{customer.getMyBids}" value="Mina bud/auktioner" class="small-button"/>
+                            <h:button outcome="profile" value="Min Profil" class="small-button"/>
+                            <h:commandButton action="#{auth.logout}" value="Logout" class="small-button"/>
+                            <h:outputText value="Logged in as DEFAULT_USER" />                       
+                            <br/>
+                        </div>
+                        <div class="product-table">
+                            <h:form>
+                                <p:dataGrid var="cat" columns="4" rows="1">
+                                    <p:panel>
+                                        <h:panelGrid columns="1" style="width: 100%">
+                                            <h:outputText  value="iBad"/>
+                                            <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="100" width="150"/>
+                                            <h:outputText value="Current bid: #{auction.price}"/>
+                                            <h:outputText value="Tid kvar: #{auction.time}"/>
+                                            <h:button value="bid"/>
+                                            
+                                        </h:panelGrid>
+                                    </p:panel>
+                                    
+                                    
+                                </p:dataGrid>
+                                
+                            </h:form>
+                            
+                            <!--
+                            <h:dataTable var="p" value="#{products.range}">
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText  value="iBad"/>
+                                        <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="100" width="150"/>
+                                    </f:facet>
+                                    <h:outputText value="#{p.id}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText  value="Name"/> 
+                                    </f:facet>
+                                    <h:outputText value="#{p.name}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText  value="Price"/>
+                                    </f:facet>
+                                    <h:outputText value="#{p.price}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText  value="Action"/>
+                                    </f:facet>
+                                    <h:commandButton actionListener="#{editProduct.setSelected(p.id)}" 
+                                                     action="#{products.navigate('edit')}" value="Edit"/>
+                                    <h:commandButton actionListener="#{deleteProduct.setSelected(p.id)}"      
+                                                     action="#{products.navigate('del')}" value="Delete" />
+                                </h:column>
+                            </h:dataTable>-->
+                        </div>
                     </div>
                 </h:form>
             </ui:define>
