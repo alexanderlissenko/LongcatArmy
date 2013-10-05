@@ -119,7 +119,12 @@ public class Customer implements User {
         return myBuyAuctionList;
     }
     
-    //nrOfSales??????? ***********************************Detta var inte med något vi har bestämt?
+    public void emptyMyLists(){
+        mySellAuctionList.clear();
+        myBuyAuctionList.clear();
+    }
+    
+    //nrOfSales??????? ***********************************Detta var inte med.. något vi har bestämt?
     public int getNrOfSells(){
         return nrOfSells;
     }
