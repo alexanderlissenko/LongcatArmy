@@ -12,6 +12,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
@@ -86,20 +87,20 @@ public class AuctionObjectResource {
     
     //osäker på om detta funkar, kanske inte primitive
     @GET
-    @Path("id")
+    @Path("??") //TODO
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getBidder() {
         List<HashMap> list = objectP.getBidder(); //byts till site.något.getBidder
-        PrimitiveJSONWrapper<List> wrapList = new PrimitiveJSONWrapper<List>(list);
-        return Response.ok(wrapList).build();
+        GenericEntity<List<HashMap>> ge = new GenericEntity<List<HashMap>>(list){};
+        return Response.ok(ge).build();
     }
     
     @GET
-    @Path("id")
+    @Path("??") //TODO
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Response getId() {
-        Long i = objectP.getId(); //byts till site.något.getId
-        PrimitiveJSONWrapper<Long> wrapId = new PrimitiveJSONWrapper<Long>(i);
-        return Response.ok(wrapId).build();
+    public Response getFlagList() {
+        List<Customer> cList = objectP.getFlagList(); //byts till site.något.getFlagList
+        GenericEntity<List<Customer>> gc = new GenericEntity<List<Customer>>(cList){};
+        return Response.ok(gc).build();
     }
 }
