@@ -80,4 +80,9 @@ public class AuctionObject {
     public void setPrice(Double price){
         this.price = price;
     }
+    
+    //för att kunna ändra info
+    public void editInfo(String info) {
+        this.info = info;
+    }
 }

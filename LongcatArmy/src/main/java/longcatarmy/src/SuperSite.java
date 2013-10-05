@@ -16,7 +16,6 @@ import javax.inject.Singleton;
  * @author William Axhav Bratt, Emelie Svensson
  */
 
-@Singleton
 public class SuperSite {
 
     
@@ -24,13 +23,20 @@ public class SuperSite {
     HashMap<Customer, List<AuctionObject>> auctionMap;
     Boolean validBid;
     
-    
     //ArrayList<AuctionObject> auctObj = new ArrayList<AuctionObject>();
     
-    public SuperSite()
+    private SuperSite()
     {
         customers = new ArrayList<Customer>();
         auctionMap = new HashMap<Customer, List<AuctionObject>>();
+    }
+    
+    private static class SuperSiteSingleton {
+        private static SuperSite instance = new SuperSite();
+    }
+    
+    public static SuperSite getInstance() {
+        return SuperSite.getInstance();
     }
     
     public void newAuction(Customer cust,AuctionObject obj)

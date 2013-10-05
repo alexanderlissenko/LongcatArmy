@@ -11,11 +11,11 @@ import javax.inject.Named;
 
 /**
  *
- * @author emesven
+ * @author Emelie Svensson, Alexander Lissenko
  */
 
-@SessionScoped
-@Named("customer")
+//@SessionScoped
+//@Named("customer")
 public class CustomerBB implements Serializable {
     
     private AuctionBB auction;

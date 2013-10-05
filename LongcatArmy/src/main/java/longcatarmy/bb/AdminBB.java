@@ -10,10 +10,10 @@ import javax.inject.Named;
 
 /**
  *
- * @author emesven
+ * @author Emelie Svensson
  */
-@SessionScoped
-@Named("admin")
+//@SessionScoped
+//@Named("admin")
 public class AdminBB {
     
     private AuctionBB auction;
