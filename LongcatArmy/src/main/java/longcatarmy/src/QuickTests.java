@@ -65,7 +65,7 @@ public class QuickTests {
         
         //Admin stuff BanCustomer***********************************************************
         site.newAuction(testCust2, obj1);
-        site.newAuction(testCust2, obj2);
+        //site.newAuction(testCust2, obj2);
         
         site.banCustomer(testCust2);
         site.newAuction(testCust2, obj3);
@@ -92,7 +92,7 @@ public class QuickTests {
         System.out.println("    rating: " +testCust.getRating().toString());
         System.out.println("    nrOfSells: " +testCust.getNrOfSells());
         
-        
+        site.soldObject(obj2, 2000.0);
         
     }
     

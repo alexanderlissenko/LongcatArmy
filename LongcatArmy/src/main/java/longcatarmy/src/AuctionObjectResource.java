@@ -28,13 +28,13 @@ public class AuctionObjectResource {
     
     AuctionObjectProxy objectP;
     private UriInfo uriInfo;
-    
+   /* 
     @PUT
     @Path("??") //TODO
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response setBid(@FormParam("newBid") Double newBid ) {
         //kopplas ihop med att kolla att budet är valid
-    }
+    }*/
     
     @GET
     @Path("title")
@@ -93,7 +93,7 @@ public class AuctionObjectResource {
         PrimitiveJSONWrapper<List> wrapList = new PrimitiveJSONWrapper<List>(list);
         return Response.ok(wrapList).build();
     }
-    
+    /*
     @GET
     @Path("id")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
@@ -101,5 +101,5 @@ public class AuctionObjectResource {
         Long i = objectP.getId(); //byts till site.något.getId
         PrimitiveJSONWrapper<Long> wrapId = new PrimitiveJSONWrapper<Long>(i);
         return Response.ok(wrapId).build();
-    }
+    }*/
 }
