@@ -30,12 +30,12 @@ public class AuctionObjectResource {
     AuctionObjectProxy objectP;
     private UriInfo uriInfo;
     
-    @PUT
+    /*@PUT
     @Path("??") //TODO
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response setBid(@FormParam("newBid") Double newBid ) {
         //kopplas ihop med att kolla att budet är valid
-    }
+    }*/
     
     @GET
     @Path("title")
