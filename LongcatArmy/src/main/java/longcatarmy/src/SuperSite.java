@@ -74,7 +74,7 @@ public class SuperSite {
         
     }
     
-    public void doBid(Customer cust, Double price, AuctionObject obj){
+    public void doBid(Customer cust, Double price, AuctionObject obj){ //Ska vi använda denna?
         obj.setBid(cust, price);
     }
     
