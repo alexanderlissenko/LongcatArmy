@@ -11,7 +11,7 @@ import javax.inject.Named;
 
 /**
  *
- * @author emesven
+ * @author Emelie Svensson, Alexander Lissenko
  */
 
 //@SessionScoped

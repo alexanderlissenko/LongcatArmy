@@ -11,7 +11,7 @@ import longcatarmy.src.SuperSite;
 
 /**
  *
- * @author emesven
+ * @author Emelie Svensson
  */
 @Singleton
 @Named("auction")

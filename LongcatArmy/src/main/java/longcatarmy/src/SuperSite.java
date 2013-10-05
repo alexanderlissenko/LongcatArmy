@@ -7,6 +7,7 @@ package longcatarmy.src;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import javax.inject.Singleton;
 
 
 
@@ -14,19 +15,27 @@ import java.util.List;
  *
  * @author William Axhav Bratt, Emelie Svensson
  */
+
 public class SuperSite {
 
     
     ArrayList<Customer> customers;
     HashMap<Customer, List<AuctionObject>> auctionMap;
     
-    
     //ArrayList<AuctionObject> auctObj = new ArrayList<AuctionObject>();
     
-    public SuperSite()
+    private SuperSite()
     {
         customers = new ArrayList<Customer>();
         auctionMap = new HashMap<Customer, List<AuctionObject>>();
+    }
+    
+    private static class SuperSiteSingleton {
+        private static SuperSite instance = new SuperSite();
+    }
+    
+    public static SuperSite getInstance() {
+        return SuperSite.getInstance();
     }
     
     public void newAuction(Customer cust,AuctionObject obj)
@@ -74,7 +83,7 @@ public class SuperSite {
         
     }
     
-    public void doBid(Customer cust, Double price, AuctionObject obj){
+    public void doBid(Customer cust, Double price, AuctionObject obj){ //Ska vi använda denna?
         obj.setBid(cust, price);
     }
     

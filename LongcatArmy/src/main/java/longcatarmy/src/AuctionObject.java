@@ -44,6 +44,7 @@ public class AuctionObject {
         }
         else {
             //nåt felmeddelande, bud kan ej vara under aktuellt bud
+            System.out.println("Bud kan ej vara under " + this.price);//tillfälligt
         }
     }
     public String getTitle(){
@@ -73,5 +74,10 @@ public class AuctionObject {
     //Behöver kunna ändra pris om tex ingen budar
     public void setPrice(Double price){
         this.price = price;
+    }
+    
+    //för att kunna ändra info
+    public void editInfo(String info) {
+        this.info = info;
     }
 }

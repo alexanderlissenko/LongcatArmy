@@ -10,7 +10,7 @@ import javax.inject.Named;
 
 /**
  *
- * @author emesven
+ * @author Emelie Svensson
  */
 //@SessionScoped
 //@Named("admin")
