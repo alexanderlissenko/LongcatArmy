@@ -4,6 +4,7 @@
  */
 package longcatarmy.src;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 import java.util.HashMap;
@@ -29,22 +30,26 @@ public class AuctionObject {
         this.info = info;
         this.price = price;
         this.expireDate = expireDate;
+        bidderMap = new HashMap<Customer, Double>();
+        bidderList = new ArrayList<HashMap>();
     }
     
     public void addFlag(Customer c){
         //implementeras senare om tid finns
     }
     
-    public void setBid(Customer bidder, Double price){
+    public boolean setBid(Customer bidder, Double price){
         if(this.price < price) {
             //concurrency-problem! löses av ejb senare
             bidderMap.put(bidder, price);
             bidderList.add(bidderMap);
             this.price += price;
+            return true;
         }
         else {
             //nåt felmeddelande, bud kan ej vara under aktuellt bud
             System.out.println("Bud kan ej vara under " + this.price);//tillfälligt
+            return false;
         }
     }
     public String getTitle(){

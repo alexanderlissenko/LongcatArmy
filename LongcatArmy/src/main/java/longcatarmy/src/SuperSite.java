@@ -21,6 +21,7 @@ public class SuperSite {
     
     ArrayList<Customer> customers;
     HashMap<Customer, List<AuctionObject>> auctionMap;
+    Boolean validBid;
     
     //ArrayList<AuctionObject> auctObj = new ArrayList<AuctionObject>();
     
@@ -35,7 +36,7 @@ public class SuperSite {
     }
     
     public static SuperSite getInstance() {
-        return SuperSite.getInstance();
+        return SuperSiteSingleton.instance;
     }
     
     public void newAuction(Customer cust,AuctionObject obj)
@@ -46,12 +47,13 @@ public class SuperSite {
         }
     }
     
-    public void removeAuction(Customer cust,AuctionObject obj){
+    public void removeAuction(Customer cust,AuctionObject obj,Boolean sold){
+        customers.get(customers.indexOf(cust)).removeMySellAuctionList(obj, sold); 
         auctionMap.get(cust).remove(obj);
     }
     
     public void updateAuction(Customer cust, AuctionObject obj){
-        removeAuction(cust,obj);
+        removeAuction(cust,obj,false); //fasle because it is not sold here
         newAuction(cust,obj);
     }
     
@@ -79,12 +81,31 @@ public class SuperSite {
     
     public void banCustomer(Customer cust){
         cust.setAccess(false);
+        cust.emptyMyLists();
         auctionMap.get(cust).clear();
+        //*****************************************************måste ta bort från andra customers BuyList... hur?********************************************'
         
     }
     
     public void doBid(Customer cust, Double price, AuctionObject obj){ //Ska vi använda denna?
-        obj.setBid(cust, price);
+        validBid = obj.setBid(cust, price); 
+
+        if(validBid){
+            customers.get(customers.indexOf(cust)).addMyBuyAuctionList(obj);
+        }
+        
+    }
+    //HELP!!!!!!!!!!!!!!!!!*************************************************!!!!!!!!!!!!!!!!!!!!!!!!!**************************
+    public void soldObject(AuctionObject obj, Double price){
+        for ( HashMap<Customer, Double> o : obj.bidderList){
+      
+            for ( Double p:o.values()){
+                if (price.equals(p)){
+                    //**************************************************FFFFFEEEEEEEEEEEEELLLLLLLLLLLLLLLL typ
+                    System.out.println("object is sold"); //Remove object from the buyList of winning customer and from seller selllist
+                }
+            }
+        }
     }
     
     //Vi kan behöva att man letar efter namnet på auktionen med

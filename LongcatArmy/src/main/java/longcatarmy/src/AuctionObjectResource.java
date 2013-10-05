@@ -5,9 +5,14 @@
 package longcatarmy.src;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
@@ -17,13 +22,21 @@ import javax.ws.rs.core.UriInfo;
  * @author Alexander Lissenko
  */
 
-@Path("auction")    //eventuellt annan path, unik för varje auctionobject
+@Path("auction/{auctionId}")    //eventuellt annan path, unik för varje auctionobject
 public class AuctionObjectResource {
     
     private final static SuperSite site = SuperSite.getInstance();   //funkar när SuperSite är @Singleton
     
     AuctionObjectProxy objectP;
     private UriInfo uriInfo;
+
+    
+    /*@PUT
+    @Path("??") //TODO
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Response setBid(@FormParam("newBid") Double newBid ) {
+        //kopplas ihop med att kolla att budet är valid
+    }*/
     
     @GET
     @Path("title")
@@ -71,4 +84,22 @@ public class AuctionObjectResource {
         PrimitiveJSONWrapper<Long> wrapId = new PrimitiveJSONWrapper<Long>(i);
         return Response.ok(wrapId).build();
     }
+    
+    
+    //osäker på om detta funkar, kanske inte primitive
+    @GET
+    @Path("??") //TODO
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Response getBidder() {
+        List<HashMap> list = objectP.getBidder(); //byts till site.något.getBidder
+        GenericEntity<List<HashMap>> ge = new GenericEntity<List<HashMap>>(list){};
+        return Response.ok(ge).build();
+    }
+    
+    public Response getFlagList() {
+        List<Customer> cList = objectP.getFlagList(); //byts till site.något.getFlagList
+        GenericEntity<List<Customer>> gc = new GenericEntity<List<Customer>>(cList){};
+        return Response.ok(gc).build();
+    }
+
 }
