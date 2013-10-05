@@ -15,7 +15,7 @@ public class AuctionFactory {
     //Change this when starting using the database
     
     public static SuperSite getAuction(boolean initTestData) {
-        SuperSite au = new SuperSite();
+        SuperSite au = SuperSite.getInstance();
         if (initTestData) {
             initTestData(au);
         }
