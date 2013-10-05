@@ -19,7 +19,6 @@ public class SuperSite {
     
     ArrayList<Customer> customers;
     HashMap<Customer, List<AuctionObject>> auctionMap;
-    Boolean t
     
     
     //ArrayList<AuctionObject> auctObj = new ArrayList<AuctionObject>();
@@ -32,8 +31,7 @@ public class SuperSite {
     
     public void newAuction(Customer cust,AuctionObject obj)
     {   
-        t =cust.getAccess();
-        if(t== true){    
+        if(cust.getAccess()){    
             customers.get(customers.indexOf(cust)).addMySellAuctionList(obj);
             auctionMap.get(cust).add(obj);   
         }
@@ -68,6 +66,16 @@ public class SuperSite {
                 allList.add(obj);
         }
         return allList;
+    }
+    
+    public void banCustomer(Customer cust){
+        cust.setAccess(false);
+        auctionMap.get(cust).clear();
+        
+    }
+    
+    public void doBid(Customer cust, Double price, AuctionObject obj){
+        obj.setBid(cust, price);
     }
     
     //Vi kan behöva att man letar efter namnet på auktionen med
