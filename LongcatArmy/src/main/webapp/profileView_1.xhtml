@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:body>
+        <ui:composition template="/WEB-INF/template.xhtml">
+            <ui:define name="content">
+                <div id="wrap">
+                <!-- CONTENT (auktioner)-->
+                <div id="main">
+                    <h3>User profile</h3>
+                    <h4>Loosing</h4>
+                    <h:outputText value="Name: #{Customer.getName()}"/>
+                    <h:outputText value="E-Mail: #{Customer.getEmail()}"/>
+                    <h:outputText value="Number of auctions: #{Customer.nrAuctions}"/>
+                    <h:outputText value="Rating: #{Customer.getRating()}"/>
+
+                    <h:form>
+                        <h:commandButton actionListener="" 
+                                                 action="#{products.navigate('index')}" value="Delete Account"/> 
+                    </h:form>
+                </div>
+                <!-- END CONTENT (auktioner) -->
+             </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

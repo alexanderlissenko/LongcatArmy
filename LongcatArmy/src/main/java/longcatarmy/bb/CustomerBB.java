@@ -14,8 +14,8 @@ import javax.inject.Named;
  * @author emesven
  */
 
-@SessionScoped
-@Named("customer")
+//@SessionScoped
+//@Named("customer")
 public class CustomerBB implements Serializable {
     
     private AuctionBB auction;
