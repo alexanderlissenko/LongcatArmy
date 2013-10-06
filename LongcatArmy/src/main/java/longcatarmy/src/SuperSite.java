@@ -122,5 +122,15 @@ public class SuperSite {
         removeAuction(Seller,obj ,true);;
     }
     
+    public Customer getCustomerByName(String name)
+    {
+        for(int i = 0; i < customers.size(); i++)
+        {
+            if(customers.get(i).getName().equals(name))
+                return customers.get(i);
+        }
+        return null;
+    }
+    
     //Vi kan behöva att man letar efter namnet på auktionen med
 }

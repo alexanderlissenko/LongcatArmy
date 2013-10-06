@@ -3,7 +3,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>LongcatArmy</title>
     </h:head>
@@ -11,7 +12,18 @@
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
                 <div id="main">
-                    <p>This is auction!</p>
+                    <h:form>
+                        <p:dataGrid var="a" value="#{home.allAuctions}" columns="3" rows="0">
+                            <p:panel>
+                                <h:panelGrid columns="1" style="width: 100%">
+                                    <h:outputText  value="#{a.title}"/>
+                                    <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="100" width="150"/>
+                                    <h:outputText value="Current bid: #{a.price}"/>
+                                    <h:outputText value="Tid kvar: #{a.expire}"/>
+                                </h:panelGrid>
+                            </p:panel>
+                        </p:dataGrid>
+                    </h:form>
                 </div>
             </ui:define>
         </ui:composition>

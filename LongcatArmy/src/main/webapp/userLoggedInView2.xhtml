@@ -27,54 +27,17 @@
                         </div>
                         <div class="product-table">
                             <h:form>
-                                <p:dataGrid var="cat" columns="4" rows="1">
+                                <p:carousel var="a" value="#{userLIV.auctions}">
                                     <p:panel>
                                         <h:panelGrid columns="1" style="width: 100%">
-                                            <h:outputText  value="iBad"/>
+                                            <h:outputText  value="#{a.title}"/>
                                             <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="100" width="150"/>
-                                            <h:outputText value="Current bid: #{auction.price}"/>
-                                            <h:outputText value="Tid kvar: #{auction.time}"/>
-                                            <h:button value="bid"/>
-                                            
+                                            <h:outputText value="Current bid: #{a.price}"/>
+                                            <h:outputText value="Tid kvar: #{a.expire}"/>                                            
                                         </h:panelGrid>
                                     </p:panel>
-                                    
-                                    
-                                </p:dataGrid>
-                                
+                                </p:carousel>
                             </h:form>
-                            
-                            <!--
-                            <h:dataTable var="p" value="#{products.range}">
-                                <h:column>
-                                    <f:facet name="header">
-                                        <h:outputText  value="iBad"/>
-                                        <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="100" width="150"/>
-                                    </f:facet>
-                                    <h:outputText value="#{p.id}"/>
-                                </h:column>
-                                <h:column>
-                                    <f:facet name="header">
-                                        <h:outputText  value="Name"/> 
-                                    </f:facet>
-                                    <h:outputText value="#{p.name}"/>
-                                </h:column>
-                                <h:column>
-                                    <f:facet name="header">
-                                        <h:outputText  value="Price"/>
-                                    </f:facet>
-                                    <h:outputText value="#{p.price}"/>
-                                </h:column>
-                                <h:column>
-                                    <f:facet name="header">
-                                        <h:outputText  value="Action"/>
-                                    </f:facet>
-                                    <h:commandButton actionListener="#{editProduct.setSelected(p.id)}" 
-                                                     action="#{products.navigate('edit')}" value="Edit"/>
-                                    <h:commandButton actionListener="#{deleteProduct.setSelected(p.id)}"      
-                                                     action="#{products.navigate('del')}" value="Delete" />
-                                </h:column>
-                            </h:dataTable>-->
                         </div>
                     </div>
                 </h:form>

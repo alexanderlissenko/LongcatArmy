@@ -94,6 +94,11 @@ public class QuickTests {
         
         site.soldObject(obj2, 2000.0);
         
+        
+        SuperSite testFactory = AuctionFactory.getAuction(true);
+        
+        System.out.println(testFactory.getAllAuctions().size());
+        
     }
     
     
