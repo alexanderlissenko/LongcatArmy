@@ -86,7 +86,7 @@ public class AuctionObjectResource {
     }
     
     
-    //osäker på om detta funkar, kanske inte primitive
+    
     @GET
     @Path("??") //TODO
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
