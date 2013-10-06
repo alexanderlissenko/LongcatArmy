@@ -66,9 +66,11 @@ public class QuickTests {
         //Admin stuff BanCustomer***********************************************************
         site.newAuction(testCust2, obj1);
         //site.newAuction(testCust2, obj2);
-        
+        site.doBid(testCust3, 2000.0, obj1); //bid success
         site.banCustomer(testCust2);
         site.newAuction(testCust2, obj3);
+        
+        System.out.println("    Number of items in myBuyAuctionList: " +testCust3.getMyBuyAuctionList().size());
         
         System.out.println(site.getAllAuctionsForUser(testCust2).size());
         if((site.getAllAuctionsForUser(testCust2).size())== 0)

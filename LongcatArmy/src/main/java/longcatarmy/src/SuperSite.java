@@ -83,9 +83,15 @@ public class SuperSite {
     
     public void banCustomer(Customer cust){
         cust.setAccess(false);
-        cust.emptyMyLists();
+        cust.emptyMyLists(); 
+        for (AuctionObject al:auctionMap.get(cust)){
+            HashMap<Customer, Double> temp =al.bidderMap;
+            
+            for(Entry<Customer,Double> p : temp.entrySet()){
+                p.getKey().removeMyBuyAuctionList(al);
+            }                   
+        }
         auctionMap.get(cust).clear();
-        //*****************************************************måste ta bort från andra customers BuyList... hur?********************************************'
         
     }
     
@@ -97,7 +103,7 @@ public class SuperSite {
         }
         
     }
-    //HELP!!!!!!!!!!!!!!!!!*************************************************!!!!!!!!!!!!!!!!!!!!!!!!!**************************
+    
     public void soldObject(AuctionObject obj, Double price){
         
         //Remove from buyer buyList
