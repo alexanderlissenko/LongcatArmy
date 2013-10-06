@@ -8,17 +8,17 @@ Ordning att följa:
 LV5-LV6: 
     (Dokumentera löpande)   
     Startsida --> kolla att länkar funkar till andra sidor etc (onsdag)
-        Hårdkodad default inloggning
+        Hårdkodad default inloggning...........................................................................X
         Lista med överbudade, förlorande bud
-            Länk till auktionssida default, [bud-knapp direkt på sidan]
+            Länk till auktionssida default
         Lista med vinnande bud
-        Browsa alla auktioner (Namn, pris visas i lista)
+        Browsa alla auktioner (Namn, pris visas i lista).....................................................pågående
         [Sökruta]
-    Auktionssida
+    Auktionssida.............................................................................................pågående
         Budfunktion (date kan krångla, eventuellt hårdkoda exp.time)        
         ...
         [Flagg-funktion] 
-    Användarsida
+    Användarsida.............................................................................................pågående
         Objekt som anv budat på
         Objekt som anv lagt ut
         [ändra uppgifter, typ lösen]
