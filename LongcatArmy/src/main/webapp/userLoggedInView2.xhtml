@@ -26,10 +26,12 @@
                             <br/>
                         </div>
                         <div class="product-table">
+                            <h:panelGrid columns="1">
+                            <h:outputText value="My Bids:" />
                             <h:form>
-                                <p:carousel var="a" value="#{userLIV.auctions}">
+                                <p:carousel var="a" value="#{userLIV.auctions}" itemStyle="width:305px">
                                     <p:panel>
-                                        <h:panelGrid columns="1" style="width: 100%">
+                                        <h:panelGrid columns="1">
                                             <h:outputText  value="#{a.title}"/>
                                             <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="100" width="150"/>
                                             <h:outputText value="Current bid: #{a.price}"/>
@@ -38,6 +40,20 @@
                                     </p:panel>
                                 </p:carousel>
                             </h:form>
+                            <h:outputText value="My Auctions:" />
+                            <h:form>
+                                <p:carousel var="a" value="#{userLIV.bids}" itemStyle="width:305px">
+                                    <p:panel>
+                                        <h:panelGrid columns="1">
+                                            <h:outputText  value="#{a.title}"/>
+                                            <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="100" width="150"/>
+                                            <h:outputText value="Current bid: #{a.price}"/>
+                                            <h:outputText value="Tid kvar: #{a.expire}"/>                                            
+                                        </h:panelGrid>
+                                    </p:panel>
+                                </p:carousel>
+                            </h:form>
+                            </h:panelGrid>
                         </div>
                     </div>
                 </h:form>

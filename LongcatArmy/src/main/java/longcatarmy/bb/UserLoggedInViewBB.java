@@ -25,20 +25,27 @@ import longcatarmy.src.SuperSite;
 public class UserLoggedInViewBB implements Serializable {
     
     private List<AuctionObject> expAuctions;
-    private SuperSite site = AuctionFactory.getAuction(true);
+    private AuctionBB test = AuctionBB.INSTANCE;
+    Customer testCust;
     
     @PostConstruct
     public void post()
     {
+        SuperSite site = test.createSuperSite();
         
-        Customer testUI = site.getCustomerByName("apa");
+        testCust = site.getCustomerByName("apa");
         
-        expAuctions = site.getAllAuctionsForUser(testUI);
+        expAuctions = site.getAllAuctionsForUser(testCust);
     }
     
     public List<AuctionObject> getAuctions()
     {
         return expAuctions;
+    }
+    
+    public List<AuctionObject> getBids()
+    {
+        return testCust.getMyBuyAuctionList();
     }
     
 }

@@ -4,8 +4,10 @@
  */
 package longcatarmy.bb;
 
+import javax.enterprise.inject.Default;
 import javax.inject.Named;
 import javax.inject.Singleton;
+import javax.enterprise.inject.Produces;
 import longcatarmy.src.AuctionFactory;
 import longcatarmy.src.SuperSite;
 
@@ -14,12 +16,25 @@ import longcatarmy.src.SuperSite;
  * @author Emelie Svensson
  */
 @Singleton
-@Named("auction")
-public class AuctionBB {
+@Default
+@Named("Auction")
+public enum AuctionBB {
+    INSTANCE;
+    
     private final SuperSite auction; 
     
-    public AuctionBB(){
+    private AuctionBB(){
         auction = AuctionFactory.getAuction(true);
+    }
+    
+    public SuperSite getSuperSite()
+    {
+        return auction;
+    }
+    
+    @Produces SuperSite createSuperSite()
+    {
+        return auction;
     }
     
 }
