@@ -18,7 +18,7 @@ LV5-LV6:
         Budfunktion (date kan krångla, eventuellt hårdkoda exp.time)        
         ...
         [Flagg-funktion] 
-    Användarsida.............................................................................................pågående
+    Användarsida.............................................................................................X
         Objekt som anv budat på
         Objekt som anv lagt ut
         [ändra uppgifter, typ lösen]
