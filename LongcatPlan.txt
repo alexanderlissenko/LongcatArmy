@@ -12,15 +12,15 @@ LV5-LV6:
         Lista med överbudade, förlorande bud
             Länk till auktionssida default
         Lista med vinnande bud
-        Browsa alla auktioner (Namn, pris visas i lista).....................................................pågående
+        Browsa alla auktioner (Namn, pris visas i lista).......................................................X
         [Sökruta]
     Auktionssida.............................................................................................pågående
         Budfunktion (date kan krångla, eventuellt hårdkoda exp.time)        
         ...
         [Flagg-funktion] 
     Användarsida.............................................................................................X
-        Objekt som anv budat på
-        Objekt som anv lagt ut
+        Objekt som anv budat på..............................................................................X
+        Objekt som anv lagt ut...............................................................................X
         [ändra uppgifter, typ lösen]
     Adminsida
         Extended användare
