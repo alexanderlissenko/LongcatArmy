@@ -24,6 +24,7 @@ public class SuperSite {
     HashMap<Customer, List<AuctionObject>> auctionMap;
     Boolean validBid;
     Customer Seller;
+    HashMap<Long,AuctionObject> allAuctions = new HashMap<Long,AuctionObject>();
     
     //ArrayList<AuctionObject> auctObj = new ArrayList<AuctionObject>();
     
@@ -136,6 +137,21 @@ public class SuperSite {
                 return customers.get(i);
         }
         return null;
+    }
+    
+    //påbörjad, för att få ut objects utan customers
+    public HashMap getAllAuctionsMappedById() {
+        //allAuctions = new HashMap<Long,AuctionObject>();
+        for(Entry<Customer, List<AuctionObject>> s: auctionMap.entrySet()){
+            for(AuctionObject ao : s.getValue()){
+                allAuctions.put(ao.getId(), ao);
+            }
+        }
+        return allAuctions;
+    }
+    
+    public AuctionObject getById(Long id) {
+        return allAuctions.get(id);
     }
     
     //Vi kan behöva att man letar efter namnet på auktionen med
