@@ -7,6 +7,7 @@ package longcatarmy.src;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 import javax.inject.Singleton;
 
 
@@ -22,6 +23,7 @@ public class SuperSite {
     ArrayList<Customer> customers;
     HashMap<Customer, List<AuctionObject>> auctionMap;
     Boolean validBid;
+    Customer Seller;
     
     //ArrayList<AuctionObject> auctObj = new ArrayList<AuctionObject>();
     
@@ -97,15 +99,27 @@ public class SuperSite {
     }
     //HELP!!!!!!!!!!!!!!!!!*************************************************!!!!!!!!!!!!!!!!!!!!!!!!!**************************
     public void soldObject(AuctionObject obj, Double price){
-        for ( HashMap<Customer, Double> o : obj.bidderList){
-      
-            for ( Double p:o.values()){
-                if (price.equals(p)){
-                    //**************************************************FFFFFEEEEEEEEEEEEELLLLLLLLLLLLLLLL typ
-                    System.out.println("object is sold"); //Remove object from the buyList of winning customer and from seller selllist
+        
+        //Remove from buyer buyList
+        for ( HashMap<Customer, Double> o : obj.bidderList){     
+            for ( Entry<Customer, Double> p:o.entrySet()){
+                if (price.equals(p.getValue())){  
+                    p.getKey().removeMyBuyAuctionList(obj);
+                    System.out.println("object is sold"); 
                 }
             }
         }
+        
+        //Remove from sellers sellList
+        for (Entry<Customer, List<AuctionObject>> s: auctionMap.entrySet()){
+            for (AuctionObject ao : s.getValue()){
+                if (obj.equals(ao)){
+                    Seller = s.getKey();                    
+                    System.out.println("Right object");
+                }
+            }                       
+        }
+        removeAuction(Seller,obj ,true);;
     }
     
     //Vi kan behöva att man letar efter namnet på auktionen med
