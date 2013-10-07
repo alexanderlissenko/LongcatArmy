@@ -34,7 +34,15 @@ public class AuctionFactory {
         Customer test4 = new Customer("depa@hej.com", "depa", "password", "44444", 
                         "seQuest", "addressgatan4");
         
-        AuctionObject testobj = new AuctionObject("Fisk", "info", 10.00, today);
+        AuctionObject testobj1 = new AuctionObject("Fisk", "info", 10.00, today);
+        AuctionObject testobj2 = new AuctionObject("Mås", "info", 101.00, today);
+        AuctionObject testobj3 = new AuctionObject("Katt", "info", 102.00, today);
+        AuctionObject testobj4 = new AuctionObject("Hest", "info", 103.00, today);
+        AuctionObject testobj5 = new AuctionObject("Dawgh", "info", 104.00, today);
+        AuctionObject testobj6 = new AuctionObject("ko", "info", 101.00, today);
+        AuctionObject testobj7 = new AuctionObject("häst", "info", 102.00, today);
+        AuctionObject testobj8 = new AuctionObject("katt", "info", 103.00, today);
+                
         
         auction.addCustomer(test1);
         auction.addCustomer(test2);
@@ -43,16 +51,16 @@ public class AuctionFactory {
         
         
         
-        auction.newAuction( test1, testobj);
-        auction.newAuction( test1, new AuctionObject("Mås", "info", 101.00, today));
-        auction.newAuction( test1, new AuctionObject("Katt", "info", 102.00, today));
-        auction.newAuction( test1, new AuctionObject("Hest", "info", 103.00, today));
-        auction.newAuction( test1, new AuctionObject("Dawgh", "info", 104.00, today));
-        auction.newAuction( test2, new AuctionObject("ko", "info", 101.00, today));
-        auction.newAuction(test3, new AuctionObject("häst", "info", 102.00, today));
-        auction.newAuction(test4 , new AuctionObject("katt", "info", 103.00, today));
+        auction.newAuction( test1, testobj1);
+        auction.newAuction( test1, testobj2);
+        auction.newAuction( test1, testobj3);
+        auction.newAuction( test1, testobj4);
+        auction.newAuction( test1, testobj5);
+        auction.newAuction( test2, testobj6);
+        auction.newAuction(test3, testobj7);
+        auction.newAuction(test4 , testobj8);
         
-        auction.doBid(test1, 1000.1, testobj);
+        auction.doBid(test1, 1000.1, testobj6);
         
         
         /*shop.getCustomerRegistry().add(new Customer(new Address("aaa", 1, "aaa"),
