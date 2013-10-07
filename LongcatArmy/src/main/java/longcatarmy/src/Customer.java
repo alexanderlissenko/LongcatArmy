@@ -6,12 +6,22 @@ package longcatarmy.src;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
  * @author Emelie Svensson, Alexander Lissenko
  */
+//@Entity
 public class Customer implements User {
+    
+    /*@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;*/ //uncomment when using database ******************************
+    
     private String email;
     private String name;       
     private String password;

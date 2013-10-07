@@ -8,12 +8,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 import java.util.HashMap;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
  * @author Emelie Svensson, Alexander Lissenko
  */
+
+//@Entity
 public class AuctionObject {
+    
+    /*@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;*/ //uncomment when using database ****************************'
+    
     public String title;
     public String info;
     public Double price;
