@@ -1,6 +1,10 @@
 Redovisning må-ons i tentaveckan. Vilken dag väljer vi?
     Deadline? Antag söndag LV7.
     Vi väljer måndag, gött att få det överstökat.
+    
+ATT FRÅGA HANDLEDARE:
+    - Konstigt exception med att footer inte laddas, google säger uppdatera en komponent till Glassfish
+    - Hur lösa koppling java.util.Date till databas? sql.Date är dålig...
 
 
 Ordning att följa:
