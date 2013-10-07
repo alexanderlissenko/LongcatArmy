@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:body>
+        <ui:composition template="/WEB-INF/template.xhtml">
+            <ui:define name="content">
+                <div id="wrap">
+                    <div id="main">
+                        <h:dataTable var="c" value="#{profileEdit.customer}" border="0" >
+                            <f:facet name="header">
+                                <h:outputText value="User profile"/>
+                            </f:facet>
+                            
+                            <h:form>
+                                <h:column>
+                                    <h:outputText value="Name:"/>
+                                    <h:outputText value="E-Mail:"/>
+                                    <h:outputText value="Adress:"/>
+                                    <h:outputText value="Password:"/>
+                                    <h:outputText value="Phone:"/>
+                                    <h:outputText value="Secret Question:"/>
+                                    <h:commandButton action="#{profileEdit.actOnSelected()}" value="Edit Account"/> 
+                                </h:column>
+                                <h:column>
+                                    <h:inputText id="name" value="#{c.getName()}" />
+                                    <h:inputText id="eMail" value="#{c.getEmail()}"/>
+                                    <h:inputText id="adress" value="#{c.getAdress()}"/>
+                                    <h:inputText id="password" value="" />
+                                    <h:inputText id="phone" value="#{c.getPhonenr()}"/>
+                                    <h:inputText id="secQuest" value="" />
+                                </h:column>
+                            </h:form>x
+                        </h:dataTable>
+                    </div>
+                <!-- END CONTENT (auktioner) -->
+             </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

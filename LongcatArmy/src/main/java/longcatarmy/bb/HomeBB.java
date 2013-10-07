@@ -23,12 +23,15 @@ import longcatarmy.src.SuperSite;
 public class HomeBB implements Serializable{
     
     AuctionBB test = AuctionBB.INSTANCE;
-    SuperSite site;
+    SuperSite site = test.createSuperSite();
+    
+    public HomeBB()
+    {
+    }
     
     @PostConstruct
     public void post()
-    {
-        site = test.createSuperSite();
+    { 
     }
     
     public List<AuctionObject> getAllAuctions()
