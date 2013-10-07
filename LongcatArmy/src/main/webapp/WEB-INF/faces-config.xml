@@ -25,11 +25,11 @@
             <to-view-id>/userLoggedInView2.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>products</from-outcome>
+            <from-outcome>auctions</from-outcome>
             <to-view-id>/index_1.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>orders</from-outcome>
+            <from-outcome>about</from-outcome>
             <to-view-id>/index_1.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>

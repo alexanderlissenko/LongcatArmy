@@ -13,31 +13,26 @@ and open the template in the editor.
             <ui:define name="content">
                 <div id="wrap">
                     <div id="main">
-                        <h:dataTable var="c" value="#{profileEdit.customer}" border="0" >
-                            <f:facet name="header">
-                                <h:outputText value="User profile"/>
-                            </f:facet>
-                            
-                            <h:form>
-                                <h:column>
-                                    <h:outputText value="Name:"/>
-                                    <h:outputText value="E-Mail:"/>
-                                    <h:outputText value="Adress:"/>
-                                    <h:outputText value="Password:"/>
-                                    <h:outputText value="Phone:"/>
-                                    <h:outputText value="Secret Question:"/>
-                                    <h:commandButton action="#{profileEdit.actOnSelected()}" value="Edit Account"/> 
-                                </h:column>
-                                <h:column>
-                                    <h:inputText id="name" value="#{c.getName()}" />
-                                    <h:inputText id="eMail" value="#{c.getEmail()}"/>
-                                    <h:inputText id="adress" value="#{c.getAdress()}"/>
-                                    <h:inputText id="password" value="" />
-                                    <h:inputText id="phone" value="#{c.getPhonenr()}"/>
-                                    <h:inputText id="secQuest" value="" />
-                                </h:column>
-                            </h:form>x
-                        </h:dataTable>
+                        <h:form>
+                            <h:panelGrid columns="2" columnClasses="column1,column1" >
+                                <f:facet name="header">
+                                    <h:outputText value="User profile"/>
+                                </f:facet>
+                                        <h:outputText value="Name:"/>
+                                        <h:inputText id="name" value="#{profileEdit.customer.getName()}" />
+                                        <h:outputText value="E-Mail:"/>
+                                        <h:inputText id="eMail" value="#{profileEdit.customer.getEmail()}"/>
+                                        <h:outputText value="Address:"/>
+                                        <h:inputText id="adress" value="#{profileEdit.customer.getAddress()}"/>
+                                        <h:outputText value="Password:"/>
+                                        <h:inputText id="password" value="" />
+                                        <h:outputText value="Phone:"/>
+                                        <h:inputText id="phone" value="#{profileEdit.customer.getPhoneNr()}"/>
+                                        <h:outputText value="Secret Question:"/>
+                                        <h:inputText id="secQuest" value="" />
+                                        <h:commandButton action="#{profileEdit.actOnSelected()}" value="Edit Account"/> 
+                            </h:panelGrid>
+                        </h:form>
                     </div>
                 <!-- END CONTENT (auktioner) -->
              </div>

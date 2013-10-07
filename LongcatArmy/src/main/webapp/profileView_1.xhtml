@@ -13,15 +13,15 @@ and open the template in the editor.
             <ui:define name="content">
                 <div id="wrap">
                     <div id="main">
-                        <h:dataTable var="c" value="#{profileView.customer}" border="0" >
-                            <f:facet name="header">
-                                <h:outputText value="User profile"/>
-                            </f:facet>
-                            <h:outputText value="Name: #{c.getName()}"/>
-                            <h:outputText value="E-Mail: #{c.getEmail()}"/>
-                            <h:outputText value="Number of auctions: #{c.nrAuctions}"/>
-                            <h:outputText value="Rating: #{c.getRating()}"/>
-                        </h:dataTable>
+                        <h:panelGrid columns="1" columnClasses="column1">
+                                <f:facet name="header">
+                                    <h:outputText value="User profile"/>
+                                </f:facet>
+                                <h:outputText value="Name: #{profileView.customer.getName()}"/>
+                                <h:outputText value="E-Mail: #{profileView.customer.getEmail()}"/>
+                                <h:outputText value="Number of auctions: #{profileView.customer.getNrOfSells()}"/>
+                                <h:outputText value="Rating: #{profileView.customer.getRating()}"/>
+                        </h:panelGrid>
                         <h:form>
                             <h:commandButton action="#{profileView.goToEdit()}" value="Edit Account"/> 
                         </h:form>
