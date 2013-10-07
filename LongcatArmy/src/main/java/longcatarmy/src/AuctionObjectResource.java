@@ -7,9 +7,7 @@ package longcatarmy.src;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.GenericEntity;
@@ -78,6 +76,7 @@ public class AuctionObjectResource {
     }
     
     
+    //getId troligtvis onödig för resource, id används bara för att hålla koll på rätt objekt
     /*@GET
     @Path("id")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
@@ -98,6 +97,11 @@ public class AuctionObjectResource {
         return Response.ok(ge).build();
     }
     
+    
+    //tas bort om vi inte implementerar någon flagg-funktion
+    @GET
+    @Path("??") //TODO
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getFlagList() {
         List<Customer> cList = site.getAuction(id).getFlagList(); //byts till site.något.getFlagList
         GenericEntity<List<Customer>> gc = new GenericEntity<List<Customer>>(cList){};
