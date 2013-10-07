@@ -40,6 +40,7 @@
             <from-outcome>editProfile</from-outcome>
             <to-view-id>/profileEdit.xhtml</to-view-id>
         </navigation-case>
+        <!-- adasdsd-->
     </navigation-rule>
     
 </faces-config>
