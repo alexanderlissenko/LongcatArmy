@@ -12,19 +12,20 @@ and open the template in the editor.
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
                 <div id="wrap">
-                <!-- CONTENT (auktioner)-->
-                <div id="main">
-                    <h3>User profile</h3>
-                    <h4>Loosing</h4>
-                    <h:outputText value="Name: #{Customer.getName()}"/>
-                    <h:outputText value="E-Mail: #{Customer.getEmail()}"/>
-                    <h:outputText value="Number of auctions: #{Customer.nrAuctions}"/>
-                    <h:outputText value="Rating: #{Customer.getRating()}"/>
-
-                    <h:form>
-                        <h:commandButton action="#{products.navigate('index')}" value="Delete Account"/> 
-                    </h:form>
-                </div>
+                    <div id="main">
+                        <h:dataTable var="c" value="#{profileView.customer}" border="0" >
+                            <f:facet name="header">
+                                <h:outputText value="User profile"/>
+                            </f:facet>
+                            <h:outputText value="Name: #{c.getName()}"/>
+                            <h:outputText value="E-Mail: #{c.getEmail()}"/>
+                            <h:outputText value="Number of auctions: #{c.nrAuctions}"/>
+                            <h:outputText value="Rating: #{c.getRating()}"/>
+                        </h:dataTable>
+                        <h:form>
+                            <h:commandButton action="#{profileView.goToEdit()}" value="Edit Account"/> 
+                        </h:form>
+                    </div>
                 <!-- END CONTENT (auktioner) -->
              </div>
             </ui:define>

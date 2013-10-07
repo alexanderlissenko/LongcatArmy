@@ -12,6 +12,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import longcatarmy.src.AuctionFactory;
 import longcatarmy.src.AuctionObject;
+import longcatarmy.src.Customer;
 import longcatarmy.src.SuperSite;
 
 /**
@@ -19,13 +20,13 @@ import longcatarmy.src.SuperSite;
  * @author William Axhav Bratt
  */
 @SessionScoped
-@Named("home")
-public class HomeBB implements Serializable{
+@Named("profileView")
+public class ProfileViewBB implements Serializable{
     
     AuctionBB test = AuctionBB.INSTANCE;
     SuperSite site = test.createSuperSite();
     
-    public HomeBB()
+    public ProfileViewBB()
     {
     }
     
@@ -34,8 +35,13 @@ public class HomeBB implements Serializable{
     { 
     }
     
-    public List<AuctionObject> getAllAuctions()
+    public Customer getCustomer()
     {
-        return site.getAllAuctions();
+        return site.getCustomerByName("apa");
+    }
+    
+    public String goToEdit()
+    {
+        return "editProfile";
     }
 }
