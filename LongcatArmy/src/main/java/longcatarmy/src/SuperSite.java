@@ -150,6 +150,10 @@ public class SuperSite {
         return allAuctions;
     }
     
+    public AuctionObject getAuction(Long id) {
+        return allAuctions.get(id);
+    }
+    
     
     
     //Vi kan behöva att man letar efter namnet på auktionen med
