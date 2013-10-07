@@ -23,7 +23,8 @@ public class SuperSite {
     ArrayList<Customer> customers;
     HashMap<Customer, List<AuctionObject>> auctionMap;
     Boolean validBid;
-    Customer Seller;
+    Customer seller;
+    Customer updated;
     HashMap<Long,AuctionObject> allAuctions = new HashMap<Long,AuctionObject>();
     
     //ArrayList<AuctionObject> auctObj = new ArrayList<AuctionObject>();
@@ -121,12 +122,12 @@ public class SuperSite {
         for (Entry<Customer, List<AuctionObject>> s: auctionMap.entrySet()){
             for (AuctionObject ao : s.getValue()){
                 if (obj.equals(ao)){
-                    Seller = s.getKey();                    
+                    seller = s.getKey();                    
                     System.out.println("Right object");
                 }
             }                       
         }
-        removeAuction(Seller,obj ,true);;
+        removeAuction(seller,obj ,true);;
     }
     
     public Customer getCustomerByName(String name)
@@ -152,6 +153,16 @@ public class SuperSite {
     
     public AuctionObject getAuction(Long id) {
         return allAuctions.get(id);
+    }
+    
+    public void updateCustomer (String email, String name, String pass, String phone, 
+                        String seQuest, String address){
+        updated = getCustomerByName(name);
+        updated.setEmail(email);
+        updated.setPassword(pass);
+        updated.setPhoneNr(phone);
+        updated.setQuest(seQuest);
+        updated.setAddress(address);
     }
     
     
