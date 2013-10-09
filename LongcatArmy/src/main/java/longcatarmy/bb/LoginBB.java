@@ -69,5 +69,15 @@ public class LoginBB implements Serializable{
         return password;
     }
     
+    public boolean isLoggedIn() {
+        return loggedIn;
+    }
     
+    public void setLoggedIn(boolean loggedIn) {
+        this.loggedIn = loggedIn;
+    }
+    
+    public void setNavBean(NavigationBB navigationBean) {
+        this.navigationBean = navigationBean;
+    }
 }
