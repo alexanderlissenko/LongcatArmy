@@ -20,22 +20,23 @@ import longcatarmy.src.SuperSite;
 public class ProfileEditBB implements Serializable{
     
     Customer cust;
-    String eMail;
+    String email;
     String password;
     String phone;
-    String secQuest;
+    String secquest;
     String address;
     AuctionBB test = AuctionBB.INSTANCE;
     SuperSite site = test.createSuperSite();
     
     public ProfileEditBB()
     {
-        cust = site.getCustomerByName("apa");
+        
     }
     
     @PostConstruct
     public void post()
     { 
+        cust = site.getCustomerByName("apa");
     }
     
     
@@ -69,7 +70,7 @@ public class ProfileEditBB implements Serializable{
         cust.setPhoneNr(phone);
     }
     
-    public void setSeqQuest(String secQuest)
+    public void setSecQuest(String secQuest)
     {
         cust.setSeqQuest(secQuest);
     }
@@ -99,7 +100,7 @@ public class ProfileEditBB implements Serializable{
         return cust.getPhoneNr();
     }
     
-    public String getSeqQuest()
+    public String getSecQuest()
     {
         return cust.getSeqQuest();
     }
