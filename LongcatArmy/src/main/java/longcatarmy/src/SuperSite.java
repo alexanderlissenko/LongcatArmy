@@ -87,7 +87,7 @@ public class SuperSite {
         cust.setAccess(false);
         cust.emptyMyLists(); 
         for (AuctionObject al:auctionMap.get(cust)){
-            HashMap<Customer, Double> temp =al.bidderMap;
+            HashMap<Customer, Double> temp =al.getBidderMap();
             
             for(Entry<Customer,Double> p : temp.entrySet()){
                 p.getKey().removeMyBuyAuctionList(al);
@@ -109,7 +109,7 @@ public class SuperSite {
     public void soldObject(AuctionObject obj, Double price){
         
         //Remove from buyer buyList
-        for ( HashMap<Customer, Double> o : obj.bidderList){     
+        for ( HashMap<Customer, Double> o : obj.getBidder()){     
             for ( Entry<Customer, Double> p:o.entrySet()){
                 if (price.equals(p.getValue())){  
                     p.getKey().removeMyBuyAuctionList(obj);
