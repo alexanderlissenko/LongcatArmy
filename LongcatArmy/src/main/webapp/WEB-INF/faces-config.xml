@@ -18,15 +18,15 @@
         <from-view-id>*</from-view-id>
         <navigation-case>
             <from-outcome>home</from-outcome>
-            <to-view-id>/index_1.xhtml</to-view-id>
+            <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>user</from-outcome>
-            <to-view-id>/userLoggedInView2.xhtml</to-view-id>
+            <to-view-id>/jsf/User/userLoggedInView.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>auctions</from-outcome>
-            <to-view-id>/index_1.xhtml</to-view-id>
+            <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>about</from-outcome>
@@ -34,18 +34,18 @@
         </navigation-case>
         <navigation-case>
             <from-outcome>profile</from-outcome>
-            <to-view-id>/profileView_1.xhtml</to-view-id>
+            <to-view-id>/jsf/User/profileView.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>editProfile</from-outcome>
-            <to-view-id>/profileEdit.xhtml</to-view-id>
+            <to-view-id>/jsf/User/profileEdit.xhtml</to-view-id>
         </navigation-case>
         <!-- Profile links-->
         <navigation-rule>
         <from-view-id>editProfile.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>profile</from-outcome>
-            <to-view-id>/profileView_1.xhtml</to-view-id>
+            <to-view-id>/jsf/User/profileView.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     </navigation-rule>
