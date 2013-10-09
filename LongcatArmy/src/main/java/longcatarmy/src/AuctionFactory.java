@@ -14,13 +14,13 @@ public class AuctionFactory {
     
     //Change this when starting using the database
     
-    public static SuperSite getAuction(boolean initTestData) {
+    /*public static SuperSite getAuction(boolean initTestData) {
         SuperSite au = SuperSite.getInstance();
         if (initTestData) {
             initTestData(au);
         }
         return au;
-    }
+    }*/
 //Behöver vi nåt slag customerregistry? Kolla i shopFactory för att se vad jag menar.
     private static void initTestData(SuperSite auction) {
 
