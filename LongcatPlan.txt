@@ -3,8 +3,9 @@ Redovisning må-ons i tentaveckan. Vilken dag väljer vi?
     Vi väljer måndag, gött att få det överstökat.
     
 ATT FRÅGA HANDLEDARE:
-    - Konstigt exception med att footer inte laddas, google säger uppdatera en komponent till Glassfish
+    - Konstigt exception med att footer inte laddas, google säger uppdatera en komponent till Glassfish (Mojarra?)
     - Hur lösa koppling java.util.Date till databas? sql.Date är dålig...
+    - Byta mellan de olika approacherna, hur rent praktiskt?
 
 
 Ordning att följa:
