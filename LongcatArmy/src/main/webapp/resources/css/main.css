@@ -17,9 +17,6 @@ li{
     margin:0 0 2em;
     list-style-type:none;
 }
-table{
-    margin:0 0 2em;
-}
 #right
 {
     float:right;
@@ -64,12 +61,6 @@ table{
     margin:0;
     padding:0;
 }
-#main td{
-    text-align:center;
-}
-#main tr{
-    text-align:center;
-}
 #main th{
     text-align:center;
 }
@@ -97,7 +88,4 @@ table{
 
 #menu li{
     display: inline;
-}
-.column1{
-    text-align:right;
 }

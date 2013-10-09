@@ -14,7 +14,7 @@ and open the template in the editor.
                 <div id="wrap">
                     <div id="main">
                         <h:form>
-                            <h:panelGrid columns="2" columnClasses="column1,column1" >
+                            <h:panelGrid columns="2" styleClass="gridSetting" >
                                 <f:facet name="header">
                                     <h:outputText value="User profile"/>
                                 </f:facet>
@@ -28,10 +28,14 @@ and open the template in the editor.
                                         <h:inputSecret id="password" value="#{profileEdit.password}" />
                                         <h:outputText value="Phone:"/>
                                         <h:inputText id="phone" value="#{profileEdit.phone}"/>
-                                        <h:outputText value="Secret Question: how long is a cat?"/>
+                                        <h:outputText value="Secret Question:"/>
+                                        <h:outputText value=" "/>
+                                        <h:outputText value="How long is a cat?"/>
                                         <h:inputSecret id="secQuest" value="#{profileEdit.secQuest}" />
-                                        <h:commandButton action="#{profileEdit.actOnSelected()}" value="Edit Account"/> 
-                                        <h:button outcome="profile" value="Cancel"/>
+                                        <h:column>
+                                            <h:commandButton action="#{profileEdit.actOnSelected()}" value="Edit Account"/> 
+                                            <h:button outcome="profile" value="Cancel"/>
+                                        </h:column>
                             </h:panelGrid>
                         </h:form>
                     </div>

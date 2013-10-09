@@ -25,11 +25,11 @@
                             <h:outputText value="Logged in as DEFAULT_USER" />                       
                             <br/>
                         </div>
-                        <div class="product-table">
+                        <div>
                             <h:panelGrid columns="1">
                             <h:outputText value="My Bids:" />
                             <h:form>
-                                <p:carousel var="a" value="#{userLIV.auctions}" itemStyle="width:305px">
+                                <p:carousel var="a" value="#{userLIV.bids}" itemStyle="width:305px">
                                     <p:panel>
                                         <h:panelGrid columns="1">
                                             <h:outputText  value="#{a.title}"/>
@@ -42,7 +42,7 @@
                             </h:form>
                             <h:outputText value="My Auctions:" />
                             <h:form>
-                                <p:carousel var="a" value="#{userLIV.bids}" itemStyle="width:305px">
+                                <p:carousel var="a" value="#{userLIV.auctions}" itemStyle="width:305px">
                                     <p:panel>
                                         <h:panelGrid columns="1">
                                             <h:outputText  value="#{a.title}"/>
