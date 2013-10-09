@@ -21,15 +21,15 @@ and open the template in the editor.
                                         <h:outputText value="Name:"/>
                                         <h:inputText id="name" value="#{profileEdit.name}" disabled="true" />
                                         <h:outputText value="E-Mail:"/>
-                                        <h:inputText id="eMail" value="#{profileEdit.email}"/>
+                                        <h:inputText id="email" value="#{profileEdit.email}"/>
                                         <h:outputText value="Address:"/>
                                         <h:inputText id="address" value="#{profileEdit.address}"/>
                                         <h:outputText value="Password:"/>
                                         <h:inputSecret id="password" value="#{profileEdit.password}" />
                                         <h:outputText value="Phone:"/>
-                                        <h:inputText id="phone" value="#{profileEdit.phonenr}"/>
+                                        <h:inputText id="phone" value="#{profileEdit.phone}"/>
                                         <h:outputText value="Secret Question: how long is a cat?"/>
-                                        <h:inputSecret id="secQuest" value="#{profileEdit.seqquest}" />
+                                        <h:inputSecret id="secQuest" value="#{profileEdit.secQuest}" />
                                         <h:commandButton action="#{profileEdit.actOnSelected()}" value="Edit Account"/> 
                                         <h:button outcome="profile" value="Cancel"/>
                             </h:panelGrid>
