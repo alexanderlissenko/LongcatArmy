@@ -1,3 +1,6 @@
+TODO!!!! Fixa till respektive view att passa med ny ändring med beans.
+
+
 Redovisning må-ons i tentaveckan. Vilken dag väljer vi?
     Deadline? Antag söndag LV7.
     Vi väljer måndag, gött att få det överstökat.
