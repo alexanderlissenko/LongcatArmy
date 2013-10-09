@@ -15,12 +15,12 @@ import javax.persistence.Id;
  *
  * @author Emelie Svensson, Alexander Lissenko
  */
-//@Entity
+@Entity
 public class Customer implements User {
     
-    /*@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;*/ //uncomment when using database ******************************
+    private Long id; //uncomment when using database ******************************
     
     private String email;
     private String name;       

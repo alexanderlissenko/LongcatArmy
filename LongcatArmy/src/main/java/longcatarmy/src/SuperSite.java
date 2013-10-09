@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 import javax.inject.Singleton;
+import javax.persistence.EntityManagerFactory;
 
 
 
@@ -19,6 +20,10 @@ import javax.inject.Singleton;
 
 public class SuperSite {
 
+    //DAtabase
+    String pUName;
+    EntityManagerFactory emf;
+    //DAtabase slut
     
     ArrayList<Customer> customers;
     HashMap<Customer, List<AuctionObject>> auctionMap;
@@ -173,7 +178,10 @@ public class SuperSite {
         updated.setSeqQuest(cust.getSeqQuest());
         updated.setAddress(cust.getAddress());
     }
-    
+    //DAtabase
+    public void setPUName (String pu){
+        pUName = pu;
+    }
     
     //Vi kan behöva att man letar efter namnet på auktionen med
 }

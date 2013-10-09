@@ -21,6 +21,12 @@ public class AuctionFactory {
         }
         return au;
     }
+    //DAtabase
+    public static SuperSite getAuction(String PUName){
+        SuperSite au = SuperSite.getInstance();
+        au.setPUName(PUName);
+        return au;
+    }
 //Behöver vi nåt slag customerregistry? Kolla i shopFactory för att se vad jag menar.
     private static void initTestData(SuperSite auction) {
 

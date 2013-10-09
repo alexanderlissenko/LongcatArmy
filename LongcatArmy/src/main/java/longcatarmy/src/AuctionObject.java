@@ -18,12 +18,12 @@ import javax.persistence.Id;
  * @author Emelie Svensson, Alexander Lissenko
  */
 
-//@Entity
+@Entity
 public class AuctionObject {
     
-    /*@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;*/ //uncomment when using database ****************************'
+    private Long id; //uncomment when using database ****************************'
     
     private String title;
     private String info;
@@ -33,7 +33,7 @@ public class AuctionObject {
     private HashMap<Customer, Double> bidderMap; //för att kunna presentera listan på smidigt sätt
     private List<HashMap> bidderList;
     private List<Customer> flagList;
-    private Long id;
+    //private Long id;
     
     public AuctionObject(String title, String info, Double price, Date expireDate){
         //this.creator = creator;

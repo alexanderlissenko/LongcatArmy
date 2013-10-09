@@ -24,7 +24,7 @@ public enum AuctionBB {
     private final SuperSite auction; 
     
     private AuctionBB(){
-        auction = AuctionFactory.getAuction(true);
+        auction = AuctionFactory.getAuction(true); //true = utan database "auction_pu" = med database
     }
     
     public SuperSite getSuperSite()
