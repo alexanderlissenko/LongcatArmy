@@ -19,18 +19,19 @@ and open the template in the editor.
                                     <h:outputText value="User profile"/>
                                 </f:facet>
                                         <h:outputText value="Name:"/>
-                                        <h:inputText id="name" value="#{profileEdit.customer.getName()}" />
+                                        <h:inputText id="name" value="#{profileEdit.name}" disabled="true" />
                                         <h:outputText value="E-Mail:"/>
-                                        <h:inputText id="eMail" value="#{profileEdit.customer.getEmail()}"/>
+                                        <h:inputText id="eMail" value="#{profileEdit.email}"/>
                                         <h:outputText value="Address:"/>
-                                        <h:inputText id="adress" value="#{profileEdit.customer.getAddress()}"/>
+                                        <h:inputText id="address" value="#{profileEdit.address}"/>
                                         <h:outputText value="Password:"/>
-                                        <h:inputText id="password" value="" />
+                                        <h:inputSecret id="password" value="#{profileEdit.password}" />
                                         <h:outputText value="Phone:"/>
-                                        <h:inputText id="phone" value="#{profileEdit.customer.getPhoneNr()}"/>
-                                        <h:outputText value="Secret Question:"/>
-                                        <h:inputText id="secQuest" value="" />
+                                        <h:inputText id="phone" value="#{profileEdit.phonenr}"/>
+                                        <h:outputText value="Secret Question: how long is a cat?"/>
+                                        <h:inputSecret id="secQuest" value="#{profileEdit.seqquest}" />
                                         <h:commandButton action="#{profileEdit.actOnSelected()}" value="Edit Account"/> 
+                                        <h:button outcome="profile" value="Cancel"/>
                             </h:panelGrid>
                         </h:form>
                     </div>

@@ -7,7 +7,7 @@ package longcatarmy.bb;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.ConversationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import longcatarmy.src.AuctionFactory;
@@ -18,7 +18,7 @@ import longcatarmy.src.SuperSite;
  *
  * @author William Axhav Bratt
  */
-@SessionScoped
+@ConversationScoped
 @Named("home")
 public class HomeBB implements Serializable{
     

@@ -74,7 +74,7 @@ public class Customer implements User {
     public String getSeqQuest() {
         return seqQuest;
     }
-    public void setQuest(String seqQuest) {
+    public void setSeqQuest(String seqQuest) {
         this.seqQuest = seqQuest;
     }
     public String getAddress() {

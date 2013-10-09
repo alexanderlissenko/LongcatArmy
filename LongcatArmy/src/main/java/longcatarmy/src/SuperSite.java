@@ -155,16 +155,24 @@ public class SuperSite {
         return allAuctions.get(id);
     }
     
-    public void updateCustomer (String email, String name, String pass, String phone, 
+    public void updateCustomer (String name,String email, String pass, String phone, 
                         String seQuest, String address){
         updated = getCustomerByName(name);
         updated.setEmail(email);
         updated.setPassword(pass);
         updated.setPhoneNr(phone);
-        updated.setQuest(seQuest);
+        updated.setSeqQuest(seQuest);
         updated.setAddress(address);
     }
     
+    public void updateCustomer (String name,Customer cust){
+        updated = getCustomerByName(name);
+        updated.setEmail(cust.getEmail());
+        updated.setPassword(cust.getPassword());
+        updated.setPhoneNr(cust.getPhoneNr());
+        updated.setSeqQuest(cust.getSeqQuest());
+        updated.setAddress(cust.getAddress());
+    }
     
     
     //Vi kan behöva att man letar efter namnet på auktionen med
