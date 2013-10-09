@@ -16,7 +16,7 @@ public class QuickTests {
     
     public static void main(String[] args)
     {
-        SuperSite site = SuperSite.getInstance();
+        SuperSite site = null;
         Date today = new Date();
         System.out.println(today.getTime());            
         
@@ -97,9 +97,9 @@ public class QuickTests {
         site.soldObject(obj2, 2000.0);
         
         
-        SuperSite testFactory = AuctionFactory.getAuction(true);
+        SuperSite testFactory;
         
-        System.out.println(testFactory.getAllAuctions().size());
+        //System.out.println(testFactory.getAllAuctions().size());
         
     }
     

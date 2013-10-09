@@ -5,15 +5,13 @@
 package longcatarmy.bb;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
-import longcatarmy.src.AuctionFactory;
 import longcatarmy.src.AuctionObject;
 import longcatarmy.src.Customer;
-import longcatarmy.src.SuperSite;
 
 /**
  *
@@ -25,12 +23,15 @@ import longcatarmy.src.SuperSite;
 public class UserLoggedInViewBB implements Serializable {
     
     private List<AuctionObject> expAuctions;
-    private AuctionBB test = AuctionBB.INSTANCE;
+    //private AuctionBB test = AuctionBB.INSTANCE;
     Customer testCust;
+    
+    @Inject
+    SuperSiteBean site;
     
     public UserLoggedInViewBB()
     {
-        SuperSite site = test.createSuperSite();
+        
         
         testCust = site.getCustomerByName("apa");
         

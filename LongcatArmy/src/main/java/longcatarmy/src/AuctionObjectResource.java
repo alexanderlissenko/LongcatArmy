@@ -7,6 +7,7 @@ package longcatarmy.src;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -14,6 +15,7 @@ import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
+import longcatarmy.bb.SuperSiteBean;
 
 /**
  *
@@ -23,7 +25,8 @@ import javax.ws.rs.core.UriInfo;
 @Path("auction/{auctionId}")    //eventuellt annan path, unik för varje auctionobject
 public class AuctionObjectResource {
     
-    private final static SuperSite site = SuperSite.getInstance();   
+    @Inject
+    private SuperSiteBean site;   
     
     AuctionObjectProxy objectP;
     private UriInfo uriInfo;

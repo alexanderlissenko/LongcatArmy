@@ -5,15 +5,11 @@
 package longcatarmy.bb;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import longcatarmy.src.AuctionFactory;
-import longcatarmy.src.AuctionObject;
 import longcatarmy.src.Customer;
-import longcatarmy.src.SuperSite;
 
 /**
  *
@@ -23,8 +19,10 @@ import longcatarmy.src.SuperSite;
 @Named("profileView")
 public class ProfileViewBB implements Serializable{
     
-    AuctionBB test = AuctionBB.INSTANCE;
-    SuperSite site = test.createSuperSite();
+    //uctionBB test = AuctionBB.INSTANCE;
+    
+    @Inject
+    SuperSiteBean site;
     
     public ProfileViewBB()
     {

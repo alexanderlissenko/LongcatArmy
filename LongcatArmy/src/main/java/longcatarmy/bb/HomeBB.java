@@ -7,10 +7,9 @@ package longcatarmy.bb;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ConversationScoped;
+import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import longcatarmy.src.AuctionFactory;
 import longcatarmy.src.AuctionObject;
 import longcatarmy.src.SuperSite;
 
@@ -18,12 +17,14 @@ import longcatarmy.src.SuperSite;
  *
  * @author William Axhav Bratt
  */
-@ConversationScoped
+@RequestScoped
 @Named("home")
 public class HomeBB implements Serializable{
     
-    AuctionBB test = AuctionBB.INSTANCE;
-    SuperSite site = test.createSuperSite();
+    
+    @Inject
+    SuperSiteBean site;
+    
     
     public HomeBB()
     {
