@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 import javax.inject.Singleton;
+import javax.persistence.EntityManagerFactory;
 
 
 
@@ -20,6 +21,10 @@ import javax.inject.Singleton;
 
 public class SuperSite {
 
+    //DAtabase
+    String pUName;
+    EntityManagerFactory emf;
+    //DAtabase slut
     
     ArrayList<Customer> customers;
     HashMap<Customer, List<AuctionObject>> auctionMap;
@@ -81,7 +86,7 @@ public class SuperSite {
         cust.setAccess(false);
         cust.emptyMyLists(); 
         for (AuctionObject al:auctionMap.get(cust)){
-            HashMap<Customer, Double> temp =al.bidderMap;
+            HashMap<Customer, Double> temp =al.getBidderMap();
             
             for(Entry<Customer,Double> p : temp.entrySet()){
                 p.getKey().removeMyBuyAuctionList(al);
@@ -103,7 +108,7 @@ public class SuperSite {
     public void soldObject(AuctionObject obj, Double price){
         
         //Remove from buyer buyList
-        for ( HashMap<Customer, Double> o : obj.bidderList){     
+        for ( HashMap<Customer, Double> o : obj.getBidder()){     
             for ( Entry<Customer, Double> p:o.entrySet()){
                 if (price.equals(p.getValue())){  
                     p.getKey().removeMyBuyAuctionList(obj);
@@ -167,7 +172,10 @@ public class SuperSite {
         updated.setSeqQuest(cust.getSeqQuest());
         updated.setAddress(cust.getAddress());
     }
-    
+    //DAtabase
+    public void setPUName (String pu){
+        pUName = pu;
+    }
     
     protected void initTestData() {
 
