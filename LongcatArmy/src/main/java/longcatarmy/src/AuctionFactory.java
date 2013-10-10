@@ -78,5 +78,5 @@ public class AuctionFactory {
 
         shop.getOrderBook().add(new PurchaseOrder(c, c.getCart().getAsOrderItems()));*/
 
-    }
+    //}
 }
