@@ -28,7 +28,7 @@ public class AuctionObjectResource {
     @Inject
     private SuperSiteBean site;   
     
-    AuctionObjectProxy objectP;
+    AuctionObject auction;
     private UriInfo uriInfo;
     Long id; //*************************************************OBS! byt ut när id går att fås
 
@@ -41,28 +41,34 @@ public class AuctionObjectResource {
     }*/
     
     @GET
-    @Path("title")
+    @Path("/title")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getTitle() {
-        String t = site.getAuction(id).getTitle(); //********************************funkar ej!
+        auction = site.getAuction(id);
+        AuctionObjectProxy prox = new AuctionObjectProxy(auction);
+        String t = prox.getTitle(); 
         PrimitiveJSONWrapper<String> wrapTitle = new PrimitiveJSONWrapper<String>(t);
         return Response.ok(wrapTitle).build();
     }
     
     @GET
-    @Path("info")
+    @Path("/info")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getInfo() {
-        String t = site.getAuction(id).getInfo(); //byts till site.något.getInfo
+        auction = site.getAuction(id);
+        AuctionObjectProxy prox = new AuctionObjectProxy(auction);
+        String t = prox.getInfo(); //byts till site.något.getInfo
         PrimitiveJSONWrapper<String> wrapInfo = new PrimitiveJSONWrapper<String>(t);
         return Response.ok(wrapInfo).build();
     }
     
     @GET
-    @Path("price")
+    @Path("/price")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getPrice() {
-        Double d = site.getAuction(id).getPrice(); //byts till site.något.getPrice
+        auction = site.getAuction(id);
+        AuctionObjectProxy prox = new AuctionObjectProxy(auction);
+        Double d = prox.getPrice(); //byts till site.något.getPrice
         PrimitiveJSONWrapper<Double> wrapPrice = new PrimitiveJSONWrapper<Double>(d);
         return Response.ok(wrapPrice).build();
     }
@@ -70,10 +76,12 @@ public class AuctionObjectResource {
     
     //kan behöva wrappas på annat sätt, osäker på om Date är primitiv typ
     @GET
-    @Path("expire")
+    @Path("/expire")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getExpire() {
-        Date d = site.getAuction(id).getExpire(); //byts till site.något.getExpire
+        auction = site.getAuction(id);
+        AuctionObjectProxy prox = new AuctionObjectProxy(auction);
+        Date d = prox.getExpire(); //byts till site.något.getExpire
         PrimitiveJSONWrapper<Date> wrapExp = new PrimitiveJSONWrapper<Date>(d);
         return Response.ok(wrapExp).build();
     }
@@ -92,7 +100,7 @@ public class AuctionObjectResource {
     
     
     @GET
-    @Path("??") //TODO
+    @Path("/bidder") 
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getBidder() {
         List<HashMap> list = site.getAuction(id).getBidder(); //byts till site.något.getBidder
@@ -103,7 +111,7 @@ public class AuctionObjectResource {
     
     //tas bort om vi inte implementerar någon flagg-funktion
     @GET
-    @Path("??") //TODO
+    @Path("/flags") 
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getFlagList() {
         List<Customer> cList = site.getAuction(id).getFlagList(); //byts till site.något.getFlagList
