@@ -21,7 +21,7 @@ import longcatarmy.src.SuperSite;
 @ConversationScoped
 @Named("addAuction")
 public class AddAuctionBB implements Serializable{
-    
+    /*
     Customer cust;
     String name;
     double price;
@@ -80,6 +80,6 @@ public class AddAuctionBB implements Serializable{
     {
         return info;
     }
-    
+    */
    
 }
