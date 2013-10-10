@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -28,6 +30,7 @@ public class AuctionObject {
     private String title;
     private String info;
     private Double price;
+    @Temporal(TemporalType.DATE)
     private Date expireDate; 
     //public Customer creator;
     private HashMap<Customer, Double> bidderMap; //för att kunna presentera listan på smidigt sätt

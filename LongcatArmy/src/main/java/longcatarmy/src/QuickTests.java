@@ -16,7 +16,7 @@ public class QuickTests {
     
     public static void main(String[] args)
     {
-        SuperSite site = null;
+        SuperSite site = new SuperSite();
         Date today = new Date();
         System.out.println(today.getTime());            
         

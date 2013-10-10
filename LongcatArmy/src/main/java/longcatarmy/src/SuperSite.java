@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 import javax.inject.Singleton;
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 
 
@@ -22,7 +24,7 @@ import javax.persistence.EntityManagerFactory;
 public class SuperSite {
 
     //DAtabase
-    String pUName;
+    String puName;
     EntityManagerFactory emf;
     //DAtabase slut
     
@@ -39,6 +41,8 @@ public class SuperSite {
     {
         customers = new ArrayList<Customer>();
         auctionMap = new HashMap<Customer, List<AuctionObject>>();
+        puName = "auction_pu";
+        emf = Persistence.createEntityManagerFactory(puName);
     }
     
     
@@ -46,7 +50,21 @@ public class SuperSite {
     {   
         if(cust.getAccess()){    
             customers.get(customers.indexOf(cust)).addMySellAuctionList(obj);
-            auctionMap.get(cust).add(obj);   
+            auctionMap.get(cust).add(obj);
+            
+            EntityManager em = null;//Från här
+            try {
+                em = emf.createEntityManager(); 
+                em.getTransaction().begin();
+                em.persist(obj);
+                em.getTransaction().commit();
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if (em != null) {
+                    em.close();  // ... and destroy
+                }
+            } //till här kan behövas ta bort
         }
     }
     
@@ -173,8 +191,8 @@ public class SuperSite {
         updated.setAddress(cust.getAddress());
     }
     //DAtabase
-    public void setPUName (String pu){
-        pUName = pu;
+    public void setPUName (String pu){ //***********************kanske kan tas bort
+        puName = pu;
     }
     
     protected void initTestData() {
