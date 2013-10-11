@@ -7,8 +7,8 @@ package longcatarmy.utils;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import longcatarmy.src.AuctionCatalogue;
-import longcatarmy.src.AuctionObject;
+import longcat.auction.src.AuctionCatalogue;
+import longcat.auction.src.AuctionObject;
 
 /**
  *

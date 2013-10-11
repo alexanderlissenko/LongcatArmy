@@ -2,10 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package longcatarmy.src;
+package com.mycompany.flurop;
 
-
-public interface User {
-    
-    //nåt som vi inte har skrivit än
+/**
+ *
+ * @author lissal
+ */
+public class NewClass {
+    int i = 5;
 }

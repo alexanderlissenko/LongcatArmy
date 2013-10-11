@@ -1,7 +1,7 @@
 /*
  * Used for testing before database is created.
  */
-package longcatarmy.src;
+package longcat.auction.src;
 
 import java.util.Date;
 

@@ -4,14 +4,15 @@
  */
 package longcatarmy.bb;
 
+import longcatarmy.src.SuperSiteBean;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import longcatarmy.src.AuctionObject;
-import longcatarmy.src.SuperSite;
+import longcat.auction.src.AuctionObject;
+import longcat.auction.src.SuperSite;
 
 /**
  *

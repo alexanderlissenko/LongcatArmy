@@ -2,11 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package longcatarmy.src;
+package longcat.auction.src;
 
 import java.util.Date;
 import java.util.List;
-import longcatarmy.src.*;
 
 /**
  *

@@ -15,7 +15,9 @@ import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
-import longcatarmy.bb.SuperSiteBean;
+import longcat.auction.src.AuctionObject;
+import longcat.auction.src.AuctionObjectProxy;
+import longcat.auction.src.Customer;
 
 /**
  *

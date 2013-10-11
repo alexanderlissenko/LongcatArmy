@@ -9,7 +9,7 @@ import javax.annotation.ManagedBean;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import longcatarmy.src.Customer;
+import longcat.auction.src.Customer;
 
 /**
  *  A bean for login functionality

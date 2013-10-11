@@ -9,6 +9,7 @@ import com.sun.jersey.api.json.JSONJAXBContext;
 import javax.ws.rs.ext.ContextResolver;
 import javax.ws.rs.ext.Provider;
 import javax.xml.bind.JAXBContext;
+import longcat.auction.src.AuctionObjectProxy;
 
 /**
  * This is used to remove '@'s from attribute names when serializing to JSON

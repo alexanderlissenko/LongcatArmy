@@ -10,9 +10,9 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.ConversationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import longcatarmy.src.AuctionObject;
-import longcatarmy.src.Customer;
-import longcatarmy.src.SuperSite;
+import longcat.auction.src.AuctionObject;
+import longcat.auction.src.Customer;
+import longcat.auction.src.SuperSite;
 
 /**
  *

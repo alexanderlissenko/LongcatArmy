@@ -1,0 +1,52 @@
+TODO!!!! Fixa till respektive view att passa med ny ändring med beans.
+
+
+Redovisning må-ons i tentaveckan. Vilken dag väljer vi?
+    Deadline? Antag söndag LV7.
+    Vi väljer måndag, gött att få det överstökat.
+    
+ATT FRÅGA HANDLEDARE:
+    - Konstigt exception med att footer inte laddas, google säger uppdatera en komponent till Glassfish (Mojarra?)
+    - Hur lösa koppling java.util.Date till databas? sql.Date är dålig...
+    - Byta mellan de olika approacherna, hur rent praktiskt?
+
+
+Ordning att följa:
+
+LV5-LV6: 
+    (Dokumentera löpande)   
+    Startsida --> kolla att länkar funkar till andra sidor etc (onsdag)
+        Hårdkodad default inloggning...........................................................................X
+        Lista med överbudade, förlorande bud
+            Länk till auktionssida default
+        Lista med vinnande bud
+        Browsa alla auktioner (Namn, pris visas i lista).......................................................X
+        [Sökruta]
+    Auktionssida.............................................................................................pågående
+        Budfunktion (date kan krångla, eventuellt hårdkoda exp.time)        
+        ...
+        [Flagg-funktion] 
+    Användarsida.............................................................................................X
+        Objekt som anv budat på..............................................................................X
+        Objekt som anv lagt ut...............................................................................X
+        [ändra uppgifter, typ lösen]
+    Adminsida
+        Extended användare
+        Accessa alla users, hårdkoda dum user innan flag
+
+    Testa att sidorna funkar!!!!!
+LV6:
+    Koppling till databas!
+
+LV7:     
+    Koppla ihop allt och få allt att funka
+    Fixa grafiskt
+    Finslipa dokumentation
+    [Finslipa det grafiska]
+    
+
+Approaches:
+    About --> Request based (egentligen onödig sida, men med for teh lulz och för bra betyg)
+    Auktionssida, dvs där ett auktionsobjekt visas, --> REST
+    Övrigt --> Component based
+    EJB!
