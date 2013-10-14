@@ -53,24 +53,24 @@ public class SuperSite {
         AuctionObject testobj8 = new AuctionObject("katt", "info", 103.00, today);
                 
         
-        customerCatalogue.addCustomer(test1);
-        customerCatalogue.addCustomer(test2);
-        customerCatalogue.addCustomer(test3);
-        customerCatalogue.addCustomer(test4);
+        customerCatalogue.add(test1);
+        customerCatalogue.add(test2);
+        customerCatalogue.add(test3);
+        customerCatalogue.add(test4);
         
         
         
-        auctionCatalogue.newAuction( test1, testobj1);
-        auctionCatalogue.newAuction( test1, testobj2);
-        auctionCatalogue.newAuction( test1, testobj3);
-        auctionCatalogue.newAuction( test1, testobj4);
-        auctionCatalogue.newAuction( test1, testobj5);
-        auctionCatalogue.newAuction( test2, testobj6);
-        auctionCatalogue.newAuction(test3, testobj7);
+        auctionCatalogue.add(testobj1);
+        auctionCatalogue.add(testobj2);
+        auctionCatalogue.add(testobj3);
+        auctionCatalogue.add(testobj4);
+        auctionCatalogue.add(testobj5);
+        auctionCatalogue.add(testobj6);
+        auctionCatalogue.add(testobj7);
         
-        auctionCatalogue.newAuction(test4 , testobj8);
+        auctionCatalogue.add(testobj8);
         
-        auctionCatalogue.doBid(test1, 1000.1, testobj6);
+        //auctionCatalogue.doBid(test1, 1000.1, testobj6);
         
         
         /*shop.getCustomerRegistry().add(new Customer(new Address("aaa", 1, "aaa"),

@@ -28,8 +28,6 @@ public abstract class AbstractDAO<T , K> {
         emf = Persistence.createEntityManagerFactory(puName);
     }
 
-
-    
     public void add(T t) {
         EntityManager em = null;
         try{
@@ -150,6 +148,5 @@ public abstract class AbstractDAO<T , K> {
          
         return null;  
     }
-    
-    
+        
 }

@@ -37,9 +37,22 @@ public class AuctionObject {
     private List<HashMap> bidderList;
     private List<Customer> flagList;
     //private Long id;
+
+    public AuctionObject() {
+    }
     
     public AuctionObject(String title, String info, Double price, Date expireDate){
         //this.creator = creator;
+        this.title = title;
+        this.info = info;
+        this.price = price;
+        this.expireDate = expireDate;
+        bidderMap = new HashMap<Customer, Double>();
+        bidderList = new ArrayList<HashMap>();
+    }
+    
+    public AuctionObject(Long id, String title, String info, Double price, Date expireDate){
+        this.id=id;
         this.title = title;
         this.info = info;
         this.price = price;

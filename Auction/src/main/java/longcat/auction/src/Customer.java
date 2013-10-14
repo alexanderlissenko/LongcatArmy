@@ -4,6 +4,7 @@
  */
 package longcat.auction.src;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
@@ -16,7 +17,7 @@ import javax.persistence.Id;
  * @author Emelie Svensson, Alexander Lissenko
  */
 @Entity
-public class Customer implements User {
+public class Customer implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,6 +34,9 @@ public class Customer implements User {
     private List<AuctionObject> myBuyAuctionList;
     private int nrOfSells; //FInns denna som set/get?
     private Double rating;
+
+    public Customer() {
+    }
     
     public Customer(String email, String name, String pass, String phone, 
                         String seQuest, String address){
@@ -50,8 +54,19 @@ public class Customer implements User {
         
     }
     
+ 
+    
     public String getEmail(){
         return email;
+    }   
+
+    public Long getId(){
+        return id;
+    }
+  
+    public Long getMoreId()
+    {
+        return id;
     }
     public void setEmail(String email){
         this.email = email;

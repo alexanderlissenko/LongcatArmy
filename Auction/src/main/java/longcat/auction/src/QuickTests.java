@@ -15,19 +15,19 @@ public class QuickTests {
     
     public static void main(String[] args)
     {
-        SuperSiteOld site = new SuperSiteOld();
+        SuperSite site = new SuperSite();
         Date today = new Date();
         System.out.println(today.getTime());            
         
         Customer testCust= new Customer("test@testing.com", "test1", "testpass", "031133742","teeeesstt","test street 1");
         Customer testCust2= new Customer("tevil@bad.com", "evil", "testpass", "031133742","teeeesstt","evil street 1");
         Customer testCust3= new Customer("test3@testing.com", "test3", "testpass", "031133742","teeeesstt","test street 3");
-        
-        site.addCustomer(testCust);
-        site.addCustomer(testCust2);
-        site.addCustomer(testCust3);
-        
        /* 
+        site.getCustomerCatalogue().addCustomer(testCust);
+        site.getCustomerCatalogue().addCustomer(testCust2);
+        site.getCustomerCatalogue().addCustomer(testCust3);
+        
+        
         //Customer creator, String title, String info, Double price, Date expireDate
         AuctionObject obj1 = new AuctionObject("hus","hus i pool",3131.3,today);
         AuctionObject obj2 = new AuctionObject("pool","pool till hus",1000.1,today);

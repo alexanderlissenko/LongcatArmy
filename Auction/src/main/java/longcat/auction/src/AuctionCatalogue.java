@@ -17,23 +17,22 @@ import longcat.auction.utils.AbstractDAO;
  */
 public final class AuctionCatalogue extends AbstractDAO<AuctionObject, Long> implements Serializable  {
     SuperSite site;
-    ArrayList<Customer> customers;
-    HashMap<Customer, List<AuctionObject>> auctionMap;
-    Boolean validBid;
-    Customer seller;
+   // ArrayList<Customer> customers;
+    //HashMap<Customer, List<AuctionObject>> auctionMap;
+    HashMap<Long,AuctionObject> allAuctions = new HashMap<Long,AuctionObject>();
     
     public AuctionCatalogue(String puName, SuperSite site) {
         super(AuctionObject.class,puName);
-        this.site = site;
+        //this.site = site;
        
     }
     
-    public void initiate(){
+   /* public void initiate(){
         customers = site.getCustomerCatalogue().getCustomers();
         auctionMap = site.getCustomerCatalogue().getAuctionMap();
-    }
+    }*/
     
-    public void newAuction(Customer cust,AuctionObject obj)
+  /* public void newAuction(Customer cust,AuctionObject obj)
     {   
         initiate();
         if(cust.getAccess()){ 
@@ -41,21 +40,21 @@ public final class AuctionCatalogue extends AbstractDAO<AuctionObject, Long> imp
             auctionMap.get(cust).add(obj);
       
         }
-    }
+    }*/
     
-    public void removeAuction(Customer cust,AuctionObject obj,Boolean sold){
+   /* public void removeAuction(Customer cust,AuctionObject obj,Boolean sold){
         initiate();
         customers.get(customers.indexOf(cust)).removeMySellAuctionList(obj, sold); 
         auctionMap.get(cust).remove(obj);
-    }
+    }*/
     
-    public void updateAuction(Customer cust, AuctionObject obj){
+    /*public void updateAuction(Customer cust, AuctionObject obj){
         initiate();
         removeAuction(cust,obj,false); //fasle because it is not sold here
         newAuction(cust,obj);
-    }
+    }*/
         
-    public List<AuctionObject> getAllAuctions()
+    /*public List<AuctionObject> getAllAuctions()
     {
         initiate();
         ArrayList allList = new ArrayList();
@@ -65,21 +64,22 @@ public final class AuctionCatalogue extends AbstractDAO<AuctionObject, Long> imp
                 allList.add(obj);
         }
         return allList;
-    }
+    }*/
     
-     public void doBid(Customer cust, Double price, AuctionObject obj){ //Ska vi använda denna?
+     /*public void doBid(Customer cust, Double price, AuctionObject obj){ //Ska vi använda denna?
         initiate();
-        validBid = obj.setBid(cust, price); 
+        Boolean validBid = obj.setBid(cust, price); 
 
         if(validBid){
             customers.get(customers.indexOf(cust)).addMyBuyAuctionList(obj);
         }
         
-    }
-     
+    }*/
+     /**************************************************************
      public void soldObject(AuctionObject obj, Double price){
-        initiate();
+        //initiate();
         //Remove from buyer buyList
+        Customer seller = null;
         for ( HashMap<Customer, Double> o : obj.getBidder()){     
             for ( Map.Entry<Customer, Double> p:o.entrySet()){
                 if (price.equals(p.getValue())){  
@@ -98,8 +98,22 @@ public final class AuctionCatalogue extends AbstractDAO<AuctionObject, Long> imp
                 }
             }                       
         }
-        removeAuction(seller,obj ,true);;
+        removeAuction(seller,obj ,true);
     }
+     
+     public HashMap getAllAuctionsMappedById() {
+        allAuctions = new HashMap<Long,AuctionObject>();
+        for(Map.Entry<Customer, List<AuctionObject>> s: auctionMap.entrySet()){
+            for(AuctionObject ao : s.getValue()){
+                allAuctions.put(ao.getId(), ao);
+            }
+        }
+        return allAuctions;
+    }
+    
+    public AuctionObject getAuction(Long id) {
+        return allAuctions.get(id);
+    }/*************************************************************************
      
 
     
