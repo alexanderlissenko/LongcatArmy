@@ -50,7 +50,7 @@ public class ViewAuctionBB implements Serializable {
     
     public void setBid(Double newBid){
         //måste få referens till budande customer, byt null till det sen
-        site.getAuctionCatalogue().doBid(null, newBid, obj);
+        //site.getAuctionCatalogue().doBid(null, newBid, obj);
     }
     
     

@@ -12,7 +12,7 @@ import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import longcat.auction.src.AuctionObject;
-import longcat.auction.src.SuperSiteOld;
+import longcatarmy.src.Controller;
 
 /**
  *
@@ -24,7 +24,7 @@ public class HomeBB implements Serializable{
     
     
     @Inject
-    SuperSiteBean site;
+    Controller site;
     
     
     public HomeBB()
@@ -38,6 +38,6 @@ public class HomeBB implements Serializable{
     
     public List<AuctionObject> getAllAuctions()
     {
-        return site.getAuctionCatalogue().getAllAuctions();
+        return site.getAllAuctions();
     }
 }

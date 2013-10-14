@@ -34,8 +34,8 @@ public class AuctionCatalogueBean implements Serializable{
     }
     
     public void initiate(){
-        customers = site.getCustomerCatalogue().getCustomers();
-        auctionMap = site.getCustomerCatalogue().getAuctionMap();
+        customers =  null;//site.getCustomerCatalogue().getCustomers();
+        auctionMap = null;//site.getCustomerCatalogue().getAuctionMap();
     }
     
     public void newAuction(Customer cust,AuctionObject obj)

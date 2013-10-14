@@ -19,14 +19,14 @@ import longcat.auction.src.Customer;
 public class Controller {
     @Inject
     SuperSiteBean site;
-    ArrayList<Customer> customers;
+    List<Customer> customers;
     //HashMap<Customer, List<AuctionObject>> auctionMap;
     
     public Controller(){
         
     }
     public void initiate(){
-        customers = site.getCustomerCatalogue().getCustomers();
+        customers = site.getCustomerCatalogue().getRange(0, site.getCustomerCatalogue().getCount());
         //auctionMap = site.getCustomerCatalogue().getAuctionMap();
     }
     public void newAuction(Customer cust,AuctionObject obj)
@@ -74,7 +74,7 @@ public class Controller {
     
     public List<AuctionObject> getAllAuctionsForUser(Customer cust)
     {
-        return site.getCustomerCatalogue().find(cust.getId());
+        return site.getCustomerCatalogue().find(cust.getId()).getMySellAuctionList();
     }
     
     public void banCustomer(Customer cust){
