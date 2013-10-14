@@ -4,6 +4,7 @@
  */
 package longcat.auction.src;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,11 +15,12 @@ import longcat.auction.utils.AbstractDAO;
  *
  * @author emesven
  */
-public class CustomerCatalogue extends AbstractDAO<Customer, Long> {
+public class CustomerCatalogue extends AbstractDAO<Customer, Long> implements Serializable  {
     ArrayList<Customer> customers;
     SuperSite site;
     Customer updated;
     HashMap<Customer, List<AuctionObject>> auctionMap;
+    
     public CustomerCatalogue(String puName, SuperSite site){
         super(Customer.class,puName);
         this.site = site;
