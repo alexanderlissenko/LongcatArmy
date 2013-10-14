@@ -33,7 +33,7 @@ public class ViewAuctionBB implements Serializable {
     
     @PostConstruct
     public void post(){
-        obj = site.getAuction(id);
+        //obj = site.getCustomerCatalogue().getAuction(id);
     }
     
     public String getTitle(){
@@ -50,7 +50,7 @@ public class ViewAuctionBB implements Serializable {
     
     public void setBid(Double newBid){
         //måste få referens till budande customer, byt null till det sen
-        site.doBid(null, newBid, obj);
+        site.getAuctionCatalogue().doBid(null, newBid, obj);
     }
     
     

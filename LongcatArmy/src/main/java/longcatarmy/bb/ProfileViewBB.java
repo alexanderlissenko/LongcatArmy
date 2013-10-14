@@ -36,7 +36,7 @@ public class ProfileViewBB implements Serializable{
     
     public Customer getCustomer()
     {
-        return site.getCustomerByName("apa");
+        return site.getCustomerCatalogue().getCustomerByName("apa");
     }
     
     public String goToEdit()

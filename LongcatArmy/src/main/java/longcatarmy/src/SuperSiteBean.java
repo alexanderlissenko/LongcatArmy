@@ -8,21 +8,18 @@ import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ApplicationScoped;
 import javax.inject.Named;
-import longcat.auction.src.AuctionFactory;
-import longcat.auction.src.SuperSiteOld;
-import longcat.auction.src.SuperSiteOld;
+import longcat.auction.src.SuperSite;
+
+
 
 /**
  *
  * @author k02sthe
  */
 @ApplicationScoped
-@Named("supersite")
-public class SuperSiteBean extends SuperSiteOld implements Serializable{
+public class SuperSiteBean extends SuperSite implements Serializable{
     
-    
-    
-    private SuperSiteBean() {
+    SuperSiteBean() {
         
     }
     
@@ -31,8 +28,4 @@ public class SuperSiteBean extends SuperSiteOld implements Serializable{
     { 
         initTestData();
     }
-    /*public SuperSite setSite(){
-        
-        return fac.getAuction(true);
-    }*/
 }

@@ -46,7 +46,7 @@ public class AuctionObjectResource {
     @Path("/title")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getTitle() {
-        auction = site.getAuction(id);
+        auction = site.getAuctionCatalogue().getAuction(id);
         AuctionObjectProxy prox = new AuctionObjectProxy(auction);
         String t = prox.getTitle(); 
         PrimitiveJSONWrapper<String> wrapTitle = new PrimitiveJSONWrapper<String>(t);
@@ -57,7 +57,7 @@ public class AuctionObjectResource {
     @Path("/info")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getInfo() {
-        auction = site.getAuction(id);
+        auction = site.getAuctionCatalogue().getAuction(id);
         AuctionObjectProxy prox = new AuctionObjectProxy(auction);
         String t = prox.getInfo(); //byts till site.något.getInfo
         PrimitiveJSONWrapper<String> wrapInfo = new PrimitiveJSONWrapper<String>(t);
@@ -68,7 +68,7 @@ public class AuctionObjectResource {
     @Path("/price")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getPrice() {
-        auction = site.getAuction(id);
+        auction = site.getAuctionCatalogue().getAuction(id);
         AuctionObjectProxy prox = new AuctionObjectProxy(auction);
         Double d = prox.getPrice(); //byts till site.något.getPrice
         PrimitiveJSONWrapper<Double> wrapPrice = new PrimitiveJSONWrapper<Double>(d);
@@ -81,7 +81,7 @@ public class AuctionObjectResource {
     @Path("/expire")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getExpire() {
-        auction = site.getAuction(id);
+        auction = site.getAuctionCatalogue().getAuction(id);
         AuctionObjectProxy prox = new AuctionObjectProxy(auction);
         Date d = prox.getExpire(); //byts till site.något.getExpire
         PrimitiveJSONWrapper<Date> wrapExp = new PrimitiveJSONWrapper<Date>(d);
@@ -105,7 +105,7 @@ public class AuctionObjectResource {
     @Path("/bidder") 
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getBidder() {
-        List<HashMap> list = site.getAuction(id).getBidder(); //byts till site.något.getBidder
+        List<HashMap> list = site.getAuctionCatalogue().getAuction(id).getBidder(); //byts till site.något.getBidder
         GenericEntity<List<HashMap>> ge = new GenericEntity<List<HashMap>>(list){};
         return Response.ok(ge).build();
     }
@@ -116,7 +116,7 @@ public class AuctionObjectResource {
     @Path("/flags") 
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getFlagList() {
-        List<Customer> cList = site.getAuction(id).getFlagList(); //byts till site.något.getFlagList
+        List<Customer> cList = site.getAuctionCatalogue().getAuction(id).getFlagList(); //byts till site.något.getFlagList
         GenericEntity<List<Customer>> gc = new GenericEntity<List<Customer>>(cList){};
         return Response.ok(gc).build();
     }
