@@ -9,8 +9,8 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ApplicationScoped;
 import javax.inject.Named;
 import longcat.auction.src.AuctionFactory;
-import longcat.auction.src.SuperSite;
-import longcat.auction.src.SuperSite;
+import longcat.auction.src.SuperSiteOld;
+import longcat.auction.src.SuperSiteOld;
 
 /**
  *
@@ -18,7 +18,7 @@ import longcat.auction.src.SuperSite;
  */
 @ApplicationScoped
 @Named("supersite")
-public class SuperSiteBean extends SuperSite implements Serializable{
+public class SuperSiteBean extends SuperSiteOld implements Serializable{
     
     
     

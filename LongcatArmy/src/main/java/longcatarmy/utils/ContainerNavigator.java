@@ -19,7 +19,7 @@ import longcat.auction.src.AuctionObject;
  * Finns en risk att vi måste ändra en del i AuctionCatalogue.
  */
 public class ContainerNavigator {
-    private int first;  
+   /* private int first;  
     private int nItems;  
     private AuctionCatalogue cat;
     
@@ -78,5 +78,5 @@ public class ContainerNavigator {
 
     public void setnItems(int nItems) {
         this.nItems = nItems;
-    }
+    }*/
 }

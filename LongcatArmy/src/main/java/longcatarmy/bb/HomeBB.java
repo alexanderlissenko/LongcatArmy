@@ -12,7 +12,7 @@ import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import longcat.auction.src.AuctionObject;
-import longcat.auction.src.SuperSite;
+import longcat.auction.src.SuperSiteOld;
 
 /**
  *

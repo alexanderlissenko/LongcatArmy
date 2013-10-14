@@ -15,7 +15,7 @@ public class QuickTests {
     
     public static void main(String[] args)
     {
-        SuperSite site = new SuperSite();
+        SuperSiteOld site = new SuperSiteOld();
         Date today = new Date();
         System.out.println(today.getTime());            
         
@@ -27,7 +27,7 @@ public class QuickTests {
         site.addCustomer(testCust2);
         site.addCustomer(testCust3);
         
-        
+       /* 
         //Customer creator, String title, String info, Double price, Date expireDate
         AuctionObject obj1 = new AuctionObject("hus","hus i pool",3131.3,today);
         AuctionObject obj2 = new AuctionObject("pool","pool till hus",1000.1,today);
@@ -98,7 +98,7 @@ public class QuickTests {
         
         SuperSite testFactory;
         
-        //System.out.println(testFactory.getAllAuctions().size());
+        //System.out.println(testFactory.getAllAuctions().size());*/
         
     }
     
