@@ -16,6 +16,7 @@ import longcat.auction.src.Customer;
 
 /**
  *
+ * När ska @XmlElement användas?????
  * @author Alexander Lissenko
  */
 @XmlRootElement
@@ -38,8 +39,18 @@ public class AuctionProxy {
     }
     
     @XmlElement
+    public void setTitle(String title){
+        //admin ska kunna ändra title, lägg till en setTitle i AuctionObject
+    }
+    
+    @XmlElement
     public String getInfo(){
         return obj.getInfo();
+    }
+    
+    @XmlElement
+    public void setInfo(String info){
+        obj.editInfo(info);
     }
     
     @XmlElement
@@ -48,8 +59,18 @@ public class AuctionProxy {
     }
     
     @XmlElement
+    public void setPrice(Double price){
+        obj.setPrice(price);
+    }
+    
+    @XmlElement
     public Date getExpire() {
         return obj.getExpire();
+    }
+    
+    @XmlElement
+    public void setExpire(Date expire){
+        //lägg till setExpire i AuctionObject, alternativt skit i denna metod (inte så viktig)
     }
     
     @XmlElement

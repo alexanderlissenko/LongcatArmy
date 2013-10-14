@@ -4,17 +4,19 @@
  */
 package admin.src;
 
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import longcat.auction.src.AuctionObject;
 import longcat.auction.src.Customer;
 
 /**
  *
- * OBS! Osäker på om man ska ha @XmlElement på set-metoder
+ * OBS! Osäker på när man ska ha @XmlElement, kolla upp!
  * 
- * Vissa metoder kommer eventuellt tas bort
+ * Vissa metoder kommer eventuellt tas bort, beroende på vad vi implementerar
  * 
  * @author Alexander Lissenko
  */
@@ -108,5 +110,30 @@ public class CustomerProxy {
         customer.setRating(rate);
     }
     
-    //övriga metoder???
+    @XmlElement
+    public List<AuctionObject> getCustSellAuctionList() {
+        return customer.getMySellAuctionList();
+    }
+    
+    @XmlElement
+    public void removeCustSellAuction(AuctionObject auction){
+        customer.getMySellAuctionList().remove(auction);
+    }
+    
+    @XmlElement
+    public void removeCustBuyAuction(AuctionObject auction) {
+        customer.getMyBuyAuctionList().remove(auction);
+    }
+    
+    @XmlElement
+    public List<AuctionObject> getMyBuyAuctionList() {
+        return customer.getMyBuyAuctionList();
+    }
+    
+    @XmlElement
+    public void emptyCustLists(){
+        customer.getMySellAuctionList().clear();
+        customer.getMyBuyAuctionList().clear();
+    }
+    //övriga metoder känns inte relevant för admin att accessa
 }
