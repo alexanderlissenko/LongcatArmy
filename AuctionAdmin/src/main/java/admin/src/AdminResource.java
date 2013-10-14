@@ -4,6 +4,7 @@
  */
 package admin.src;
 
+import javax.inject.Inject;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.PUT;
@@ -15,6 +16,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import longcat.auction.src.AuctionObject;
 import longcat.auction.src.Customer;
+import longcatarmy.src.SuperSiteBean;
 
 /**
  *
@@ -24,31 +26,33 @@ import longcat.auction.src.Customer;
 @Path("admin")
 public class AdminResource {
     
-    //instansiering av SuperSite eller Control här!!!
+    @Inject
+    SuperSiteBean site;
     
-    AuctionProxy auctions;
-    CustomerProxy customers;
     private UriInfo uriInfo;
     
     @PUT
-    @Path("{customer.id}") //funkar detta??
+    @Path("customer" + "{id}") //funkar detta??
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response editCustomer(@FormParam ("email") String email,
             @FormParam ("name") String name, @FormParam ("pass") String pass,
             @FormParam ("phone") String phone, @FormParam("seQuest") String seQuest, 
             @FormParam("address") String address, @FormParam("access") Boolean access){
-        Customer newCust;
-        //TODO******************************************************
-        //här ska nåt site.updateCustomer eller liknande in
-        //glöm ej wrappa om till proxy
-        return Response.ok().build(); //fixas sen
+        try {
+            Customer newCust = new Customer(email,name,pass,phone,seQuest,address);
+            site.getCustomerCatalogue().update(newCust);
+            CustomerProxy cx = new CustomerProxy(newCust);
+            return Response.ok(cx).build();
+        } catch (IllegalArgumentException e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+        }
     }
     
     @DELETE
-    @Path("{customer.id}") //funkar detta???
+    @Path("customer" + "{id}") //funkar detta???
     public Response deleteCustomer(@PathParam ("id") Long id){
         try {
-            //site.getCustomerCatalogue().remove(id) eller liknande
+            site.getCustomerCatalogue().remove(id);
             return Response.ok().build();
         } catch (IllegalArgumentException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
@@ -56,23 +60,26 @@ public class AdminResource {
     }
     
     @PUT
-    @Path("{auctionObject.id}")
+    @Path("auctionObject" + "{id}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response editAuction(@FormParam("title") String title, 
             @FormParam("info") String info, @FormParam("price") Double price) {
-        AuctionObject obj;
-        //TODO******************************************************
-        //här ska nåt site.updateAuction eller liknande in
-        //glöm ej wrappa om till proxy
-        return Response.ok().build(); //fixas sen
+        try {
+            AuctionObject obj = new AuctionObject(title,info,price);
+            site.getAuctionCatalogue().update(obj);
+            AuctionProxy ax = new AuctionProxy(obj);
+            return Response.ok(ax).build();
+        } catch (IllegalArgumentException e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+        }
     }
     
     @DELETE
-    @Path("{auctionObject.id}")
+    @Path("auctionObject" + "{id}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response deleteAuction(@PathParam("id") Long id) {
         try {
-            //site.getAuctionCatalogue().remove(id) eller liknande
+            site.getAuctionCatalogue().remove(id);
             return Response.ok().build();
         } catch (IllegalArgumentException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
