@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>LongcatArmy</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/WEB-INF/template.xhtml">
+            <ui:define name="content">
+                <h:form>
+                    <p:growl id="growl" showDetail="true" />
+                    <p:fieldset legend="William Axhav Bratt" toggleable="true" toggleSpeed="500">
+                        <p:ajax event="toggle" listener="#{fieldsetBean.handleToggle}" update="growl" />
+                        <h:panelGrid columns="2" cellpadding="10">
+                            <p:graphicImage value="/images/godfather/godfather2.jpg" />
+                            <h:outputText value="Description"/>;
+                        </h:panelGrid>
+                    </p:fieldset>
+                </h:form>
+                <h:form>
+                    <p:growl id="growl" showDetail="true" />
+                    <p:fieldset legend="Emmelie Svensson" toggleable="true" toggleSpeed="500">
+                        <p:ajax event="toggle" listener="#{fieldsetBean.handleToggle}" update="growl" />
+                        <h:panelGrid columns="2" cellpadding="10">
+                            <p:graphicImage value="/images/godfather/godfather2.jpg" />
+                            <h:outputText value="Description"/>;
+                        </h:panelGrid>
+                    </p:fieldset>
+                </h:form>
+                <h:form>
+                    <p:growl id="growl" showDetail="true" />
+                    <p:fieldset legend="Alexander Lissenko" toggleable="true" toggleSpeed="500">
+                        <p:ajax event="toggle" listener="#{fieldsetBean.handleToggle}" update="growl" />
+                        <h:panelGrid columns="2" cellpadding="10">
+                            <p:graphicImage value="/images/godfather/godfather2.jpg" />
+                            <h:outputText value="Description"/>;
+                        </h:panelGrid>
+                    </p:fieldset>
+                </h:form>
+                <h:form>
+                    <p:growl id="growl" showDetail="true" />
+                    <p:fieldset legend="Henrik Ståhlsparre" toggleable="true" toggleSpeed="500">
+                        <p:ajax event="toggle" listener="#{fieldsetBean.handleToggle}" update="growl" />
+                        <h:panelGrid columns="2" cellpadding="10">
+                            <p:graphicImage value="/images/godfather/godfather2.jpg" />
+                            <h:outputText value="Description"/>;
+                        </h:panelGrid>
+                    </p:fieldset>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+
+</html>
