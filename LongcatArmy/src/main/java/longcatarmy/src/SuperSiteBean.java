@@ -8,6 +8,7 @@ import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ApplicationScoped;
 import javax.inject.Named;
+import javax.inject.Singleton;
 import longcat.auction.src.SuperSite;
 
 
@@ -17,6 +18,7 @@ import longcat.auction.src.SuperSite;
  * @author k02sthe
  */
 @ApplicationScoped
+@Singleton
 public class SuperSiteBean extends SuperSite implements Serializable{
     
     SuperSiteBean() {

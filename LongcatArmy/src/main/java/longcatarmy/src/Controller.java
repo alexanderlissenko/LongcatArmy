@@ -51,32 +51,11 @@ public class Controller {
         newAuction(cust,obj);
     }
     
-    public List<AuctionObject> getAllAuctions()
-    {
-        initiate();
-        return site.getAuctionCatalogue().getRange(0, site.getAuctionCatalogue().getCount());
-    }
-    
-    public void doBid(Customer cust, Double price, AuctionObject obj){ //Ska vi använda denna?
-        initiate();
-
-        if(price > obj.getPrice()){
-            obj.setPrice(price);
-            site.getAuctionCatalogue().update(obj);
-        }
-        
-    }
-    
     /************ Customer functionality***********************
      * 
      * 
      */
-    
-    public List<AuctionObject> getAllAuctionsForUser(Customer cust)
-    {
-        return site.getCustomerCatalogue().find(cust.getId()).getMySellAuctionList();
-    }
-    
+        
     public void banCustomer(Customer cust){
         cust.setAccess(false);
         cust.emptyMyLists(); 

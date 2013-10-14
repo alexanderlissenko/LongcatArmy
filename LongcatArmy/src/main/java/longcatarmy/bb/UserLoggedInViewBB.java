@@ -32,17 +32,14 @@ public class UserLoggedInViewBB implements Serializable {
     
     public UserLoggedInViewBB()
     {
-        
-        
-   
+        testCust = site.getCustomerCatalogue().getByName("apa").get(0);
+        expAuctions = site.getCustomerCatalogue().getAllAuctionsForUser(testCust);
     }
     
     @PostConstruct
     public void post()
     {
-        //testCust = site.getCustomerCatalogue().getCustomerByName("apa");
-
-        //expAuctions = site.getCustomerCatalogue().getAllAuctionsForUser(testCust);
+        
     }
     
     public List<AuctionObject> getAuctions()

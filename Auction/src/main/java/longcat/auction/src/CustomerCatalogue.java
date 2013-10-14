@@ -28,6 +28,10 @@ public final class CustomerCatalogue extends AbstractDAO<Customer, Long> impleme
         //auctionMap = new HashMap<Customer, List<AuctionObject>>();
     }
     
+    public List<AuctionObject> getAllAuctionsForUser(Customer cust)
+    {
+        return find(cust.getId()).getMySellAuctionList();
+    }
     
     /*public void addCustomer(Customer cust)
     {

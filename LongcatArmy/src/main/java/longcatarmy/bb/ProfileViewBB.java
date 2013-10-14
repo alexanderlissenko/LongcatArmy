@@ -19,9 +19,7 @@ import longcat.auction.src.Customer;
 @SessionScoped
 @Named("profileView")
 public class ProfileViewBB implements Serializable{
-    
-    //uctionBB test = AuctionBB.INSTANCE;
-    
+        
     @Inject
     SuperSiteBean site;
     
@@ -36,8 +34,7 @@ public class ProfileViewBB implements Serializable{
     
     public Customer getCustomer()
     {
-        //return site.getCustomerCatalogue().getCustomerByName("apa");
-        return null;
+        return site.getCustomerCatalogue().getByName("apa").get(0);
     }
     
     public String goToEdit()

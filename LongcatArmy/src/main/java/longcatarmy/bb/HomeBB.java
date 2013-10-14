@@ -24,7 +24,7 @@ public class HomeBB implements Serializable{
     
     
     @Inject
-    Controller site;
+    SuperSiteBean site;
     
     
     public HomeBB()
@@ -38,6 +38,6 @@ public class HomeBB implements Serializable{
     
     public List<AuctionObject> getAllAuctions()
     {
-        return site.getAllAuctions();
+        return site.getAuctionCatalogue().getAllAuctions();
     }
 }
