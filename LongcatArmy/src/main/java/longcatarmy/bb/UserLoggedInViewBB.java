@@ -8,6 +8,7 @@ import longcatarmy.src.SuperSiteBean;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -27,19 +28,19 @@ public class UserLoggedInViewBB implements Serializable {
     //private AuctionBB test = AuctionBB.INSTANCE;
     Customer testCust;
     
-    @Inject
+    @EJB
     SuperSiteBean site;
     
     public UserLoggedInViewBB()
     {
-        testCust = site.getCustomerCatalogue().getByName("apa").get(0);
-        expAuctions = site.getCustomerCatalogue().getAllAuctionsForUser(testCust);
+        
     }
     
     @PostConstruct
     public void post()
     {
-        
+        testCust = site.getCustomerCatalogue().find(Long.getLong("1"));//site.getCustomerCatalogue().getByName("apa").get(0);
+        expAuctions = site.getCustomerCatalogue().getAllAuctionsForUser(testCust);
     }
     
     public List<AuctionObject> getAuctions()

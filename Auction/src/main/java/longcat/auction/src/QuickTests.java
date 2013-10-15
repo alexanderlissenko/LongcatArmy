@@ -22,10 +22,10 @@ public class QuickTests {
         Customer testCust= new Customer("test@testing.com", "test1", "testpass", "031133742","teeeesstt","test street 1");
         Customer testCust2= new Customer("tevil@bad.com", "evil", "testpass", "031133742","teeeesstt","evil street 1");
         Customer testCust3= new Customer("test3@testing.com", "test3", "testpass", "031133742","teeeesstt","test street 3");
-       /* 
-        site.getCustomerCatalogue().addCustomer(testCust);
-        site.getCustomerCatalogue().addCustomer(testCust2);
-        site.getCustomerCatalogue().addCustomer(testCust3);
+       
+        site.getCustomerCatalogue().add(testCust);
+        site.getCustomerCatalogue().add(testCust2);
+        site.getCustomerCatalogue().add(testCust3);
         
         
         //Customer creator, String title, String info, Double price, Date expireDate
@@ -37,13 +37,13 @@ public class QuickTests {
         
         
         //testing supersite********************************************************
-        site.newAuction(testCust, obj1);
-        site.newAuction(testCust, obj2);
-        //System.out.println("test");
-        System.out.println(site.getAllAuctionsForUser(testCust).get(0).getTitle());
-        System.out.println(site.getAllAuctions().get(1).getTitle());
+        site.getAuctionCatalogue().add(obj1);
+        site.getAuctionCatalogue().add( obj2);
+        System.out.println("test");
+        //System.out.println(site.getAllAuctionsForUser(testCust).get(0).getTitle());
+        System.out.println(site.getAuctionCatalogue().getAllAuctions().get(1).getName());
         
-        
+        /*
         System.out.println("Innan: "+site.getAllAuctions().get(0).getPrice());
         obj1.setPrice(1.1);
         site.updateAuction(testCust, obj1);

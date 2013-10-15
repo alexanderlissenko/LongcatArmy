@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -30,7 +32,11 @@ public class Customer implements Serializable {
     private String seqQuest;   
     private String address;
     private Boolean access; //Ligga i User
+    @OneToMany
+    @JoinColumn(name= "SellList")
     private List<AuctionObject> mySellAuctionList;
+    @OneToMany
+    @JoinColumn(name= "BuyList")
     private List<AuctionObject> myBuyAuctionList;
     private int nrOfSells; //FInns denna som set/get?
     private Double rating;

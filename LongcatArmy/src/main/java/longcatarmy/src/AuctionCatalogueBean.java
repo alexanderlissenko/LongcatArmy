@@ -72,7 +72,7 @@ public class AuctionCatalogueBean implements Serializable{
         return allList;
     }
     
-     public void doBid(Customer cust, Double price, AuctionObject obj){ //Ska vi använda denna?
+    /* public void doBid(Customer cust, Double price, AuctionObject obj){ //Ska vi använda denna?
         initiate();
         validBid = obj.setBid(cust, price); 
 
@@ -104,5 +104,5 @@ public class AuctionCatalogueBean implements Serializable{
             }                       
         }
         removeAuction(seller,obj ,true);;
-    }
+    }*/
 }

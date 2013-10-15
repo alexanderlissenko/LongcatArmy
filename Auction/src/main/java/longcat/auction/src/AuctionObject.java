@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -27,15 +28,16 @@ public class AuctionObject {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id; //uncomment when using database ****************************'
     
-    private String title;
+    private String name;
     private String info;
     private Double price;
     @Temporal(TemporalType.DATE)
     private Date expireDate; 
     //public Customer creator;
-    private HashMap<Customer, Double> bidderMap; //för att kunna presentera listan på smidigt sätt
-    private List<HashMap> bidderList;
-    private List<Customer> flagList;
+    //private HashMap<Customer, Double> bidderMap; //för att kunna presentera listan på smidigt sätt
+   // @ManyToOne
+    //private List<HashMap> bidderList;
+    //private List<Customer> flagList;
     //private Long id;
 
     public AuctionObject() {
@@ -44,43 +46,43 @@ public class AuctionObject {
     //Constructor used only by admin to avoid java.util.Date
     public AuctionObject(String title, String info, Double price){
         //this.creator = creator;
-        this.title = title;
+        this.name = title;
         this.info = info;
         this.price = price;
-        bidderMap = new HashMap<Customer, Double>();
-        bidderList = new ArrayList<HashMap>();
+        //bidderMap = new HashMap<Customer, Double>();
+        //bidderList = new ArrayList<HashMap>();
     }
     
     public AuctionObject(String title, String info, Double price, Date expireDate){
         //this.creator = creator;
-        this.title = title;
+        this.name = title;
         this.info = info;
         this.price = price;
         this.expireDate = expireDate;
-        bidderMap = new HashMap<Customer, Double>();
-        bidderList = new ArrayList<HashMap>();
+       // bidderMap = new HashMap<Customer, Double>();
+       //bidderList = new ArrayList<HashMap>();
     }
     
     
     
     public AuctionObject(Long id, String title, String info, Double price, Date expireDate){
         this.id=id;
-        this.title = title;
+        this.name = title;
         this.info = info;
         this.price = price;
         this.expireDate = expireDate;
-        bidderMap = new HashMap<Customer, Double>();
-        bidderList = new ArrayList<HashMap>();
+        //bidderMap = new HashMap<Customer, Double>();
+        //bidderList = new ArrayList<HashMap>();
     }
     
     public void addFlag(Customer c){
         //implementeras senare om tid finns
     }
-    
+    /*
     public boolean setBid(Customer bidder, Double price){
         if(this.price < price) {
             //concurrency-problem! löses av ejb senare
-            bidderMap.put(bidder, price);
+           // bidderMap.put(bidder, price);
             bidderList.add(bidderMap);
             this.price += price;
             return true;
@@ -90,9 +92,10 @@ public class AuctionObject {
             System.out.println("Bud kan ej vara under " + this.price);//tillfälligt
             return false;
         }
-    }
-    public String getTitle(){
-        return title;
+    }*/
+    
+    public String getName(){
+        return name;
     }
     public String getInfo(){
         return info;
@@ -106,15 +109,16 @@ public class AuctionObject {
     /*public Customer getCreator(){
         return creator;
     }*/
-    public List<HashMap> getBidder(){
-        return bidderList;
+   /* public List<HashMap> getBidder(){
+       
+       //return bidderList;
     }
     public HashMap<Customer, Double> getBidderMap(){
         return bidderMap;
     }
     public List<Customer> getFlagList(){
         return flagList;
-    }
+    }*/
     public Long getId(){
         return id;
     }

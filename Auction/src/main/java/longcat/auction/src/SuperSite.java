@@ -34,7 +34,7 @@ public class SuperSite {
     protected void initTestData() {
 
         Date today = new Date();
-        Customer test1 = new Customer("apa@hej.com", "apa", "password", "11111", 
+        /*Customer test1 = new Customer("apa@hej.com", "apa", "password", "11111", 
                         "seQuest", "addressgatan1");
         Customer test2 = new Customer("bepa@hej.com", "bepa", "password", "22222", 
                         "seQuest", "addressgatan2");
@@ -42,7 +42,7 @@ public class SuperSite {
                         "seQuest", "addressgatan3");
         Customer test4 = new Customer("depa@hej.com", "depa", "password", "44444", 
                         "seQuest", "addressgatan4");
-        
+        */
         AuctionObject testobj1 = new AuctionObject("Fisk", "info", 10.00, today);
         AuctionObject testobj2 = new AuctionObject("Mås", "info", 101.00, today);
         AuctionObject testobj3 = new AuctionObject("Katt", "info", 102.00, today);
@@ -51,15 +51,12 @@ public class SuperSite {
         AuctionObject testobj6 = new AuctionObject("ko", "info", 101.00, today);
         AuctionObject testobj7 = new AuctionObject("häst", "info", 102.00, today);
         AuctionObject testobj8 = new AuctionObject("katt", "info", 103.00, today);
-                
-        
+        /*        
         customerCatalogue.add(test1);
         customerCatalogue.add(test2);
         customerCatalogue.add(test3);
         customerCatalogue.add(test4);
-        
-        
-        
+        */
         auctionCatalogue.add(testobj1);
         auctionCatalogue.add(testobj2);
         auctionCatalogue.add(testobj3);

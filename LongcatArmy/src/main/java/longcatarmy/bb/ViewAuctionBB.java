@@ -36,8 +36,8 @@ public class ViewAuctionBB implements Serializable {
         //obj = site.getCustomerCatalogue().getAuction(id);
     }
     
-    public String getTitle(){
-        return obj.getTitle();
+    public String getName(){
+        return obj.getName();
     }
     
     public String getInfo(){

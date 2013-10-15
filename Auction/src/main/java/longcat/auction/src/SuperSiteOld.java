@@ -87,7 +87,7 @@ public class SuperSiteOld extends AbstractDAO<Customer,Long> implements Serializ
         return allList;
     }
     //tagit
-    public void banCustomer(Customer cust){
+    /*public void banCustomer(Customer cust){
         cust.setAccess(false);
         cust.emptyMyLists(); 
         for (AuctionObject al:auctionMap.get(cust)){
@@ -99,18 +99,18 @@ public class SuperSiteOld extends AbstractDAO<Customer,Long> implements Serializ
         }
         auctionMap.get(cust).clear();
         
-    }
+    }*/
     //tagit
-    public void doBid(Customer cust, Double price, AuctionObject obj){ //Ska vi använda denna?
+    /*public void doBid(Customer cust, Double price, AuctionObject obj){ //Ska vi använda denna?
         validBid = obj.setBid(cust, price); 
 
         if(validBid){
             customers.get(customers.indexOf(cust)).addMyBuyAuctionList(obj);
         }
         
-    }
+    }*/
     //tagit
-    public void soldObject(AuctionObject obj, Double price){
+   /* public void soldObject(AuctionObject obj, Double price){
         
         //Remove from buyer buyList
         for ( HashMap<Customer, Double> o : obj.getBidder()){     
@@ -120,8 +120,8 @@ public class SuperSiteOld extends AbstractDAO<Customer,Long> implements Serializ
                     System.out.println("object is sold"); 
                 }
             }
-        }
-        
+        }*/
+        /*
         //Remove from sellers sellList
         for (Entry<Customer, List<AuctionObject>> s: auctionMap.entrySet()){
             for (AuctionObject ao : s.getValue()){
@@ -229,7 +229,7 @@ public class SuperSiteOld extends AbstractDAO<Customer,Long> implements Serializ
 
         shop.getOrderBook().add(new PurchaseOrder(c, c.getCart().getAsOrderItems()));*/
 
-    }
+    //}
     
     //Vi kan behöva att man letar efter namnet på auktionen med
 }
