@@ -65,7 +65,8 @@ public class AdminResource {
     public Response editAuction(@FormParam("title") String title, 
             @FormParam("info") String info, @FormParam("price") Double price) {
         try {
-            AuctionObject obj = new AuctionObject(title,info,price);
+            AuctionObject obj = new AuctionObject(title, info, price);
+            //AuctionObject obj = new AuctionObject(title, info, price);
             site.getAuctionCatalogue().update(obj);
             AuctionProxy ax = new AuctionProxy(obj);
             return Response.ok(ax).build();

@@ -41,6 +41,16 @@ public class AuctionObject {
     public AuctionObject() {
     }
     
+    //Constructor used only by admin to avoid java.util.Date
+    public AuctionObject(String title, String info, Double price){
+        //this.creator = creator;
+        this.title = title;
+        this.info = info;
+        this.price = price;
+        bidderMap = new HashMap<Customer, Double>();
+        bidderList = new ArrayList<HashMap>();
+    }
+    
     public AuctionObject(String title, String info, Double price, Date expireDate){
         //this.creator = creator;
         this.title = title;
@@ -50,6 +60,8 @@ public class AuctionObject {
         bidderMap = new HashMap<Customer, Double>();
         bidderList = new ArrayList<HashMap>();
     }
+    
+    
     
     public AuctionObject(Long id, String title, String info, Double price, Date expireDate){
         this.id=id;
