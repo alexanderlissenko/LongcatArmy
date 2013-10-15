@@ -270,7 +270,7 @@ $(function() {
         $("#dialog-form #cpass").val(customer.pass);
         $("#dialog-form #cphone").val(customer.phone);
         $("#dialog-form #cseQuest").val(customer.seQuest);
-        $("#dialog-form #cadress").val(customer.address);
+        $("#dialog-form #caddress").val(customer.address);
     }
     
     function clearFormDialogDataA() {

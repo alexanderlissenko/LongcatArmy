@@ -1,0 +1,113 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="sv" xml:lang="sv">
+    <head>
+        <title>Admin Page</title>
+        <script type="text/javascript" src="js/gui/adminView.js" ></script>
+    </head>
+    <body>
+        <div id="dialog-form-A" title="Auctions" hidden="hidden">
+            <p class="validateTips">All form fields are required.</p>
+            <form>
+                <fieldset>
+                    <label for="id">Id</label>
+                    <input type="text" name="id" id="id" class="text ui-widget-content ui-corner-all" />
+                    <label for="pname">Title</label>
+                    <input type="text" name="atitle" id="atitle" value="" class="text ui-widget-content ui-corner-all" />
+                    <label for="price">Info</label>
+                    <input type="text" name="ainfo" id="ainfo" value="" class="text ui-widget-content ui-corner-all" />
+                    <label for="price">Price</label>
+                    <input type="text" name="aprice" id="aprice" value="" class="text ui-widget-content ui-corner-all" />
+                    <label for="price">Expire Date</label>
+                    <input type="text" name="aexpire" id="aexpire" value="" class="text ui-widget-content ui-corner-all" />
+                </fieldset>
+            </form>
+        </div>
+        <div id="dialog-form-C" title="Customers" hidden="hidden">
+            <p class="validateTips">All form fields are required.</p>
+            <form>
+                <fieldset>
+                    <label for="id">Id</label>
+                    <input type="text" name="id" id="id" class="text ui-widget-content ui-corner-all" />
+                    <label for="pname">Email</label>
+                    <input type="text" name="cemail" id="cemail" value="" class="text ui-widget-content ui-corner-all" />
+                    <label for="price">Name</label>
+                    <input type="text" name="cname" id="cname" value="" class="text ui-widget-content ui-corner-all" />
+                    <label for="price">Password</label>
+                    <input type="text" name="cpass" id="cpass" value="" class="text ui-widget-content ui-corner-all" />
+                    <label for="price">Phone number</label>
+                    <input type="text" name="cphone" id="cphone" value="" class="text ui-widget-content ui-corner-all" />
+                    <label for="price">Security question</label>
+                    <input type="text" name="cseQuest" id="cseQuest" value="" class="text ui-widget-content ui-corner-all" />
+                    <label for="price">Address</label>
+                    <input type="text" name="caddress" id="caddress" value="" class="text ui-widget-content ui-corner-all" />
+                </fieldset>
+            </form>
+        </div>
+        <div id="auctionobjects-contain" class="ui-widget">
+            <button id="prev-button">Prev</button> 
+            <button id="next-button">Next</button>
+            <table id="auctionobjects" class="ui-widget ui-widget-content">
+                <thead>
+                    <tr class="ui-widget-header ">
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Info</th>
+                        <th>Price</th>
+                        <th>Expire date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Kisse</td>
+                        <td>Snel kat</td>
+                        <td>13.37</td>
+                        <td>Today 13:37</td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+        </div>
+        <div id="customers-contain" class="ui-widget">
+            <button id="prev-button">Prev</button> 
+            <button id="next-button">Next</button>
+            <table id="customers" class="ui-widget ui-widget-content">
+                <thead>
+                    <tr class="ui-widget-header ">
+                        <th>Id</th>
+                        <th>Email</th>
+                        <th>Name</th>
+                        <th>Password</th>
+                        <th>Phone number</th>
+                        <th>Security question</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>apa@bepa.cepa</td>
+                        <td>Apa Bepa</td>
+                        <td>qwerty</td>
+                        <td>0123456</td>
+                        <td>How long is a cat?</td>
+                        <td>Depagatan 42, 1337 Leet-town</td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+        </div>
+        <div id="dialog-message" title="Set this in code" hidden="hidden">
+            <p>
+                <span class="ui-icon ui-icon-circle-check" 
+                      style="float: left; margin: 0 7px 50px 0;">
+                </span> 
+                <span id="msg">Set this in code </span>           
+            </p>
+        </div>
+    </body>
+</html>
