@@ -26,8 +26,7 @@ import longcatarmy.src.SuperSiteBean;
 @Path("admin")
 public class AdminResource {
     
-    @Inject
-    SuperSiteBean site;
+    private final static Site site = Site.INSTANCE;
     
     private UriInfo uriInfo;
     
