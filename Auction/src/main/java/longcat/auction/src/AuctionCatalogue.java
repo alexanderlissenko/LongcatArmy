@@ -23,16 +23,7 @@ public final class AuctionCatalogue extends AbstractDAO<AuctionObject, Long> imp
         //this.site = site;
        
     }
-    
-    public void doBid(Customer cust, Double price, AuctionObject obj){ //Ska vi använda denna?
-
-        if(price > obj.getPrice()){
-            obj.setPrice(price);
-            update(obj);
-        }
-        
-    }
-    
+            
     public List<AuctionObject> getAllAuctions()
     {
         return getRange(0, getCount());

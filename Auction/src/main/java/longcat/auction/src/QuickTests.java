@@ -47,6 +47,7 @@ public class QuickTests {
         //System.out.println(site.getAllAuctionsForUser(testCust).get(0).getTitle());
         System.out.println(site.getAuctionCatalogue().getAllAuctions().get(1).getName());
         
+        System.out.println(site.getCustomerCatalogue().find(testCust.getId()).getMySellAuctionList().size());
         
         System.out.println("Innan: "+site.getAuctionCatalogue().getAllAuctions().get(0).getName()+ " " +site.getAuctionCatalogue().getAllAuctions().get(0).getPrice());
         obj1.setPrice(1.1);
@@ -55,8 +56,8 @@ public class QuickTests {
       
         site.getCustomerCatalogue().remove(testCust2.getId());
         
-        site.getAuctionCatalogue().doBid(testCust, 0.0, obj3); //It should not change price, and it doesn't
-        site.getAuctionCatalogue().doBid(testCust, 10.0, obj3); //It should change, it does
+        site.doBid(testCust, 0.0, obj3); //It should not change price, and it doesn't
+        site.doBid(testCust, 10.0, obj3); //It should change, it does
         
         
         
