@@ -16,9 +16,9 @@ import longcat.auction.utils.AbstractDAO;
 public final class AuctionCatalogue extends AbstractDAO<AuctionObject, Long> implements Serializable  {
    // ArrayList<Customer> customers;
     //HashMap<Customer, List<AuctionObject>> auctionMap;
-    HashMap<Long,AuctionObject> allAuctions = new HashMap<Long,AuctionObject>();
+  //  HashMap<Long,AuctionObject> allAuctions = new HashMap<Long,AuctionObject>();
     
-    public AuctionCatalogue(String puName, SuperSite site) {
+    public AuctionCatalogue(String puName) {
         super(AuctionObject.class,puName);
         //this.site = site;
        

@@ -20,9 +20,8 @@ public class SuperSite {
 
         
     public SuperSite() {
-        customerCatalogue = new CustomerCatalogue("auction_pu",this);
-        auctionCatalogue = new AuctionCatalogue("auction_pu",this);
-        
+        customerCatalogue = new CustomerCatalogue("auction_pu");
+        auctionCatalogue = new AuctionCatalogue("auction_pu");        
     }
     
     public CustomerCatalogue getCustomerCatalogue(){
@@ -30,6 +29,12 @@ public class SuperSite {
     }
     public AuctionCatalogue getAuctionCatalogue(){
             return auctionCatalogue;
+    }
+    
+    public void createNewAuction(Customer cust, AuctionObject obj){
+        
+        customerCatalogue.find(cust.getId()).addMySellAuctionList(obj);
+        auctionCatalogue.add(obj);
     }
     protected void initTestData() {
 
