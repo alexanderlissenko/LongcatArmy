@@ -62,9 +62,7 @@ li{
     margin:0;
     padding:0;
 }
-#main th{
-    text-align:center;
-}
+
 .inlineTable {
     display: inline-block;
     text-align:center; 
@@ -90,6 +88,7 @@ li{
 #menu li{
     display: inline;
 }
+
 #test-a
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
