@@ -35,7 +35,7 @@ public class AuctionProxy {
     
     @XmlElement
     public String getTitle(){
-        return obj.getTitle();
+        return obj.getName();
     }
     
     @XmlElement
@@ -73,15 +73,15 @@ public class AuctionProxy {
         //lägg till setExpire i AuctionObject, alternativt skit i denna metod (inte så viktig)
     }
     
-    @XmlElement
+    /*@XmlElement
     public List<HashMap> getBidder(){
         return obj.getBidder();
-    }
+    }*/
     
-    @XmlElement
+    /*@XmlElement
     public List<Customer> getFlagList(){
         return obj.getFlagList();
-    }
+    }*/
     
     @XmlElement
     public Long getId(){
