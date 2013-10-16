@@ -53,6 +53,7 @@ public class HomeBB implements Serializable{
     //fixa även till viewAuction och index xhtml
     public String goToAuction(Long id) {
         this.id = id;
-        return "success?faces-redirect=true&includeViewParams=true"; //ev bara return success
+        //return "success?faces-redirect=true&includeViewParams=true"; //ev bara return success
+        return "success";
     }
 }

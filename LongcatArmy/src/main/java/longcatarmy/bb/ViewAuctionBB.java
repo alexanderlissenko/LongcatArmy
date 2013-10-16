@@ -8,9 +8,7 @@ import longcatarmy.src.SuperSiteBean;
 import java.io.Serializable;
 import java.util.Date;
 import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import javax.enterprise.context.Conversation;
-import javax.enterprise.context.ConversationScoped;
+import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import longcat.auction.src.AuctionObject;
@@ -20,15 +18,14 @@ import longcat.auction.src.AuctionObject;
  * @author Alexander Lissenko
  */
 
-@ConversationScoped
+@RequestScoped
 @Named("viewAuction")
 public class ViewAuctionBB implements Serializable {
     
     @Inject
     private SuperSiteBean site;
     
-    @Inject
-    private Conversation conversation;
+   
     
     
     private Long id;
@@ -52,9 +49,7 @@ public class ViewAuctionBB implements Serializable {
     }
     
     public void setAuctionObject(Long id) {
-        if (conversation.isTransient()) {
-            conversation.begin();
-        }
+        
         AuctionObject obj = site.getAuctionCatalogue().find(id);
         this.id = obj.getId();
         this.name = obj.getName();
@@ -63,12 +58,7 @@ public class ViewAuctionBB implements Serializable {
         this.expire = obj.getExpire();
     }
     
-    @PreDestroy  //verkar bra för PRG-grejer
-    public void destroy() {
-        if (!conversation.isTransient()) {
-            conversation.end();
-        }
-    }
+    
 
     public Long getId() {
         return id;

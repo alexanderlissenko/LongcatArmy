@@ -20,17 +20,19 @@ and open the template in the editor.
             <ui:define name="content">
                 <div id="wrap">
                     <div id="main">
-                        <h:panelGrid columns="2">
+                        <h:form>
+                       <!-- <h:panelGrid columns="2">-->
                             <f:facet name="header">
                                 <h:outputText value="#{viewAuction.name}"/>
                             </f:facet>
                             <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="300" width="300"/>
                             <h:outputText value="#{viewAuction.info}"/>
                             <h:outputText value="#{viewAuction.expire}"/>
-                        </h:panelGrid>
+                        <!--</h:panelGrid>-->
+                        </h:form>
                         <h:form>
                             <h:inputText value="#{viewAuction.price}"/>
-                            <h:commandButton action="#{viewAuction.setBid()}" value="Edit Account"/> 
+                            <h:commandButton action="#{viewAuction.setBid()}" value="Place bid"/> 
                         </h:form>
                     </div>
                     <!-- END CONTENT (auktioner) -->
