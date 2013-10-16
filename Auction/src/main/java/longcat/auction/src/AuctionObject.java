@@ -4,15 +4,12 @@
  */
 package longcat.auction.src;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.Serializable;
 import java.util.Date;
-import java.util.HashMap;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -22,7 +19,7 @@ import javax.persistence.TemporalType;
  */
 
 @Entity
-public class AuctionObject {
+public class AuctionObject implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

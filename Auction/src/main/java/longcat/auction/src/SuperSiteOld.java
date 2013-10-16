@@ -6,12 +6,8 @@ package longcat.auction.src;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map.Entry;
-import javax.inject.Singleton;
-import javax.persistence.Persistence;
 import longcat.auction.utils.AbstractDAO;
 
 
