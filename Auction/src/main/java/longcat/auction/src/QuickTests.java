@@ -28,33 +28,46 @@ public class QuickTests {
         site.getCustomerCatalogue().add(testCust3);
         
         
-        //Customer creator, String title, String info, Double price, Date expireDate
         AuctionObject obj1 = new AuctionObject("hus","hus i pool",3131.3,today);
         AuctionObject obj2 = new AuctionObject("pool","pool till hus",1000.1,today);
         AuctionObject obj3 = new AuctionObject("evilness","evil",1.0,today);
-        //System.out.println("test");
         //testCust.addMySellAuctionList(obj1);
         
         
-        //testing supersite********************************************************
-        site.getAuctionCatalogue().add(obj1);
-        site.getAuctionCatalogue().add( obj2);
+        //************************ Om ett objekt är skapat men inte tillagt kan customers ändå buda på det..... ändra?*********************************'
+        
+        //testing supersite
+        site.createNewAuction(testCust, obj1);
+        //site.getAuctionCatalogue().add(obj1);
+        site.createNewAuction(testCust2, obj2);
+        //site.getAuctionCatalogue().add(obj2);
+        site.createNewAuction(testCust3, obj3);
+        //site.getAuctionCatalogue().add(obj3);
         System.out.println("test");
         //System.out.println(site.getAllAuctionsForUser(testCust).get(0).getTitle());
         System.out.println(site.getAuctionCatalogue().getAllAuctions().get(1).getName());
         
-        /*
-        System.out.println("Innan: "+site.getAllAuctions().get(0).getPrice());
-        obj1.setPrice(1.1);
-        site.updateAuction(testCust, obj1);
-        System.out.println("Efter: "+site.getAllAuctions().get(1).getPrice());
         
+        System.out.println("Innan: "+site.getAuctionCatalogue().getAllAuctions().get(0).getName()+ " " +site.getAuctionCatalogue().getAllAuctions().get(0).getPrice());
+        obj1.setPrice(1.1);
+        site.getAuctionCatalogue().update(obj1);
+        System.out.println("Efter: "+site.getAuctionCatalogue().getAllAuctions().get(0).getName()+" "+site.getAuctionCatalogue().getAllAuctions().get(0).getPrice());
+      
+        site.getCustomerCatalogue().remove(testCust2.getId());
+        
+        site.getAuctionCatalogue().doBid(testCust, 0.0, obj3); //It should not change price, and it doesn't
+        site.getAuctionCatalogue().doBid(testCust, 10.0, obj3); //It should change, it does
+        
+        
+        
+        
+        /*  
         //Remove
-        site.removeAuction(testCust, obj1, false); //not sold
+        site.getAuctionCatalogue().removeAuction(testCust, obj1, false); //not sold
        // site.removeAuction(testCust, obj2);
         if((site.getAllAuctionsForUser(testCust).size())== 0)
             System.out.println("tomt");
-        
+        /*  
         //Do a bid
         site.doBid(testCust3, 100.0, obj2); //failed bid
         System.out.println("    Number of items in myBuyAuctionList: " +testCust3.getMyBuyAuctionList().size());
