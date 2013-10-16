@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Auction object</title>
+    </h:head>
+    <f:metadata>
+        <f:viewParam name="id" value="#{home.id}" />
+    </f:metadata>
+    <h:body>
+        <ui:composition template="/WEB-INF/template.xhtml">
+            <ui:define name="content">
+                <div id="wrap">
+                    <div id="main">
+                        <h:panelGrid columns="2">
+                            <f:facet name="header">
+                                <h:outputText value="#{viewAuction.name}"/>
+                            </f:facet>
+                            <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="300" width="300"/>
+                            <h:outputText value="#{viewAuction.info}"/>
+                            <h:outputText value="#{viewAuction.expire}"/>
+                        </h:panelGrid>
+                        <h:form>
+                            <h:inputText value="#{viewAuction.price}"/>
+                            <h:commandButton action="#{viewAuction.setBid()}" value="Edit Account"/> 
+                        </h:form>
+                    </div>
+                    <!-- END CONTENT (auktioner) -->
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

@@ -6,8 +6,11 @@ package longcatarmy.bb;
 
 import longcatarmy.src.SuperSiteBean;
 import java.io.Serializable;
+import java.util.Date;
 import javax.annotation.PostConstruct;
-import javax.faces.bean.SessionScoped;
+import javax.annotation.PreDestroy;
+import javax.enterprise.context.Conversation;
+import javax.enterprise.context.ConversationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import longcat.auction.src.AuctionObject;
@@ -17,15 +20,27 @@ import longcat.auction.src.AuctionObject;
  * @author Alexander Lissenko
  */
 
-@SessionScoped
+@ConversationScoped
 @Named("viewAuction")
 public class ViewAuctionBB implements Serializable {
     
     @Inject
-    SuperSiteBean site;
+    private SuperSiteBean site;
     
-    AuctionObject obj;
-    Long id; //****************************************OBS! bort med denna när id skickas med
+    @Inject
+    private Conversation conversation;
+    
+    
+    private Long id;
+    private String name;
+    private Double price;
+    private String info;
+    private Date expire;
+    private Double tmpPrice;
+    
+    
+    //AuctionObject obj;
+    //Long id; //****************************************OBS! bort med denna när id skickas med
     
     public ViewAuctionBB(){
         
@@ -33,24 +48,58 @@ public class ViewAuctionBB implements Serializable {
     
     @PostConstruct
     public void post(){
-        //obj = site.getCustomerCatalogue().getAuction(id);
+        tmpPrice = price;
+    }
+    
+    public void setAuctionObject(Long id) {
+        if (conversation.isTransient()) {
+            conversation.begin();
+        }
+        AuctionObject obj = site.getAuctionCatalogue().find(id);
+        this.id = obj.getId();
+        this.name = obj.getName();
+        this.price = obj.getPrice();
+        this.info = obj.getInfo();
+        this.expire = obj.getExpire();
+    }
+    
+    @PreDestroy  //verkar bra för PRG-grejer
+    public void destroy() {
+        if (!conversation.isTransient()) {
+            conversation.end();
+        }
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
     
     public String getName(){
-        return obj.getName();
+        return name;
     }
     
     public String getInfo(){
-        return obj.getInfo();
+        return info;
     }
     
     public Double getPrice(){
-        return obj.getPrice();
+        return price;
     }
     
-    public void setBid(Double newBid){
-        //måste få referens till budande customer, byt null till det sen
-        //site.getAuctionCatalogue().doBid(null, newBid, obj);
+    public Date getExpire(){
+        return expire;
+    }
+    
+    public void setBid(){
+        //skicka till nåt coolt i src, controller??
+        if(price > tmpPrice){
+            AuctionObject obj = new AuctionObject(id,name,info,price,expire);
+            site.getAuctionCatalogue().update(obj);
+        }
     }
     
     
