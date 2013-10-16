@@ -10,7 +10,7 @@ import longcat.auction.src.SuperSite;
 
 /**
  *
- * @author lissal
+ * @author Alexander Lissenko
  */
 public enum Site {
     INSTANCE;
@@ -18,10 +18,7 @@ public enum Site {
     private final SuperSite site;
     
     private Site(){
-        //s = ShopFactory.getShop(true);
-        
-        //TODO
-        //Här ska nån cool metod som hämtar från databasen in.
+        site = new SuperSite();
     }
     
     public AuctionCatalogue getAuctionCatalogue() {
