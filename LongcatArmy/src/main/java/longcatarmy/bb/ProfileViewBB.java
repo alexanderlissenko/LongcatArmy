@@ -34,7 +34,7 @@ public class ProfileViewBB implements Serializable{
     
     public Customer getCustomer()
     {
-        return site.getCustomerCatalogue().getByName("apa").get(0);
+        return site.getCustomerCatalogue().find(Long.parseLong("1"));
     }
     
     public String goToEdit()

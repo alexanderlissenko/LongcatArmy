@@ -32,7 +32,7 @@
                                 <p:carousel var="a" value="#{userLIV.bids}" itemStyle="width:305px">
                                     <p:panel>
                                         <h:panelGrid columns="1">
-                                            <h:outputText  value="#{a.title}"/>
+                                            <h:outputText  value="#{a.name}"/>
                                             <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="100" width="150"/>
                                             <h:outputText value="Current bid: #{a.price}"/>
                                             <h:outputText value="Tid kvar: #{a.expire}"/>                                            
@@ -45,7 +45,7 @@
                                 <p:carousel var="a" value="#{userLIV.auctions}" itemStyle="width:305px">
                                     <p:panel>
                                         <h:panelGrid columns="1">
-                                            <h:outputText  value="#{a.title}"/>
+                                            <h:outputText  value="#{a.name}"/>
                                             <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="100" width="150"/>
                                             <h:outputText value="Current bid: #{a.price}"/>
                                             <h:outputText value="Tid kvar: #{a.expire}"/>                                            

@@ -26,7 +26,6 @@ public class ProfileEditBB implements Serializable{
     String phone;
     String secquest;
     String address;
-    //AuctionBB test = AuctionBB.INSTANCE;
     
     @Inject
     SuperSiteBean site;
@@ -46,6 +45,7 @@ public class ProfileEditBB implements Serializable{
     public String actOnSelected()
     {
         //site.getCustomerCatalogue().updateCustomer("apa", cust);
+        site.getCustomerCatalogue().update(cust);
         return goToView();
     }  
     

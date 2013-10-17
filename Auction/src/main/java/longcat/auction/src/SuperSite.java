@@ -88,7 +88,7 @@ public class SuperSite {
         createNewAuction(test3,testobj7);
         createNewAuction(test4,testobj8);
         
-        doBid(test1, 10.0, testobj6);
+        doBid(test1, 10000.0, testobj6);
         /*
         auctionCatalogue.add(testobj1);
         auctionCatalogue.add(testobj2);

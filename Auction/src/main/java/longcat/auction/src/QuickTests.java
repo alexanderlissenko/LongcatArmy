@@ -33,7 +33,9 @@ public class QuickTests {
         AuctionObject obj3 = new AuctionObject("evilness","evil",1.0,today);
         //testCust.addMySellAuctionList(obj1);
         
-        
+        System.out.println("Innan: " + testCust.getId() );
+        testCust = site.getCustomerCatalogue().find(Long.parseLong("1"));
+        System.out.println("Efter: " + testCust.getName() );
         //************************ Om ett objekt är skapat men inte tillagt kan customers ändå buda på det..... ändra?*********************************'
         
         //testing supersite
@@ -54,7 +56,7 @@ public class QuickTests {
         site.getAuctionCatalogue().update(obj1);
         System.out.println("Efter: "+site.getAuctionCatalogue().getAllAuctions().get(0).getName()+" "+site.getAuctionCatalogue().getAllAuctions().get(0).getPrice());
       
-        site.getCustomerCatalogue().remove(testCust2.getId());
+       // site.getCustomerCatalogue().remove(testCust2.getId());
         
         site.doBid(testCust, 0.0, obj3); //It should not change price, and it doesn't
         site.doBid(testCust, 10.0, obj3); //It should change, it does

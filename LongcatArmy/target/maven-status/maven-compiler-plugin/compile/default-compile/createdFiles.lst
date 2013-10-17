@@ -1,11 +1,11 @@
 longcatarmy/bb/NavigationBB.class
+longcatarmy/bb/ViewAuctionBB.class
 longcatarmy/src/SuperSiteBean.class
 longcatarmy/bb/AddAuctionBB.class
-longcatarmy/bb/ViewAuctionBB.class
 longcatarmy/bb/FieldsetBean.class
 longcatarmy/src/AuctionCatalogueBean.class
-longcatarmy/src/Controller.class
 longcatarmy/bb/ProfileViewBB.class
+longcatarmy/src/Controller.class
 longcatarmy/bb/HomeBB.class
 longcatarmy/bb/UserLoggedInViewBB.class
 longcatarmy/bb/ProfileEditBB.class

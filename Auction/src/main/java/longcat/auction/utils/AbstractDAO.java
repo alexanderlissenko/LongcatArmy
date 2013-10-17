@@ -89,8 +89,24 @@ public abstract class AbstractDAO<T , K> {
 
     
     public T find(K id) {
-       EntityManager em = emf.createEntityManager();
+       EntityManager em;
+               em= emf.createEntityManager();
        return em.find(clazz, id);
+       /*EntityManager em =  null;
+       T temp = null;
+       try{
+               em= emf.createEntityManager();
+               temp =em.find(clazz, id);
+       }
+       catch(Exception e) {
+            e.printStackTrace();
+        }
+       finally{
+           if (em != null) {
+                em.close();  // ... and destroy
+            }
+       }
+       return temp; */
     }
 
     
