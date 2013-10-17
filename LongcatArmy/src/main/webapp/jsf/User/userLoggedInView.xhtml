@@ -18,7 +18,7 @@
                 <h:form>
                     <div id="main">
                         <div>
-                            <h:commandButton actionListener="#{customer.getExpiring}" value="Utgående" class="small-button"/>
+                            <h:button outcome="auctions" value="New Auction" class="small-button"/>
                             <h:commandButton actionListener="#{customer.getMyBids}" value="Mina bud/auktioner" class="small-button"/>
                             <h:button outcome="profile" value="Min Profil" class="small-button"/>
                             <h:commandButton action="#{auth.logout}" value="Logout" class="small-button"/>

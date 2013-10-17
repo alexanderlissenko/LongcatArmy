@@ -56,8 +56,8 @@
         <navigation-rule>
             <from-view-id>/jsf/Auctions/addItemView.xhtml</from-view-id>
             <navigation-case>
-                <from-outcome>profile</from-outcome>
-                <to-view-id>/jsf/User/profileView.xhtml</to-view-id>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/jsf/User/userLoggedInView.xhtml</to-view-id>
             </navigation-case>
         </navigation-rule>
     </navigation-rule>

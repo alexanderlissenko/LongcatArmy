@@ -13,6 +13,7 @@ import javax.inject.Named;
 import longcat.auction.src.AuctionObject;
 import longcat.auction.src.Customer;
 import longcat.auction.src.SuperSiteOld;
+import longcatarmy.src.SuperSiteBean;
 
 /**
  *
@@ -21,15 +22,14 @@ import longcat.auction.src.SuperSiteOld;
 @ConversationScoped
 @Named("addAuction")
 public class AddAuctionBB implements Serializable{
-    /*
+    
     Customer cust;
     String name;
     double price;
     String info;
     
-    AuctionBB test = AuctionBB.INSTANCE;
-    //@Inject
-    SuperSite site = test.createSuperSite();
+    @Inject
+    SuperSiteBean site;
     
     public AddAuctionBB()
     {
@@ -39,20 +39,16 @@ public class AddAuctionBB implements Serializable{
     @PostConstruct
     public void post()
     { 
-        cust = site.getCustomerByName("apa");
+        cust = site.getCustomerCatalogue().find(Long.parseLong("1"));
     }
     
     
     public String actOnSelected()
     {
-        site.newAuction(cust,new AuctionObject(name,info,price,new Date()));
-        return goToView();
+        site.createNewAuction(cust,new AuctionObject(name,info,price,new Date()));
+        return "success";
     }  
     
-    public String goToView()
-    {
-        return "profile";
-    }
     public void setName(String name)
     {
         this.name = name;
@@ -80,6 +76,5 @@ public class AddAuctionBB implements Serializable{
     {
         return info;
     }
-    */
    
 }
