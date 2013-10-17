@@ -22,12 +22,8 @@ import longcat.auction.src.AuctionObject;
 @Named("viewAuction")
 public class ViewAuctionBB implements Serializable {
     
-    @Inject
+    
     private SuperSiteBean site;
-    
-   
-    
-    
     private Long id;
     private String name;
     private Double price;
@@ -35,6 +31,13 @@ public class ViewAuctionBB implements Serializable {
     private Date expire;
     private Double tmpPrice;
     
+    private AuctionObject tmpobj;
+    
+    @Inject
+    private void setSite(SuperSiteBean site){
+        this.site = site;
+        setAuctionObject(id);
+    }
     
     //AuctionObject obj;
     //Long id; //****************************************OBS! bort med denna när id skickas med
@@ -46,9 +49,11 @@ public class ViewAuctionBB implements Serializable {
     @PostConstruct
     public void post(){
         tmpPrice = price;
+        //tmpobj = site.getAuctionCatalogue().find(id);
     }
     
-    public void setAuctionObject(Long id) {
+    
+    public AuctionObject setAuctionObject(Long id) {
         
         AuctionObject obj = site.getAuctionCatalogue().find(id);
         this.id = obj.getId();
@@ -56,32 +61,33 @@ public class ViewAuctionBB implements Serializable {
         this.price = obj.getPrice();
         this.info = obj.getInfo();
         this.expire = obj.getExpire();
+        return obj;
     }
     
     
 
     public Long getId() {
-        return id;
+        return tmpobj.getId();
     }
 
     public void setId(Long id) {
-        this.id = id;
+        //this.id = id;
     }
     
     public String getName(){
-        return name;
+        return tmpobj.getName();
     }
     
     public String getInfo(){
-        return info;
+        return tmpobj.getInfo();
     }
     
     public Double getPrice(){
-        return price;
+        return tmpobj.getPrice();
     }
     
     public Date getExpire(){
-        return expire;
+        return tmpobj.getExpire();
     }
     
     public void setBid(){
