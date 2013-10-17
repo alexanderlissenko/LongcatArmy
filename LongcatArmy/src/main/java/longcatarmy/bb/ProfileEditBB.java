@@ -65,7 +65,9 @@ public class ProfileEditBB implements Serializable{
     
     public void setPassword(String password)
     {
-        cust.setPassword(password);
+        if(!password.equals("")){
+            cust.setPassword(password);
+        }
     }
     
     public void setPhone(String phone)
@@ -75,7 +77,9 @@ public class ProfileEditBB implements Serializable{
     
     public void setSecQuest(String secQuest)
     {
-        cust.setSeqQuest(secQuest);
+        if(!secQuest.equals("")){
+            cust.setSeqQuest(secQuest);
+        }
     }
     
     public void setAddress(String address)

@@ -26,6 +26,7 @@ public class UserLoggedInViewBB implements Serializable {
     private List<AuctionObject> expAuctions;
     //private AuctionBB test = AuctionBB.INSTANCE;
     Customer testCust;
+    Long id;
     
     @Inject
     SuperSiteBean site;
@@ -53,6 +54,12 @@ public class UserLoggedInViewBB implements Serializable {
         testCust = site.getCustomerCatalogue().find(Long.parseLong("1"));//site.getCustomerCatalogue().getByName("apa").get(0);
         //expAuctions = site.getCustomerCatalogue().getAllAuctionsForUser(testCust);
         return testCust.getMyBuyAuctionList();
+    }
+    
+    public String goToAuction(Long id) {
+        this.id = id;
+        //return "success?faces-redirect=true&includeViewParams=true"; //ev bara return success
+        return "success";
     }
     
 }
