@@ -13,7 +13,7 @@ and open the template in the editor.
         <title>Auction object</title>
     </h:head>
     <f:metadata>
-        <f:viewParam name="id" value="#{home.id}" />
+        <f:viewParam name="id" value="#{viewAuction.setId(home.id)}" />
     </f:metadata>
     <h:body>
         <ui:composition template="/WEB-INF/template.xhtml">
@@ -23,14 +23,15 @@ and open the template in the editor.
                         <h:form>
                        <!-- <h:panelGrid columns="2">-->
                             <f:facet name="header">
-                                <h:outputText value="#{viewAuction.name}"/>
+                                <h:outputText value="#{viewAuction.getAuction(home.id).name}"/>
                             </f:facet>
                             <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="300" width="300"/>
-                            <h:outputText value="#{viewAuction.info}"/>
-                            <h:outputText value="#{viewAuction.expire}"/>
+                            <h:outputText value="#{viewAuction.getAuction(home.id).info}"/>
+                            <h:outputText value="#{viewAuction.getAuction(home.id).expire}"/>
                         <!--</h:panelGrid>-->
                         </h:form>
                         <h:form>
+                            <h:outputText value="Current bid:  #{viewAuction.getAuction(home.id).price}"/>
                             <h:inputText value="#{viewAuction.price}"/>
                             <h:commandButton action="#{viewAuction.setBid()}" value="Place bid"/> 
                         </h:form>

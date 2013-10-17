@@ -36,7 +36,8 @@ public class ViewAuctionBB implements Serializable {
     @Inject
     private void setSite(SuperSiteBean site){
         this.site = site;
-        setAuctionObject(id);
+        //setAuctionObject(id);
+        //tmpPrice = price;
     }
     
     //AuctionObject obj;
@@ -48,12 +49,18 @@ public class ViewAuctionBB implements Serializable {
     
     @PostConstruct
     public void post(){
+        //setAuctionObject(id);
         tmpPrice = price;
-        //tmpobj = site.getAuctionCatalogue().find(id);
+        //getAuction(id);
+    }
+    
+    public AuctionObject getAuction(Long id){
+        tmpobj = site.getAuctionCatalogue().find(id);
+        return tmpobj;
     }
     
     
-    public AuctionObject setAuctionObject(Long id) {
+    /*public AuctionObject setAuctionObject(Long id) {
         
         AuctionObject obj = site.getAuctionCatalogue().find(id);
         this.id = obj.getId();
@@ -62,32 +69,37 @@ public class ViewAuctionBB implements Serializable {
         this.info = obj.getInfo();
         this.expire = obj.getExpire();
         return obj;
-    }
+    }*/
     
     
 
     public Long getId() {
-        return tmpobj.getId();
+        return id;
     }
 
     public void setId(Long id) {
-        //this.id = id;
+        this.id = id;
     }
     
     public String getName(){
-        return tmpobj.getName();
+        return name;
     }
     
     public String getInfo(){
-        return tmpobj.getInfo();
+        return info;
     }
     
     public Double getPrice(){
+        getAuction(id);
         return tmpobj.getPrice();
     }
     
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+    
     public Date getExpire(){
-        return tmpobj.getExpire();
+        return expire;
     }
     
     public void setBid(){

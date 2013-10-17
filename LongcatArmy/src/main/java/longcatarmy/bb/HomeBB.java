@@ -49,6 +49,10 @@ public class HomeBB implements Serializable{
         this.id = id;
     }
     
+    public Long getId (){
+        return id;
+    }
+    
     //TODO fixa till returnen till nåt vettigt (till viewAuction)
     //fixa även till viewAuction och index xhtml
     public String goToAuction(Long id) {
