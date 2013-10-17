@@ -38,7 +38,7 @@ public class ProfileEditBB implements Serializable{
     @PostConstruct
     public void post()
     { 
-        //cust = site.getCustomerCatalogue().getCustomerByName("apa");
+        cust = site.getCustomerCatalogue().find(Long.parseLong("1"));//.getCustomerByName("apa");
     }
     
     
