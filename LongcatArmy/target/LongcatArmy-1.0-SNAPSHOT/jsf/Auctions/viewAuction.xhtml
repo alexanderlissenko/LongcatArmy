@@ -14,8 +14,7 @@ and open the template in the editor.
     </h:head>
     <ui:define name="metadata">
         <f:metadata>
-            <f:viewParam id ="id" name="id" value="#{home.id}" />
-            <f:viewAction action="#{viewAuction.setAuctionObject(id)}"/>
+            <f:viewParam name="id" value="#{viewAuction.id}" />
         </f:metadata>
     </ui:define>
     <h:body>
@@ -23,6 +22,7 @@ and open the template in the editor.
             <ui:define name="content">
                 <div id="wrap">
                     <div id="main">
+                        #{param.id}
                         <h:form>
                        <!-- <h:panelGrid columns="2">-->
                             <f:facet name="header">

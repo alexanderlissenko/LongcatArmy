@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>LongcatArmy</title>
     </h:head>
@@ -20,7 +21,9 @@
                                     <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="100" width="150"/>
                                     <h:outputText value="Current bid: #{auction.price}"/>
                                     <h:outputText value="Tid kvar: #{auction.expire}"/>
-                                    <h:commandButton value="Till objektet" action="#{home.goToAuction(auction.id)}"/>
+                                        <h:button outcome="success" value="Till objektet">
+                                            <f:param name="id" value="#{auction.id}"/>
+                                        </h:button>
                                 </h:panelGrid>
                             </p:panel>
                         </p:dataGrid>

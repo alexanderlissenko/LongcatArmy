@@ -22,8 +22,8 @@
         </navigation-case>
         <navigation-case>
             <from-outcome>success</from-outcome>
-            <redirect include-view-params="true"/>
             <to-view-id>/jsf/Auctions/viewAuction.xhtml</to-view-id>
+            <redirect include-view-params="true" />
         </navigation-case>
         <navigation-case>
             <from-outcome>user</from-outcome>
