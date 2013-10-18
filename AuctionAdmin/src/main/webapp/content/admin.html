@@ -1,27 +1,30 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="sv" xml:lang="sv">
+<html>
     <head>
+        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <title>Admin Page</title>
+        <link rel="stylesheet" type="text/css" href="resources/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="resources/css/blitzer/jquery-ui-1.10.2.custom.min.css" />
+        <script type="text/javascript" src="lib/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="lib/jquery-ui-1.10.2.custom.js"></script>
         <script type="text/javascript" src="js/gui/adminView.js" ></script>
-        <link href="main.css" type="text/css" rel="stylesheet"/>
+        <script type="text/javascript" src="js/core/auctionCatalogue.js" ></script> 
+        <script type="text/javascript" src="js/core/customerCatalogue.js" ></script>
+        <script type="text/javascript" src="js/core/navigator.js" ></script>
+        <script type="text/javascript" src="js/core/site.js" ></script> 
     </head>
+
     <body>
         <div id="wrap">
-            <!-- HEADER-->
+            
             <div id="header"><h1>Auktionssite</h1></div>
-            <!-- END HEADER -->
-
-            <!-- PAGE NAVBAR -->
             <div id="nav">
                 <p><a href="adminview">Admin view</a> <a href="home">Home</a></p>
             </div>
 
             <h3>Auction object edit</h3>
-            <div id="main" id="dialog-form-A" title="Auctions" hidden="hidden">
+            <div id="dialog-form-A" title="Auctions" hidden="hidden">
                 <p class="validateTips">All form fields are required.</p>
                 <form>
                     <fieldset>
@@ -38,8 +41,7 @@ and open the template in the editor.
                     </fieldset>
                 </form>
             </div>
-            
-            
+
             <div id="dialog-form-C" title="Customers" hidden="hidden">
                 <p class="validateTips">All form fields are required.</p>
                 <form>
@@ -61,11 +63,11 @@ and open the template in the editor.
                     </fieldset>
                 </form>
             </div>
-            
+
             <div id="auctionobjects-contain" class="ui-widget">
-                <button id="prev-button">Prev</button> 
-                <button id="next-button">Next</button>
-                <table id="test-a">
+                <button id="prev-auction-button">Prev</button> 
+                <button id="next-auction-button">Next</button>
+                <table class="test-a" id="auctionobjects" >
                     <thead>
                         <tr>
                             <th>Id</th>
@@ -75,26 +77,27 @@ and open the template in the editor.
                             <th>Expire date</th>
                         </tr>
                     </thead>
-                    <tbody id="test-a">
+                    <tbody>
                         <tr>
                             <td>1</td>
                             <td>Kisse</td>
                             <td>Snel kat</td>
                             <td>13.37</td>
                             <td>Today 13:37</td>
+
                         </tr>
                     </tbody>
                     <tfoot></tfoot>
                 </table>
             </div>
-            
+
             <h3>Customer edit</h3>
             <div id="customers-contain" class="ui-widget">
-                <button id="prev-button">Prev</button> 
-                <button id="next-button">Next</button>
-                <table id="test-a">
+                <button id="prev-customer-button">Prev</button> 
+                <button id="next-customer-button">Next</button>
+                <table class="test-a" id="customers">
                     <thead>
-                        <tr class="ui-widget-header ">
+                        <tr>
                             <th>Id</th>
                             <th>Email</th>
                             <th>Name</th>
@@ -118,7 +121,7 @@ and open the template in the editor.
                     <tfoot></tfoot>
                 </table>
             </div>
-            
+
             <div id="dialog-message" title="Set this in code" hidden="hidden">
                 <p>
                     <span class="ui-icon ui-icon-circle-check" 

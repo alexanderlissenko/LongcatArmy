@@ -5,6 +5,7 @@
     <class>longcat.auction.src.AuctionObject</class>
     <class>longcat.auction.src.Customer</class>
     <!--<exclude-unlisted-classes>true</exclude-unlisted-classes>-->
+    <class>longcat.auction.src.Admin</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/AuctionSite"/>
       <property name="javax.persistence.jdbc.password" value="app"/>
