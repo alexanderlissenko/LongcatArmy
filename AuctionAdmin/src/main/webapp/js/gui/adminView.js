@@ -8,6 +8,8 @@ $(function() {
     var nav1 = new Navigator(site.getCustomerCatalogue());
     var nav2 = new Navigator(site.getAuctionCatalogue());
     
+    $("table").remove();
+    
     $("table#auctionobjects").ready(function() {
         nav2.prev(createTableA);
     });
