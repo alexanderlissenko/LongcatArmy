@@ -24,7 +24,8 @@ public class ViewAuctionBB implements Serializable {
     
     
     private SuperSiteBean site;
-    private Long id;
+    private Long auctionId;
+    private Long homeId;
     private String name;
     private Double price;
     private String info;
@@ -36,7 +37,7 @@ public class ViewAuctionBB implements Serializable {
     @Inject
     private void setSite(SuperSiteBean site){
         this.site = site;
-        setAuctionObject(id);
+        
     }
     
     //AuctionObject obj;
@@ -53,20 +54,22 @@ public class ViewAuctionBB implements Serializable {
     }
     
     
-    public AuctionObject setAuctionObject(Long id) {
+    public void setAuctionObject(Long id) {
+        homeId = id;
         
-        AuctionObject obj = site.getAuctionCatalogue().find(id);
-        this.id = obj.getId();
-        this.name = obj.getName();
-        this.price = obj.getPrice();
-        this.info = obj.getInfo();
-        this.expire = obj.getExpire();
-        return obj;
+        this.tmpobj = site.getAuctionCatalogue().find(homeId);
+        auctionId = tmpobj.getId();
+        this.name = tmpobj.getName();
+        this.price = tmpobj.getPrice();
+        this.info = tmpobj.getInfo();
+        this.expire = tmpobj.getExpire();
+
     }
     
     
 
     public Long getId() {
+        //tmpobj = setAuctionObject(homeId);
         return tmpobj.getId();
     }
 
@@ -75,25 +78,30 @@ public class ViewAuctionBB implements Serializable {
     }
     
     public String getName(){
+        //tmpobj = setAuctionObject(homeId);
         return tmpobj.getName();
     }
     
     public String getInfo(){
+        //tmpobj = setAuctionObject(homeId);
         return tmpobj.getInfo();
     }
     
     public Double getPrice(){
+        //tmpobj = setAuctionObject(homeId);
         return tmpobj.getPrice();
     }
     
     public Date getExpire(){
+        //tmpobj = setAuctionObject(homeId);
         return tmpobj.getExpire();
     }
     
     public void setBid(){
+        //tmpobj = setAuctionObject(homeId); //******************************************eventuellt ta bort
         //skicka till nåt coolt i src, controller??
         if(price > tmpPrice){
-            AuctionObject obj = new AuctionObject(id,name,info,price,expire);
+            AuctionObject obj = new AuctionObject(homeId,name,info,price,expire);
             site.getAuctionCatalogue().update(obj);
         }
     }
