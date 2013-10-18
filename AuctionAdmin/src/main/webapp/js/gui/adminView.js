@@ -20,7 +20,7 @@ $(function() {
     $("#next-buttonA")
             .button()
             .click(function() {
-        nav1.next(createTableA, fail);
+        nav2.next(createTableA, fail);
         function fail() {
             createErrorDialog("Can't list!").dialog("open");
         }
@@ -29,7 +29,7 @@ $(function() {
     $("#next-buttonC")
             .button()
             .click(function() {
-        nav2.next(createTableC, fail);
+        nav1.next(createTableC, fail);
         function fail() {
             createErrorDialog("Can't list!").dialog("open");
         }
@@ -38,7 +38,7 @@ $(function() {
     $("#prev-buttonA")
             .button()
             .click(function() {
-        nav1.prev(createTableA, fail);
+        nav2.prev(createTableA, fail);
         function fail() {
             createErrorDialog("Can't list!!").dialog("open");
         }
@@ -47,7 +47,7 @@ $(function() {
     $("#prev-buttonC")
             .button()
             .click(function() {
-        nav2.prev(createTableC, fail);
+        nav1.prev(createTableC, fail);
         function fail() {
             createErrorDialog("Can't list!!").dialog("open");
         }
