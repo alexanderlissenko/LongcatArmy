@@ -15,25 +15,31 @@ $(document).ready(function() {
     $("table#customers").ready(function() {
         nav1.prev(createTableC);
     });
+    
+    $("table#auctionobjects").ready(function() {
+        nav1.prev(createTableA);
+    });
 
-
-    $("#next-auction-button").on('click', function() {
+    $("#next-auction-button")
+            .button()
+            .click(function() {
         nav2.next(createTableA, fail);
         function fail() {
-            createErrorDialog("Can't list!").dialog("open");
+            createErrorDialog("Can't list!!").dialog("open")
         }
     });
 
-    $("#next-buttonC")
+    $("#next-customer-button")
             .button()
             .click(function() {
+        alert("customer next")
         nav1.next(createTableC, fail);
         function fail() {
             createErrorDialog("Can't list!").dialog("open");
         }
     });
 
-    $("#prev-buttonA")
+    $("#prev-auction-button")
             .button()
             .click(function() {
         nav2.prev(createTableA, fail);
@@ -42,9 +48,10 @@ $(document).ready(function() {
         }
     });
 
-    $("#prev-buttonC")
+    $("#prev-customer-button")
             .button()
             .click(function() {
+        alert("customer prev")
         nav1.prev(createTableC, fail);
         function fail() {
             createErrorDialog("Can't list!!").dialog("open");
@@ -55,9 +62,10 @@ $(document).ready(function() {
 // Utils
 function createTableA(auctionobjects) {
     
-    $("table.test-a tbody tr").remove();
+    alert("hej")
+    $("table#auctionobjects tbody tr").remove();
     for (var i = 0; i < auctionobjects.length; i++) {
-        $(".test-a tbody").append('<tr>' +
+        $("#auctionobjects tbody").append('<tr>' +
                 '<td>' + auctionobjects[i].id + '</td>' +
                 '<td>' + auctionobjects[i].title + '</td>' +
                 '<td>' + auctionobjects[i].info + '</td>' +
@@ -65,7 +73,7 @@ function createTableA(auctionobjects) {
                 '<td>' + auctionobjects[i].expire + '</td>' +
                 '</tr>');
     }
-    $('table.test-a').find('tr')
+    $('table#auctionobjects').find('tr')
             .on('click', function() {
         var selectedProductRow = {};
         selectedProductRow.id = $(this).find('td').eq(0).html();

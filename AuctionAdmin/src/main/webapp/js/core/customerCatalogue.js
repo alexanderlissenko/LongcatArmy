@@ -12,12 +12,11 @@ CustomerCatalogue.prototype = (function() {
     return {
                 
         getRange: function(first, last) {
-            return 0;
+            return $.getJSON(this.baseUri + "/rangeC?" + "first=" + first + "&" + "last=" + last);
         },
         
         getCount: function() {
-            
-            return 0;
+            return $.getJSON(this.baseUri + "/count");
         },
         
         editCustomer: function(customer) {
