@@ -8,48 +8,48 @@ $(function() {
     var nav1 = new Navigator(site.getCustomerCatalogue());
     var nav2 = new Navigator(site.getAuctionCatalogue());
     
-    $("table#auctionObjects").ready(function() {
-        nav2.prev(createTableA)
+    $("table#auctionobjects").ready(function() {
+        nav2.prev(createTableA);
     });
     
     $("table#customers").ready(function() {
-        nav1.prev(createTableC)
+        nav1.prev(createTableC);
     });
     
     
     $("#next-buttonA")
             .button()
             .click(function() {
-        nav.next(createTableA, fail);
+        nav1.next(createTableA, fail);
         function fail() {
-            createErrorDialog("Can't list!").dialog("open")
+            createErrorDialog("Can't list!").dialog("open");
         }
     });
     
     $("#next-buttonC")
             .button()
             .click(function() {
-        nav.next(createTableC, fail);
+        nav2.next(createTableC, fail);
         function fail() {
-            createErrorDialog("Can't list!").dialog("open")
+            createErrorDialog("Can't list!").dialog("open");
         }
     });
     
     $("#prev-buttonA")
             .button()
             .click(function() {
-        nav.prev(createTableA, fail);
+        nav1.prev(createTableA, fail);
         function fail() {
-            createErrorDialog("Can't list!!").dialog("open")
+            createErrorDialog("Can't list!!").dialog("open");
         }
     });
     
     $("#prev-buttonC")
             .button()
             .click(function() {
-        nav.prev(createTableC, fail);
+        nav2.prev(createTableC, fail);
         function fail() {
-            createErrorDialog("Can't list!!").dialog("open")
+            createErrorDialog("Can't list!!").dialog("open");
         }
     });
     
@@ -58,6 +58,7 @@ $(function() {
        
         //$("#products tbody tr").remove();
         //var len = products.length;
+        $("#auctionobjects tbody tr").remove();
         for (var i = 0; i < auctionobjects.length; i++) {
             $("#auctionobjects tbody").append('<tr>' +
                     '<td>' + auctionobjects[i].id + '</td>' +
@@ -84,6 +85,7 @@ $(function() {
        
         //$("#products tbody tr").remove();
         //var len = products.length;
+        $("#customers tbody tr").remove();
         for (var i = 0; i < customers.length; i++) {
             $("#customers tbody").append('<tr>' +
                     '<td>' + customers[i].id + '</td>' +
@@ -292,3 +294,4 @@ $(function() {
     }
 });
 
+//@ sourceURL=adminView.js

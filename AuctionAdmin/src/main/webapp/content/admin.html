@@ -6,8 +6,12 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml" lang="sv" xml:lang="sv">
     <head>
         <title>Admin Page</title>
+        <link rel="stylesheet" type="text/css" href="resources/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="resources/css/blitzer/jquery-ui-1.10.2.custom.min.css" />
+        <script type="text/javascript" src="lib/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="lib/jquery-ui-1.10.2.custom.js"></script>
         <script type="text/javascript" src="js/gui/adminView.js" ></script>
-        <link href="main.css" type="text/css" rel="stylesheet"/>
+        
     </head>
     <body>
         <div id="wrap">
@@ -65,9 +69,9 @@ and open the template in the editor.
             <div id="auctionobjects-contain" class="ui-widget">
                 <button id="prev-button">Prev</button> 
                 <button id="next-button">Next</button>
-                <table id="test-a">
+                <table id="auctionobjects" class="test-a" >
                     <thead>
-                        <tr>
+                        <tr class="ui-widget-header ">
                             <th>Id</th>
                             <th>Title</th>
                             <th>Info</th>
@@ -75,7 +79,7 @@ and open the template in the editor.
                             <th>Expire date</th>
                         </tr>
                     </thead>
-                    <tbody id="test-a">
+                    <tbody>
                         <tr>
                             <td>1</td>
                             <td>Kisse</td>
@@ -92,7 +96,7 @@ and open the template in the editor.
             <div id="customers-contain" class="ui-widget">
                 <button id="prev-button">Prev</button> 
                 <button id="next-button">Next</button>
-                <table id="test-a">
+                <table id="customers" class="test-a" >
                     <thead>
                         <tr class="ui-widget-header ">
                             <th>Id</th>

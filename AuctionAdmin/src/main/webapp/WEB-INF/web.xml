@@ -7,7 +7,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ServletAdaptor</servlet-name>
-        <url-pattern>*</url-pattern>
+        <url-pattern>/rs/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -15,6 +15,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>/content/admin.html</welcome-file>
+        <welcome-file>content/admin.html</welcome-file>
     </welcome-file-list>
 </web-app>
