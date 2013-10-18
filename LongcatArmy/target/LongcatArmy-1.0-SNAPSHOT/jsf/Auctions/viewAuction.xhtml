@@ -12,9 +12,12 @@ and open the template in the editor.
     <h:head>
         <title>Auction object</title>
     </h:head>
-    <f:metadata>
-        <f:viewParam name="id" value="#{home.id}" />
-    </f:metadata>
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:viewParam id ="id" name="id" value="#{home.id}" />
+            <f:viewAction action="#{viewAuction.setAuctionObject(id)}"/>
+        </f:metadata>
+    </ui:define>
     <h:body>
         <ui:composition template="/WEB-INF/template.xhtml">
             <ui:define name="content">
