@@ -6,7 +6,7 @@
 var site = (function(){
     
     var baseUri = "http://localhost:8080/AuctionAdmin/rs/";
-    var auctionobjects = new AuctionCatalogue(baseUri + "auctionObjects");
+    var auctionobjects = new AuctionCatalogue(baseUri + "auctionobjects");
     var customers = new CustomerCatalogue(baseUri + "customers");
     
     return {

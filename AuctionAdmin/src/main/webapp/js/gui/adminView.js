@@ -5,7 +5,7 @@
 
 $(document).ready(function() {
 
-    alert("Sidan laddar nu... Det är kuul...");
+    //alert("Sidan laddar nu... Det är kuul...");
 
     var nav1 = new Navigator(site.getCustomerCatalogue());
     var nav2 = new Navigator(site.getAuctionCatalogue());
@@ -62,7 +62,7 @@ $(document).ready(function() {
 // Utils
 function createTableA(auctionobjects) {
     
-    alert("hej")
+    //alert("hej")
     $("table#auctionobjects tbody tr").remove();
     for (var i = 0; i < auctionobjects.length; i++) {
         $("#auctionobjects tbody").append('<tr>' +

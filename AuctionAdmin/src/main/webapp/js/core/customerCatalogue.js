@@ -12,7 +12,7 @@ CustomerCatalogue.prototype = (function() {
     return {
                 
         getRange: function(first, last) {
-            return $.getJSON(this.baseUri + "/rangeC?" + "first=" + first + "&" + "last=" + last);
+            return $.getJSON(this.baseUri + "/range?" + "first=" + first + "&" + "last=" + last);
         },
         
         getCount: function() {
@@ -29,10 +29,11 @@ CustomerCatalogue.prototype = (function() {
                         customer.address + "&access=" + customer.access
             });
         },
-        deleteCustomer: function(customer) {
+                
+        deleteCustomer: function(id) {
             return $.ajax({
                 type: 'DELETE',
-                url: this.baseUri + "/" + customer.id
+                url: this.baseUri + "/" + id
             });
         }
     };

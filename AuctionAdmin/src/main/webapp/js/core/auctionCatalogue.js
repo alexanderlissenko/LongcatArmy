@@ -12,7 +12,7 @@ AuctionCatalogue.prototype = (function() {
     return {
         
         getRange: function(first, last) {
-            return $.getJSON(this.baseUri + "/rangeA?" + "first=" + first + "&" + "last=" + last);
+            return $.getJSON(this.baseUri + "/range?" + "first=" + first + "&" + "last=" + last);
         },
         
         getCount: function() {
@@ -22,15 +22,16 @@ AuctionCatalogue.prototype = (function() {
         editAuction: function(auctionObject) {
             return $.ajax({
                 type: 'PUT',
-                url: this.baseUri + "/edit/" + auctionObject.id,
-                data: "title=" + auctionObject.title + "&info=" + auctionObject.info +
+                url: this.baseUri + "/" + auctionObject.id ,
+                data: "name=" + auctionObject.name + "&info=" + auctionObject.info +
                         "&price=" + auctionObject.price
             });
         },
-        deleteAuction: function(auctionObject) {
+                
+        deleteAuction: function(id) {
             return $.ajax({
                 type: 'DELETE',
-                url: this.baseUri + "/" + auctionObject.id
+                url: this.baseUri + "/" + id
             });
         }
     };
