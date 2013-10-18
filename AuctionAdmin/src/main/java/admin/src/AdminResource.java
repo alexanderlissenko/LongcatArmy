@@ -38,6 +38,13 @@ public class AdminResource {
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public String getCustomerCount() {
+        site.getCustomerCatalogue().getCount();//Long site.getCustomerCount(); 
+        return "alert";
+    }
+    
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    public String getAuctionCount() {
         site.getAuctionCatalogue().getCount();//Long site.getCustomerCount(); 
         return "alert";
     }

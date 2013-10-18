@@ -10,6 +10,16 @@ var CustomerCatalogue = function(baseUri) {
 CustomerCatalogue.prototype = (function() {
 
     return {
+                
+        getRange: function(first, last) {
+            return 0;
+        },
+        
+        getCount: function() {
+            
+            return 0;
+        },
+        
         editCustomer: function(customer) {
             return $.ajax({
                 type: 'PUT',
