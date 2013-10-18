@@ -6,6 +6,7 @@ package admin.src;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
+import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -28,8 +29,21 @@ public class AdminResource {
     
     private UriInfo uriInfo;
     
+    @GET
+    @Produces({MediaType.TEXT_PLAIN})
+    public String doTest() {
+        return "Hello";
+    }
+    
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    public String getCustomerCount() {
+        site.getAuctionCatalogue().getCount();//Long site.getCustomerCount(); 
+        return "alert";
+    }
+    
     @PUT
-    @Path("customer" + "{id}") //funkar detta??
+    @Path("customer/" + "{id}") //funkar detta??
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response editCustomer(@FormParam ("email") String email,
             @FormParam ("name") String name, @FormParam ("pass") String pass,
@@ -83,7 +97,4 @@ public class AdminResource {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
     }
-    
-    
-    
 }

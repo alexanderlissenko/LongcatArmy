@@ -16,75 +16,71 @@ import longcat.auction.src.Customer;
 
 /**
  *
- * När ska @XmlElement användas?????
+ * När ska
+ *
+ * @XmlElement användas?????
  * @author Alexander Lissenko
+ * Inga @XmlElement vid setters /Henrik
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.PROPERTY)
 public class AuctionProxy {
-    
+
     private AuctionObject obj;
-    
+
     protected AuctionProxy() {
-        
     }
-    
+
     public AuctionProxy(AuctionObject obj) {
         this.obj = obj;
     }
-    
+
     @XmlElement
-    public String getTitle(){
+    public String getTitle() {
         return obj.getName();
     }
-    
-    @XmlElement
-    public void setTitle(String title){
+
+    public void setTitle(String title) {
         //admin ska kunna ändra title, lägg till en setTitle i AuctionObject
     }
-    
+
     @XmlElement
-    public String getInfo(){
+    public String getInfo() {
         return obj.getInfo();
     }
-    
-    @XmlElement
-    public void setInfo(String info){
+
+    public void setInfo(String info) {
         obj.editInfo(info);
     }
-    
+
     @XmlElement
-    public Double getPrice(){
+    public Double getPrice() {
         return obj.getPrice();
     }
-    
-    @XmlElement
-    public void setPrice(Double price){
+
+    public void setPrice(Double price) {
         obj.setPrice(price);
     }
-    
+
     @XmlElement
     public Date getExpire() {
         return obj.getExpire();
     }
-    
-    @XmlElement
-    public void setExpire(Date expire){
+
+    public void setExpire(Date expire) {
         //lägg till setExpire i AuctionObject, alternativt skit i denna metod (inte så viktig)
     }
-    
+
     /*@XmlElement
-    public List<HashMap> getBidder(){
-        return obj.getBidder();
-    }*/
-    
+     public List<HashMap> getBidder(){
+     return obj.getBidder();
+     }*/
     /*@XmlElement
-    public List<Customer> getFlagList(){
-        return obj.getFlagList();
-    }*/
-    
+     public List<Customer> getFlagList(){
+     return obj.getFlagList();
+     }*/
     @XmlElement
-    public Long getId(){
+    public Long getId() {
         return obj.getId();
     }
 }
