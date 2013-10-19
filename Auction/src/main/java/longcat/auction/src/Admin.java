@@ -30,6 +30,12 @@ public class Admin implements User{
     private Boolean access; 
     
     
+    public Admin()
+    {
+        
+    }
+    
+    
     public Admin(String email, String name, String pass, String phone, 
                         String seQuest, String address){
         this.email = email;

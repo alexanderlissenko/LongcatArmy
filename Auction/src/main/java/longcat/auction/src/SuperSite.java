@@ -36,20 +36,24 @@ public class SuperSite {
     public void createNewAuction(Customer cust, AuctionObject obj) {
 
         // Customer temp = cust; //Varför temp? **************************************************************
-        cust.addMySellAuctionList(obj);
-       // auctionCatalogue.add(obj);
-        customerCatalogue.update(cust);
+        Customer tmpCust=customerCatalogue.find(cust.getId());
+        tmpCust.addMySellAuctionList(obj);
+        auctionCatalogue.add(obj);
+        customerCatalogue.update(tmpCust);
     }
 
     public void doBid(Customer cust, Double price, AuctionObject obj) { //Ska vi använda denna? ja
 
+        Customer tmpCust=customerCatalogue.find(cust.getId());
+        AuctionObject tmpAo = auctionCatalogue.find(obj.getId());
 
-        if (price > obj.getPrice()) {
-            obj.setPrice(price);
-            Customer temp = cust; // varför denna?***********************************************************'
-            cust.addMyBuyAuctionList(obj);
-            customerCatalogue.update(cust);
-            auctionCatalogue.update(obj);
+        if (price > tmpAo.getPrice()) {
+            
+            tmpAo.setPrice(price); 
+            auctionCatalogue.update(tmpAo);
+            tmpCust.addMyBuyAuctionList(tmpAo);
+           
+            customerCatalogue.update(tmpCust);
         }
     }
 

@@ -16,7 +16,14 @@ public class QuickTests {
     public static void main(String[] args)
     {
         SuperSite site = new SuperSite();
-        Date today = new Date();
+        site.initTestData();
+        List<AuctionObject> a = site.auctionCatalogue.getAllAuctions();
+        System.out.println(a.get(0).getName());
+        
+        
+        System.out.println(site.customerCatalogue.find(Long.parseLong("1")).getMyBuyAuctionList().get(0).getName());
+        
+        /*Date today = new Date();
         System.out.println(today.getTime());            
         
         Customer testCust= new Customer("test@testing.com", "test1", "testpass", "031133742","teeeesstt","test street 1");
@@ -52,6 +59,8 @@ public class QuickTests {
         System.out.println(site.getCustomerCatalogue().find(testCust.getId()).getMySellAuctionList().size());
         
         System.out.println("Innan: "+site.getAuctionCatalogue().getAllAuctions().get(0).getName()+ " " +site.getAuctionCatalogue().getAllAuctions().get(0).getPrice());
+        Long id = obj1.getId();
+        obj1 = site.getAuctionCatalogue().find(id);
         obj1.setPrice(1.1);
         site.getAuctionCatalogue().update(obj1);
         System.out.println("Efter: "+site.getAuctionCatalogue().getAllAuctions().get(0).getName()+" "+site.getAuctionCatalogue().getAllAuctions().get(0).getPrice());
@@ -62,7 +71,7 @@ public class QuickTests {
         site.doBid(testCust, 10.0, obj3); //It should change, it does
         
         
-        
+        */
         
         /*  
         //Remove
