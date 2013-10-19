@@ -36,7 +36,9 @@
                                             <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="100" width="150"/>
                                             <h:outputText value="Current bid: #{a.price}"/>
                                             <h:outputText value="Tid kvar: #{a.expire}"/>
-                                            <h:commandButton value="Till objektet" action="#{home.goToAuction(a.id)}"/>
+                                            <h:button outcome="success" value="Till objektet">
+                                            <f:param name="id" value="#{a.id}"/>
+                                        </h:button>
                                         </h:panelGrid>
                                     </p:panel>
                                 </p:carousel>
@@ -50,7 +52,9 @@
                                             <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="100" width="150"/>
                                             <h:outputText value="Current bid: #{a.price}"/>
                                             <h:outputText value="Tid kvar: #{a.expire}"/>  
-                                            <h:commandButton value="Till objektet" action="#{home.goToAuction(a.id)}"/>
+                                            <h:button outcome="success" value="Till objektet">
+                                            <f:param name="id" value="#{a.id}"/>
+                                        </h:button>
                                         </h:panelGrid>
                                     </p:panel>
                                 </p:carousel>

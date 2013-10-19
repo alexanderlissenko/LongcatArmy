@@ -51,8 +51,10 @@ public class UserLoggedInViewBB implements Serializable {
     
     public List<AuctionObject> getBids()
     {
+        //List<Customer> foundy =site.getCustomerCatalogue().getByName("apa");
+        //testCust = foundy.get(0);
         testCust = site.getCustomerCatalogue().find(Long.parseLong("1"));//site.getCustomerCatalogue().getByName("apa").get(0);
-        //expAuctions = site.getCustomerCatalogue().getAllAuctionsForUser(testCust);
+        expAuctions = site.getCustomerCatalogue().getAllAuctionsForUser(testCust);
         return testCust.getMyBuyAuctionList();
     }
     

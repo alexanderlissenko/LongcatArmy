@@ -21,8 +21,8 @@
                             <h:outputText value="Item Info:"/>
                             <h:inputTextarea value="#{addAuction.info}"/>
                         </h:panelGrid>
-                        <h:commandButton actionListener="#{addAuction.actOnSelected()}" value="Submit"/>
-                        <h:button outcome="profile" value="Cancle"/>
+                        <h:commandButton action="#{addAuction.actOnSelected()}" value="Submit"/>
+                        <h:button outcome="user" value="Cancel"/>
                     </h:form>
                 </div>
             </ui:define>

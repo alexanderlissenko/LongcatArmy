@@ -51,6 +51,7 @@
             <navigation-case>
                 <from-outcome>profile</from-outcome>
                 <to-view-id>/jsf/User/profileView.xhtml</to-view-id>
+                <redirect/>
             </navigation-case>
         </navigation-rule>
         <!-- Auction links-->
@@ -59,6 +60,7 @@
             <navigation-case>
                 <from-outcome>success</from-outcome>
                 <to-view-id>/jsf/User/userLoggedInView.xhtml</to-view-id>
+                <redirect/>
             </navigation-case>
         </navigation-rule>
     </navigation-rule>
