@@ -40,8 +40,8 @@ public class AuctionProxy {
         return obj.getName();
     }
 
-    public void setTitle(String title) {
-        //admin ska kunna ändra title, lägg till en setTitle i AuctionObject
+    public void setName(String title) {
+        //setname
     }
 
     @XmlElement

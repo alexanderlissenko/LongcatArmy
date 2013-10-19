@@ -36,6 +36,11 @@ public class CustomerProxy {
     public CustomerProxy(Customer customer) {
         this.customer = customer;
     }
+    
+    @XmlElement
+    public Long getId() {
+        return customer.getId();
+    }
 
     @XmlElement
     public String getEmail() {

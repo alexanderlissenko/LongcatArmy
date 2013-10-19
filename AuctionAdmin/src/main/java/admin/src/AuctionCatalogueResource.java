@@ -35,7 +35,7 @@ public class AuctionCatalogueResource {
     @GET
     @Path("/count")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Response getAuctionCount() {
+    public Response getCount() {
         int a = site.getAuctionCatalogue().getCount();
         PrimitiveJSONWrapper<Integer> wa = new PrimitiveJSONWrapper<Integer>(a);
         return Response.ok(wa).build();
