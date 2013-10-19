@@ -37,7 +37,7 @@ public class SuperSite {
 
         // Customer temp = cust; //Varför temp? **************************************************************
         cust.addMySellAuctionList(obj);
-        auctionCatalogue.add(obj);
+       // auctionCatalogue.add(obj);
         customerCatalogue.update(cust);
     }
 
