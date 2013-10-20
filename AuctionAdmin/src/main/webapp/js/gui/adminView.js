@@ -101,9 +101,9 @@ $(function() {
             selectedCustomerRow.id = $(this).find('td').eq(0).html();
             selectedCustomerRow.email = $(this).find('td').eq(1).html();
             selectedCustomerRow.name = $(this).find('td').eq(2).html();
-            selectedCustomerRow.pass = $(this).find('td').eq(3).html();
-            selectedCustomerRow.phone = $(this).find('td').eq(4).html();
-            selectedCustomerRow.seQuest = $(this).find('td').eq(5).html();
+            selectedCustomerRow.password = $(this).find('td').eq(3).html();
+            selectedCustomerRow.phoneNr = $(this).find('td').eq(4).html();
+            selectedCustomerRow.seqQuest = $(this).find('td').eq(5).html();
             selectedCustomerRow.address = $(this).find('td').eq(6).html();
             createEditDeleteDialogC(selectedCustomerRow);
         });
@@ -118,7 +118,7 @@ $(function() {
                 Delete: {
                     text: "Delete",
                     click: function() {
-                        createConfirmDeleteDialogA(auctionobject);
+                        createConfirmDeleteDialogA(auctionobject.id);
                         $(this).dialog("close");
                     },
                 },
@@ -148,7 +148,7 @@ $(function() {
                 Delete: {
                     text: "Delete",
                     click: function() {
-                        createConfirmDeleteDialogC(customer);
+                        createConfirmDeleteDialogC(customer.id);
                         $(this).dialog("close");
                     },
                 },
@@ -169,15 +169,15 @@ $(function() {
         return $('#dialog-form-C');
     }
 
-    function createConfirmDeleteDialogA(auctionobject) {
+    function createConfirmDeleteDialogA(id) {
 
-        $("#dialog-form-A").dialog({
+        $("#dialog-message").dialog({
             autoOpen: true,
             modal: true,
             stack: true,
             buttons: {
                 Yes: function() {
-                    $(this).dialog(site.getAuctionCatalogue().remove(auctionobject.id)); //ej asynkront!!
+                    $(this).dialog(site.getAuctionCatalogue().remove(id)); //ej asynkront!!
                     $(this).dialog("close");
                 },
                 Cancel: function() {
@@ -191,7 +191,7 @@ $(function() {
         return $('#dialog-message');
     }
 
-    function createConfirmDeleteDialogC(customer) {
+    function createConfirmDeleteDialogC(id) {
 
         $("#dialog-message").dialog({
             autoOpen: true,
@@ -200,7 +200,7 @@ $(function() {
             buttons: {
                 Yes: function() {
                     //remove funkar ej!
-                    $(this).dialog(site.getCustomerCatalogue().remove(customer.id)); //ej asynkront!!
+                    $(this).dialog(site.getCustomerCatalogue().remove(id)); //ej asynkront!!
                     $(this).dialog("close");
                 },
                 Cancel: function() {
@@ -210,7 +210,7 @@ $(function() {
         });
         $('#dialog-message').dialog('option', 'title', 'Are you sure?');
         $("#dialog-message #msg").text("Do you really want to delete this customer?");
-        $("#dialog-form").dialog(clearFormDialogDataC());
+        $("#dialog-form-C").dialog(clearFormDialogDataC());
         return $('#dialog-message');
     }
 
@@ -246,13 +246,12 @@ $(function() {
 
     function getFormDialogDataC() {
         var customer = {};
-        customer.id = $("#dialog-form #id").val();
-        customer.email = $("#dialog-form #cemail").val();
-        customer.name = $("#dialog-form #cname").val();
-        customer.pass = $("#dialog-form #cpass").val();
-        customer.phone = $("#dialog-form #cphone").val();
-        customer.seQuest = $("#dialog-form #cseQuest").val();
-        customer.address = $("#dialog-form #caddres").val();
+        customer.id = $("#dialog-form-C #id").val();
+        customer.email = $("#dialog-form-C #cemail").val();
+        customer.name = $("#dialog-form-C #cname").val();
+        customer.password = $("#dialog-form-C #cpass").val();
+        customer.phoneNr = $("#dialog-form-C #cphone").val();
+        customer.address = $("#dialog-form-C #caddres").val();
         return customer;
     }
 
@@ -265,30 +264,30 @@ $(function() {
     }
 
     function setFormDialogDataC(customer) {
-        $("#dialog-form #id").val(customer.id);
-        $("#dialog-form #cemail").val(customer.email);
-        $("#dialog-form #cname").val(customer.name);
-        $("#dialog-form #cpass").val(customer.pass);
-        $("#dialog-form #cphone").val(customer.phone);
-        $("#dialog-form #cseQuest").val(customer.seQuest);
+        $("#dialog-form-C #id").val(customer.id);
+        $("#dialog-form-C #cemail").val(customer.email);
+        $("#dialog-form-C #cname").val(customer.name);
+        $("#dialog-form-C #cpass").val(customer.password);
+        $("#dialog-form-C #cphone").val(customer.phoneNr);
+        $("#dialog-form-C #cseQuest").val(customer.seqQuest);
         $("#dialog-form #caddress").val(customer.address);
     }
 
     function clearFormDialogDataA() {
-        $("#dialog-form #id").val("");
-        $("#dialog-form #atitle").val("");
-        $("#dialog-form #ainfo").val("");
-        $("#dialog-form #aprice").val("");
-        $("#dialog-form #aexpire").val("");
+        $("#dialog-form-A #id").val("");
+        $("#dialog-form-A #atitle").val("");
+        $("#dialog-form-A #ainfo").val("");
+        $("#dialog-form-A #aprice").val("");
+        $("#dialog-form-A #aexpire").val("");
     }
 
     function clearFormDialogDataC() {
-        $("#dialog-form #id").val("");
-        $("#dialog-form #cemail").val("");
-        $("#dialog-form #cname").val("");
-        $("#dialog-form #cpass").val("");
-        $("#dialog-form #cphone").val("");
-        $("#dialog-form #cseQuest").val("");
+        $("#dialog-form-C #id").val("");
+        $("#dialog-form-C #cemail").val("");
+        $("#dialog-form-C #cname").val("");
+        $("#dialog-form-C #cpass").val("");
+        $("#dialog-form-C #cphone").val("");
+        $("#dialog-form-C #cseQuest").val("");
         $("#dialog-form #cadress").val("");
     }
 });

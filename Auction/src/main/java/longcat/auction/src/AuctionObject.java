@@ -90,18 +90,44 @@ public class AuctionObject implements Serializable{
             return false;
         }
     }*/
+    public Long getId(){
+        return id;
+    }
+    
+    public void setId(Long id) {
+        this.id = id;
+    }
     
     public String getName(){
         return name;
     }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
     public String getInfo(){
         return info;
     }
+    
+    public void setInfo(String info) {
+        this.info = info;
+    }
+    
     public Double getPrice(){
         return price;
     }
+    
+    public void setPrice(Double price){
+        this.price = price;
+    }
+    
     public Date getExpire() {
         return expireDate;
+    }
+    
+    public void setExpire(Date expireDate) {
+        this.expireDate = expireDate;
     }
     /*public Customer getCreator(){
         return creator;
@@ -116,16 +142,6 @@ public class AuctionObject implements Serializable{
     public List<Customer> getFlagList(){
         return flagList;
     }*/
-    public Long getId(){
-        return id;
-    }
-    //Behöver kunna ändra pris om tex ingen budar
-    public void setPrice(Double price){
-        this.price = price;
-    }
     
-    //för att kunna ändra info
-    public void editInfo(String info) {
-        this.info = info;
-    }
+    
 }
