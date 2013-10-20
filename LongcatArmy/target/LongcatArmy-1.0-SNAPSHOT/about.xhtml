@@ -9,51 +9,55 @@
         <title>LongcatArmy</title>
     </h:head>
     <h:body>
-        <ui:composition template="/WEB-INF/template.xhtml">
-            <ui:define name="content">
-                <p>Ett vilt försök att göra ett webprojekt med en component-based auction display, och en service-based admin-sida. Vårt uppsåt är helt demonstrativt. Här är longkatterna som realiserat sidan.</p>
-                <h:form>
-                    <p:growl id="growl" showDetail="true" />
-                    <p:fieldset legend="William Buttler Axhav Bratt" toggleable="true" toggleSpeed="500">
-                        <p:ajax event="toggle" listener="#{fieldsetBean.handleToggle}" update="growl" />
-                        <h:panelGrid columns="2" cellpadding="10">
-                            <p:graphicImage value="http://www.netanimations.net/TechnoTim.gif" />
-                            <h:outputText value="Special-attack: Sten"/>
-                        </h:panelGrid>
-                    </p:fieldset>
-                </h:form>
-                <h:form>
-                    <p:growl id="growl" showDetail="true" />
-                    <p:fieldset legend="Emelie Svensson" toggleable="true" toggleSpeed="500">
-                        <p:ajax event="toggle" listener="#{fieldsetBean.handleToggle}" update="growl" />
-                        <h:panelGrid columns="2" cellpadding="10">
-                            <p:graphicImage value="http://www.dj-rooms.com/wp-content/uploads/2011/08/156.gif" />
-                            <h:outputText value="Special-attack: Hungrig"/>
-                        </h:panelGrid>
-                    </p:fieldset>
-                </h:form>
-                <h:form>
-                    <p:growl id="growl" showDetail="true" />
-                    <p:fieldset legend="Alexander Lissenko" toggleable="true" toggleSpeed="500">
-                        <p:ajax event="toggle" listener="#{fieldsetBean.handleToggle}" update="growl" />
-                        <h:panelGrid columns="2" cellpadding="10">
-                            <p:graphicImage value="http://sofiauhr.se/wp-content/uploads/2013/09/hest1.jpg" />
-                            <h:outputText value="Special-attack: Kaffe"/>
-                        </h:panelGrid>
-                    </p:fieldset>
-                </h:form>
-                <h:form>
-                    <p:growl id="growl" showDetail="true" />
-                    <p:fieldset legend="Henrik Ståhlsparre" toggleable="true" toggleSpeed="500">
-                        <p:ajax event="toggle" listener="#{fieldsetBean.handleToggle}" update="growl" />
-                        <h:panelGrid columns="2" cellpadding="10">
-                            <p:graphicImage value="http://www.animated-gifs.eu/fun-cats/0091.gif" />
-                            <h:outputText value="Special-attack: Förkyld"/>
-                        </h:panelGrid>
-                    </p:fieldset>
-                </h:form>
-            </ui:define>
-        </ui:composition>
+        <div id="wrap">
+            <div id="main">
+                <ui:composition template="/WEB-INF/template.xhtml">
+                    <ui:define name="content">
+                        <p>Ett vilt försök att göra ett webprojekt med en component-based auction display, och en service-based admin-sida. Vårt uppsåt är helt demonstrativt. Här är longkatterna som realiserat sidan.</p>
+                        <h:form>
+                            <p:growl id="growl" showDetail="true" />
+                            <p:fieldset legend="William Buttler Axhav Bratt" toggleable="true" toggleSpeed="500">
+                                <p:ajax event="toggle" listener="#{fieldsetBean.handleToggle}" update="growl" />
+                                <h:panelGrid columns="2" cellpadding="10">
+                                    <p:graphicImage value="http://www.netanimations.net/TechnoTim.gif" />
+                                    <h:outputText value="Special-attack: Sten och tornadokick"/>
+                                </h:panelGrid>
+                            </p:fieldset>
+                        </h:form>
+                        <h:form>
+                            <p:growl id="growl" showDetail="true" />
+                            <p:fieldset legend="Emelie Svensson" toggleable="true" toggleSpeed="500">
+                                <p:ajax event="toggle" listener="#{fieldsetBean.handleToggle}" update="growl" />
+                                <h:panelGrid columns="2" cellpadding="10">
+                                    <p:graphicImage value="http://www.dj-rooms.com/wp-content/uploads/2011/08/156.gif" />
+                                    <h:outputText value="Special-attack: Hungrig"/>
+                                </h:panelGrid>
+                            </p:fieldset>
+                        </h:form>
+                        <h:form>
+                            <p:growl id="growl" showDetail="true" />
+                            <p:fieldset legend="Alexander Lissenko" toggleable="true" toggleSpeed="500">
+                                <p:ajax event="toggle" listener="#{fieldsetBean.handleToggle}" update="growl" />
+                                <h:panelGrid columns="2" cellpadding="10">
+                                    <p:graphicImage value="http://sofiauhr.se/wp-content/uploads/2013/09/hest1.jpg" />
+                                    <h:outputText value="Special-attack: Kaffe"/>
+                                </h:panelGrid>
+                            </p:fieldset>
+                        </h:form>
+                        <h:form>
+                            <p:growl id="growl" showDetail="true" />
+                            <p:fieldset legend="Henrik Ståhlsparre" toggleable="true" toggleSpeed="500">
+                                <p:ajax event="toggle" listener="#{fieldsetBean.handleToggle}" update="growl" />
+                                <h:panelGrid columns="2" cellpadding="10">
+                                    <p:graphicImage value="http://www.animated-gifs.eu/fun-cats/0091.gif" />
+                                    <h:outputText value="Special-attack: Förkyld"/>
+                                </h:panelGrid>
+                            </p:fieldset>
+                        </h:form>
+                    </ui:define>
+                </ui:composition>
+            </div>
+        </div>
     </h:body>
 
 </html>

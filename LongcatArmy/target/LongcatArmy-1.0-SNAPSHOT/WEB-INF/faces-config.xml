@@ -63,5 +63,13 @@
                 <redirect/>
             </navigation-case>
         </navigation-rule>
+        <navigation-rule>
+            <from-view-id>/jsf/Auctions/viewAuction.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/jsf/User/userLoggedInView.xhtml</to-view-id>
+                <redirect/>
+            </navigation-case>
+        </navigation-rule>
     </navigation-rule>
 </faces-config>

@@ -7,40 +7,34 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Auction object</title>
     </h:head>
-    <ui:define name="metadata">
-        <f:metadata>
-            <f:viewParam name="id" value="#{viewAuction.id}" />
-        </f:metadata>
-    </ui:define>
     <h:body>
-        <ui:composition template="/WEB-INF/template.xhtml">
+        <ui:decorate template="/WEB-INF/template.xhtml">
             <ui:define name="content">
                 <div id="wrap">
                     <div id="main">
-                        #{param.id}
-                        <h:form>
-                       <!-- <h:panelGrid columns="2">-->
+                        <f:event type="preRenderView" listener="#{viewAuction.setAuction()}" />
+                        <h:panelGrid columns="1">
                             <f:facet name="header">
-                                <h:outputText value="#{viewAuction.name}"/>
+                                <h:outputText id="name" value="#{viewAuction.name}"/>
                             </f:facet>
                             <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="300" width="300"/>
-                            <h:outputText value="#{viewAuction.info}"/>
-                            <h:outputText value="#{viewAuction.expire}"/>
-                        <!--</h:panelGrid>-->
-                        </h:form>
-                        <h:form>
-                            <h:inputText value="#{viewAuction.price}"/>
-                            <h:commandButton action="#{viewAuction.setBid()}" value="Place bid"/> 
-                        </h:form>
+                            <h:outputText id="info" value="#{viewAuction.info}"/>
+                            <h:outputText id="expire" value="#{viewAuction.expire}"/>
+                            <h:form>
+                                <h:inputHidden id="id" value="#{viewAuction.id}"/>
+                                <h:inputText id="price" value="#{viewAuction.price}"/>
+                                <h:commandButton action="#{viewAuction.onSetBid()}" value="Place bid"/> 
+                            </h:form>
+                            <h:button outcome="home" value="Cancel"/>
+                        </h:panelGrid>
                     </div>
                     <!-- END CONTENT (auktioner) -->
                 </div>
             </ui:define>
-        </ui:composition>
+        </ui:decorate>
     </h:body>
 </html>
