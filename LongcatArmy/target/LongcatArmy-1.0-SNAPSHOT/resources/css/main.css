@@ -27,10 +27,13 @@ li{
     width:960px;
     margin:0 auto;
     background:#FFFFFF;
+    border: 1px solid black;
 }
 #header{
     padding:25px 45px;
     background:#B2B2B2;
+    outline-color: #000000;
+    outline-width: 100px;
 }
 #nav{
     padding:5px 10px;
@@ -78,7 +81,7 @@ li{
 }
 #footer{
     clear:both;
-    padding:5px 10px;
+    padding:25px 45px;
     background:	#CCCCCC;
 }
 #footer p{
