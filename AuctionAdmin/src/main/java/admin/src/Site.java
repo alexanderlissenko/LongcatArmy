@@ -9,7 +9,7 @@ import longcat.auction.src.CustomerCatalogue;
 import longcat.auction.src.SuperSite;
 
 /**
- *
+ * Connection with the model
  * @author Alexander Lissenko
  */
 public enum Site {

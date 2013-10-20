@@ -13,7 +13,7 @@ import javax.inject.Named;
 import longcat.auction.src.Customer;
 
 /**
- *
+ * Backing bean for ProfileView
  * @author William Axhav Bratt
  */
 @SessionScoped
@@ -23,22 +23,18 @@ public class ProfileViewBB implements Serializable{
     @Inject
     SuperSiteBean site;
     
-    public ProfileViewBB()
-    {
+    public ProfileViewBB(){
     }
     
     @PostConstruct
-    public void post()
-    { 
+    public void post(){ 
     }
     
-    public Customer getCustomer()
-    {
+    public Customer getCustomer(){
         return site.getCustomerCatalogue().find(Long.parseLong("1"));
     }
     
-    public String goToEdit()
-    {
+    public String goToEdit(){
         return "editProfile";
     }
 }

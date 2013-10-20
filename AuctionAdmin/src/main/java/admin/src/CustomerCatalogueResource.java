@@ -21,7 +21,7 @@ import javax.ws.rs.core.UriInfo;
 import longcat.auction.src.Customer;
 
 /**
- *
+ * Resource for Customer catalogue
  * @author Alexander Lissenko
  */
 
@@ -57,7 +57,7 @@ public class CustomerCatalogueResource {
     }
     
     @PUT
-    @Path("{id}") //funkar detta??
+    @Path("{id}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response update(@PathParam("id") Long id, @FormParam ("email") String email,
             @FormParam ("name") String name, @FormParam ("password") String password,
@@ -80,7 +80,7 @@ public class CustomerCatalogueResource {
     }
     
     @DELETE
-    @Path("{id}") //funkar detta???
+    @Path("{id}")
     public Response remove(@PathParam ("id") Long id){
         try {
             site.getCustomerCatalogue().remove(id);

@@ -21,7 +21,7 @@ import javax.ws.rs.core.UriInfo;
 import longcat.auction.src.AuctionObject;
 
 /**
- *
+ * Resource class for Auction catalogue
  * @author Alexander Lissenko
  */
 
@@ -66,7 +66,6 @@ public class AuctionCatalogueResource {
             obj.setName(name);
             obj.setInfo(info);
             obj.setPrice(price);
-            //AuctionObject obj = new AuctionObject(title, info, price);
             site.getAuctionCatalogue().update(obj);
             AuctionProxy ax = new AuctionProxy(obj);
             return Response.ok(ax).build();

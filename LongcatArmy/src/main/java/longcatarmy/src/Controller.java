@@ -4,33 +4,28 @@
  */
 package longcatarmy.src;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import javax.inject.Inject;
 import longcat.auction.src.AuctionObject;
 import longcat.auction.src.Customer;
 
 /**
- *
+ * Controller class
  * @author emesven
  */
 public class Controller {
     @Inject
     SuperSiteBean site;
     List<Customer> customers;
-    //HashMap<Customer, List<AuctionObject>> auctionMap;
     
     public Controller(){
-        
     }
+    
     public void initiate(){
         customers = site.getCustomerCatalogue().getRange(0, site.getCustomerCatalogue().getCount());
-        //auctionMap = site.getCustomerCatalogue().getAuctionMap();
     }
-    public void newAuction(Customer cust,AuctionObject obj)
-    {   
+    
+    public void newAuction(Customer cust,AuctionObject obj){   
         initiate();
         if(cust.getAccess()){ 
             site.getAuctionCatalogue().add(obj);
@@ -47,21 +42,17 @@ public class Controller {
     
     public void updateAuction(Customer cust, AuctionObject obj){
         initiate();
-        removeAuction(cust,obj,false); //fasle because it is not sold here
+        removeAuction(cust,obj,false); //false because it is not sold here
         newAuction(cust,obj);
     }
     
+    
+    
     /************ Customer functionality***********************
      * 
-     * 
-     */
-        
+     */  
     public void banCustomer(Customer cust){
         cust.setAccess(false);
         cust.emptyMyLists(); 
-        
-        // tabort för andra användare
-        
     }
-    
 }

@@ -6,9 +6,7 @@
 $(function() {
 
     var nav1 = new Navigator(site.getCustomerCatalogue());
-    alert("nav1 init")
     var nav2 = new Navigator(site.getAuctionCatalogue());
-    alert("nav2 init")
 
     $("table#auctionobjects").ready(function() {
         nav2.prev(createTableA);
@@ -18,8 +16,6 @@ $(function() {
         nav1.prev(createTableC); 
     });
     
-    
-
     $("#next-auction-button")
             .button()
             .click(function() {
@@ -57,7 +53,9 @@ $(function() {
     });
 
 
+
     // Utils
+    
     function createTableA(auctionobjects) {
         $("table#auctionobjects tbody tr").remove();
         for (var i = 0; i < auctionobjects.length; i++) {
@@ -177,7 +175,7 @@ $(function() {
             stack: true,
             buttons: {
                 Yes: function() {
-                    $(this).dialog(site.getAuctionCatalogue().remove(id)); //ej asynkront!!
+                    $(this).dialog(site.getAuctionCatalogue().remove(id)); 
                     $(this).dialog("close");
                 },
                 Cancel: function() {
@@ -200,7 +198,7 @@ $(function() {
             buttons: {
                 Yes: function() {
                     //remove funkar ej!
-                    $(this).dialog(site.getCustomerCatalogue().remove(id)); //ej asynkront!!
+                    $(this).dialog(site.getCustomerCatalogue().remove(id)); 
                     $(this).dialog("close");
                 },
                 Cancel: function() {

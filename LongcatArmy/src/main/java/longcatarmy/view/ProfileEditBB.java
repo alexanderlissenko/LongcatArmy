@@ -13,7 +13,7 @@ import javax.inject.Named;
 import longcat.auction.src.Customer;
 
 /**
- *
+ * Backing bean for ProfileEdit view
  * @author William Axhav Bratt
  */
 @ConversationScoped
@@ -30,90 +30,73 @@ public class ProfileEditBB implements Serializable{
     @Inject
     SuperSiteBean site;
     
-    public ProfileEditBB()
-    {
-        
+    public ProfileEditBB(){
     }
     
     @PostConstruct
-    public void post()
-    { 
-        cust = site.getCustomerCatalogue().find(Long.parseLong("1"));//.getCustomerByName("apa");
+    public void post(){ 
+        cust = site.getCustomerCatalogue().find(Long.parseLong("1"));
     }
     
     
-    public String actOnSelected()
-    {
-        //site.getCustomerCatalogue().updateCustomer("apa", cust);
+    public String actOnSelected(){
         site.getCustomerCatalogue().update(cust);
         return goToView();
     }  
     
-    public String goToView()
-    {
+    public String goToView(){
         return "profile";
     }
-    public void setName(String name)
-    {
+    
+    public void setName(String name){
         //incase of buggs does not do anything
     }
     
-    public void setEmail(String eMail)
-    {
+    public void setEmail(String eMail){
         cust.setEmail(eMail);
     }
     
-    public void setPassword(String password)
-    {
+    public void setPassword(String password){
         if(!password.equals("")){
             cust.setPassword(password);
         }
     }
     
-    public void setPhone(String phone)
-    {
+    public void setPhone(String phone){
         cust.setPhoneNr(phone);
     }
     
-    public void setSecQuest(String secQuest)
-    {
+    public void setSecQuest(String secQuest){
         if(!secQuest.equals("")){
             cust.setSeqQuest(secQuest);
         }
     }
     
-    public void setAddress(String address)
-    {
+    public void setAddress(String address){
         cust.setAddress(address);
     }
     
-    public String getName()
-    {
+    public String getName(){
         return cust.getName();
     }
     
-    public String getEmail()
-    {
+    public String getEmail(){
         return cust.getEmail();
     }
     
-    public String getPassword()
-    {
+    public String getPassword(){
         return cust.getPassword();
     }
     
-    public String getPhone()
-    {
+    public String getPhone(){
         return cust.getPhoneNr();
     }
     
-    public String getSecQuest()
-    {
+    public String getSecQuest(){
         return cust.getSeqQuest();
     }
     
-    public String getAddress()
-    {
+    public String getAddress(){
         return cust.getAddress();
     }
 }

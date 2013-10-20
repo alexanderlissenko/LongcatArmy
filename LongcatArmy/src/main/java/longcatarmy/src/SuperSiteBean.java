@@ -7,15 +7,14 @@ package longcatarmy.src;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ApplicationScoped;
-import javax.inject.Named;
 import javax.inject.Singleton;
 import longcat.auction.src.SuperSite;
 
 
 
 /**
- *
- * @author k02sthe
+ * Singleton wrapper for SuperSite
+ * @author Henrik Ståhlsparre
  */
 @ApplicationScoped
 @Singleton
@@ -26,8 +25,7 @@ public class SuperSiteBean extends SuperSite implements Serializable{
     }
     
     @PostConstruct
-    public void post()
-    { 
+    public void post() { 
         initTestData();
     }
 }

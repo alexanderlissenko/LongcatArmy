@@ -15,7 +15,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 /**
- *
+ * Customer class
  * @author Emelie Svensson, Alexander Lissenko
  */
 @Entity
@@ -23,7 +23,7 @@ public class Customer implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id; //uncomment when using database ******************************
+    private Long id; 
     
     private String email;
     private String name;       
@@ -31,14 +31,17 @@ public class Customer implements Serializable {
     private String phoneNr;
     private String seqQuest;   
     private String address;
-    private Boolean access; //Ligga i User
+    private Boolean access; 
+    
     @OneToMany
     @JoinColumn(name= "SellList")
     private List<AuctionObject> mySellAuctionList;
+    
     @OneToMany
     @JoinColumn(name= "BuyList")
     private List<AuctionObject> myBuyAuctionList;
-    private int nrOfSells; //FInns denna som set/get?
+    
+    private int nrOfSells; 
     private Double rating;
 
     public Customer() {
@@ -57,10 +60,7 @@ public class Customer implements Serializable {
         myBuyAuctionList = new ArrayList<AuctionObject>();
         access = true;
         nrOfSells = 0;
-        
     }
-    
- 
     
     public String getEmail(){
         return email;
@@ -70,85 +70,98 @@ public class Customer implements Serializable {
         return id;
     }
   
-    public Long getMoreId()
-    {
-        return id;
-    }
     public void setEmail(String email){
         this.email = email;
     }
+    
     public String getPassword() {
         return password;
     } 
+    
     public void setPassword(String password){
         this.password = password;
     }  
+    
     public String getName() {
         return name;
     }
+    
     public String getPhoneNr() {
         return phoneNr;
     }
+    
     public void setPhoneNr(String phoneNr) {
         this.phoneNr = phoneNr;
     }
+    
     public void setName(String name){
         this.name = name;
     }
+    
     public String getSeqQuest() {
         return seqQuest;
     }
+    
     public void setSeqQuest(String seqQuest) {
         this.seqQuest = seqQuest;
     }
+    
     public String getAddress() {
         return address;
     }
+    
     public void setAddress(String address) {
         this.address = address;
     }
+    
     public Boolean getAccess() {
         return access;
     }
+    
     public void setAccess(Boolean access) {
         this.access = access;
     }
+    
     public Double getRating() {
         return rating;
     }
+    
     public void setRating(Double rate) {
         this.rating = rate;
     }
-    public void calculateRating(double rating)// Behver att ses över igen efter test
-    {
-        if(nrOfSells != 0)
-        {
-        this.rating = (rating+this.rating)/nrOfSells;
+    
+    public void calculateRating(double rating) {
+        if(nrOfSells != 0) {
+            this.rating = (rating+this.rating)/nrOfSells;
         }
-        else
-        {
-            System.out.print("Illegal operation no sells yet registerd");//tillfälligt error medelande
+        else{
+            System.out.print("Illegal operation no sells yet registered");
         }
     }
+    
     public void addMySellAuctionList(AuctionObject auction) {
         mySellAuctionList.add(auction);
     }
+    
     public void removeMySellAuctionList(AuctionObject auction,boolean sold) {
         mySellAuctionList.remove(auction);
-        if(sold)
-        {
+        if(sold){
             nrOfSells++;
         }
     }
+    
     public List<AuctionObject> getMySellAuctionList() {
         return mySellAuctionList;
     }
+    
     public void addMyBuyAuctionList(AuctionObject auction) {
         myBuyAuctionList.add(auction);
     }
+    
     public void removeMyBuyAuctionList(AuctionObject auction) {
         myBuyAuctionList.remove(auction);
     }
+    
     public List<AuctionObject> getMyBuyAuctionList() {
         return myBuyAuctionList;
     }
@@ -158,7 +171,6 @@ public class Customer implements Serializable {
         myBuyAuctionList.clear();
     }
     
-    //nrOfSales??????? ***********************************Detta var inte med.. något vi har bestämt?
     public int getNrOfSells(){
         return nrOfSells;
     }

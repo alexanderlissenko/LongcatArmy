@@ -9,66 +9,21 @@ import java.util.List;
 import longcat.auction.utils.AbstractDAO;
 
 /**
- *
- * @author emesven
+ * Container class for customers
+ * 
+ * @author Emelie Svensson
  */
 public final class CustomerCatalogue extends AbstractDAO<Customer, Long> implements Serializable {
 
     static CustomerCatalogue getDefault() {
         return new CustomerCatalogue(("auction_pu"));
     }
-    // ArrayList<Customer> customers;
-    // SuperSite site;
-    //HashMap<Customer, List<AuctionObject>> auctionMap;
 
     public CustomerCatalogue(String puName) {
         super(Customer.class, puName);
-        //this.site = site;
-        //customers = new ArrayList<Customer>();
-        //auctionMap = new HashMap<Customer, List<AuctionObject>>();
     }
 
     public List<AuctionObject> getAllAuctionsForUser(Customer cust) {
         return find(cust.getId()).getMySellAuctionList();
     }
-    /*public void addCustomer(Customer cust)
-     {
-     customers.add(cust);
-     auctionMap.put(cust, new ArrayList<AuctionObject>());
-     }*/
-    /*public List<AuctionObject> getAllAuctionsForUser(Customer cust)
-     {
-     return auctionMap.get(cust);
-     }*/
-    /*public void banCustomer(Customer cust){
-     cust.setAccess(false);
-     cust.emptyMyLists(); 
-     for (AuctionObject al:auctionMap.get(cust)){
-     HashMap<Customer, Double> temp =al.getBidderMap();
-            
-     for(Map.Entry<Customer,Double> p : temp.entrySet()){
-     p.getKey().removeMyBuyAuctionList(al);
-     }                   
-     }
-     auctionMap.get(cust).clear();
-        
-     }*/
-    /*
-     public void updateCustomer (String name,String email, String pass, String phone, 
-     String seQuest, String address){
-     Customer updated = getCustomerByName(name);
-     updated.setEmail(email);
-     updated.setPassword(pass);
-     updated.setPhoneNr(phone);
-     updated.setSeqQuest(seQuest);
-     updated.setAddress(address);
-     }
-     public void updateCustomer (String name,Customer cust){
-     Customer updated = getCustomerByName(name);
-     updated.setEmail(cust.getEmail());
-     updated.setPassword(cust.getPassword());
-     updated.setPhoneNr(cust.getPhoneNr());
-     updated.setSeqQuest(cust.getSeqQuest());
-     updated.setAddress(cust.getAddress());
-     }*/
 }

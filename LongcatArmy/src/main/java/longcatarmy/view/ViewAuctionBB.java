@@ -15,7 +15,7 @@ import longcat.auction.src.AuctionObject;
 import longcat.auction.src.Customer;
 
 /**
- *
+ * Backing bean for ViewAuction page
  * @author Alexander Lissenko
  */
 
@@ -33,7 +33,6 @@ public class ViewAuctionBB implements Serializable {
     private String img;
     
     
-    
     public ViewAuctionBB(){
         
     }
@@ -49,7 +48,6 @@ public class ViewAuctionBB implements Serializable {
     }
 
     public Long getId() {
-        
         return getIdParam();
     }
 
@@ -57,16 +55,13 @@ public class ViewAuctionBB implements Serializable {
         this.id = (id);
     }
     
-    public Long getIdParam()
-    {
+    public Long getIdParam(){
         FacesContext fc = FacesContext.getCurrentInstance();
         String idString = fc.getExternalContext().getRequestParameterMap().get("id");
         return Long.parseLong(idString);
     }
     
     public String getName(){
-        
-         
         return site.getAuctionCatalogue().find(getIdParam()).getName();
     }
     
@@ -80,7 +75,6 @@ public class ViewAuctionBB implements Serializable {
     
     public void setInfo(String info){
         this.info = info;
-        
     }
     
     public Double getPrice(){
@@ -89,7 +83,6 @@ public class ViewAuctionBB implements Serializable {
     
     public void setPrice(Double price){
         this.price = price;
-        
     }
     
     public Date getExpire(){
@@ -98,7 +91,6 @@ public class ViewAuctionBB implements Serializable {
     
     public void setExpire(Date expire){
         this.expire = expire;
-        
     }
     
     public String getImg(){
@@ -107,15 +99,12 @@ public class ViewAuctionBB implements Serializable {
     
     public void setImg(String img){
         this.img = img;
-        
     }
     
     public String onSetBid() {
         final AuctionObject auctionObject = site.getAuctionCatalogue().find(id);
         Customer cust = site.getCustomerCatalogue().find(Long.parseLong("1"));
         site.doBid(cust, price, auctionObject);
-        //FacesContext.getCurrentInstance().addMessage(null, null);
-        
         return "user";
     }
 }

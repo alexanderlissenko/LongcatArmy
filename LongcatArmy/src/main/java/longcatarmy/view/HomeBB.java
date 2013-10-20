@@ -11,13 +11,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.RequestScoped;
-import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import longcat.auction.src.AuctionObject;
 
 /**
- *
+ * Backing bean for Home view
  * @author William Axhav Bratt
  */
 @RequestScoped
@@ -30,18 +29,15 @@ public class HomeBB implements Serializable{
     
     private Long id;
     
-    public HomeBB()
-    {
+    public HomeBB(){
     }
     
     @PostConstruct
-    public void post()
-    { 
+    public void post(){ 
     }
     
-    public List<AuctionObject> getAllAuctions()
-    {
-        Logger.getAnonymousLogger().log(Level.INFO,"auction ={0}", site.getAuctionCatalogue().getAllAuctions().isEmpty());//Never remove this
+    public List<AuctionObject> getAllAuctions(){
+        Logger.getAnonymousLogger().log(Level.INFO,"auction ={0}", site.getAuctionCatalogue().getAllAuctions().isEmpty());
         return site.getAuctionCatalogue().getAllAuctions();
     }
     
@@ -53,12 +49,8 @@ public class HomeBB implements Serializable{
         return id;
     }
     
-    //TODO fixa till returnen till nåt vettigt (till viewAuction)
-    //fixa även till viewAuction och index xhtml
     public String goToAuction(Long id) {
         this.id = id;
-        
-        //return "success?faces-redirect=true&includeViewParams=true"; //ev bara return success
         return "success";
     }
 }

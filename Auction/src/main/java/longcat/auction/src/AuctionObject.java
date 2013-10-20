@@ -14,7 +14,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 /**
- *
+ * Auction object class
  * @author Emelie Svensson, Alexander Lissenko
  */
 
@@ -23,45 +23,26 @@ public class AuctionObject implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id; //uncomment when using database ****************************'
+    private Long id; 
     
     private String name;
     private String info;
     private Double price;
+    
     @Temporal(TemporalType.DATE)
     private Date expireDate; 
+    
     private String imgLink;
-    //public Customer creator;
-    //private HashMap<Customer, Double> bidderMap; //för att kunna presentera listan på smidigt sätt
-   // @ManyToOne
-    //private List<HashMap> bidderList;
-    //private List<Customer> flagList;
-    //private Long id;
-
+    
     public AuctionObject() {
     }
     
-    //Constructor used only by admin to avoid java.util.Date
-    public AuctionObject(String title, String info, Double price){
-        //this.creator = creator;
-        this.name = title;
-        this.info = info;
-        this.price = price;
-        //bidderMap = new HashMap<Customer, Double>();
-        //bidderList = new ArrayList<HashMap>();
-    }
-    
     public AuctionObject(String title, String info, Double price, Date expireDate){
-        //this.creator = creator;
         this.name = title;
         this.info = info;
         this.price = price;
         this.expireDate = expireDate;
-       // bidderMap = new HashMap<Customer, Double>();
-       //bidderList = new ArrayList<HashMap>();
     }
-    
-    
     
     public AuctionObject(Long id, String title, String info, Double price, Date expireDate){
         this.id=id;
@@ -69,28 +50,8 @@ public class AuctionObject implements Serializable{
         this.info = info;
         this.price = price;
         this.expireDate = expireDate;
-        //bidderMap = new HashMap<Customer, Double>();
-        //bidderList = new ArrayList<HashMap>();
     }
     
-    public void addFlag(Customer c){
-        //implementeras senare om tid finns
-    }
-    /*
-    public boolean setBid(Customer bidder, Double price){
-        if(this.price < price) {
-            //concurrency-problem! löses av ejb senare
-           // bidderMap.put(bidder, price);
-            bidderList.add(bidderMap);
-            this.price += price;
-            return true;
-        }
-        else {
-            //nåt felmeddelande, bud kan ej vara under aktuellt bud
-            System.out.println("Bud kan ej vara under " + this.price);//tillfälligt
-            return false;
-        }
-    }*/
     public Long getId(){
         return id;
     }
@@ -138,19 +99,4 @@ public class AuctionObject implements Serializable{
     public void setExpire(Date expireDate) {
         this.expireDate = expireDate;
     }
-    /*public Customer getCreator(){
-        return creator;
-    }*/
-   /* public List<HashMap> getBidder(){
-       
-       //return bidderList;
-    }
-    public HashMap<Customer, Double> getBidderMap(){
-        return bidderMap;
-    }
-    public List<Customer> getFlagList(){
-        return flagList;
-    }*/
-    
-    
 }

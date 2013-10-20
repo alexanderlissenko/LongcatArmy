@@ -10,13 +10,10 @@ import java.util.List;
 import longcat.auction.utils.AbstractDAO;
 
 /**
- *
+ * Container class for Auction objects
  * @author emesven
  */
 public final class AuctionCatalogue extends AbstractDAO<AuctionObject, Long> implements Serializable {
-    // ArrayList<Customer> customers;
-    //HashMap<Customer, List<AuctionObject>> auctionMap;
-    //  HashMap<Long,AuctionObject> allAuctions = new HashMap<Long,AuctionObject>();
 
     public static AuctionCatalogue getDefault() {
         return new AuctionCatalogue(("auction_pu"));
@@ -24,8 +21,6 @@ public final class AuctionCatalogue extends AbstractDAO<AuctionObject, Long> imp
 
     public AuctionCatalogue(String puName) {
         super(AuctionObject.class, puName);
-        //this.site = site;
-
     }
 
     public List<AuctionObject> getAllAuctions() {

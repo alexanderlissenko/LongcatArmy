@@ -1,14 +1,9 @@
-longcatarmy/view/ProfileEditBB.class
-longcatarmy/controller/ViewAuctionController.class
-longcatarmy/src/SuperSiteBean.class
-longcatarmy/view/FieldsetBean.class
-longcatarmy/view/LoginBB.class
-longcatarmy/src/AuctionCatalogueBean.class
 longcatarmy/src/Controller.class
+longcatarmy/view/ProfileEditBB.class
 longcatarmy/view/AddAuctionBB.class
 longcatarmy/view/HomeBB.class
 longcatarmy/view/ProfileViewBB.class
+longcatarmy/src/SuperSiteBean.class
+longcatarmy/view/FieldsetBean.class
 longcatarmy/view/UserLoggedInViewBB.class
 longcatarmy/view/ViewAuctionBB.class
-longcatarmy/utils/ContainerNavigator.class
-longcatarmy/view/NavigationBB.class

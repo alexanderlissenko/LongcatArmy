@@ -13,16 +13,9 @@ import longcat.auction.src.AuctionObject;
 import longcat.auction.src.Customer;
 
 /**
- *
- * OBS! Osäker på när man ska ha
- *
- * @XmlElement, kolla upp!
- *
- * Vissa metoder kommer eventuellt tas bort, beroende på vad vi implementerar
- *
+ * Proxy class used for representing Customer objects as Xml
  * @author Alexander Lissenko
  * 
- * Ingen @XmlElement vid setters.
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.PROPERTY)
@@ -91,46 +84,4 @@ public class CustomerProxy {
     public void setAddress(String address) {
         customer.setAddress(address);
     }
-
-    @XmlElement
-    public Boolean getAccess() {
-        return customer.getAccess();
-    }
-
-    public void setAccess(Boolean access) {
-        customer.setAccess(access);
-    }
-
-    @XmlElement
-    public Double getRating() {
-        return customer.getRating();
-    }
-
-    public void setRating(Double rate) {
-        customer.setRating(rate);
-    }
-
-    @XmlElement
-    public List<AuctionObject> getCustSellAuctionList() {
-        return customer.getMySellAuctionList();
-    }
-
-    public void removeCustSellAuction(AuctionObject auction) {
-        customer.getMySellAuctionList().remove(auction);
-    }
-
-    public void removeCustBuyAuction(AuctionObject auction) {
-        customer.getMyBuyAuctionList().remove(auction);
-    }
-
-    @XmlElement
-    public List<AuctionObject> getMyBuyAuctionList() {
-        return customer.getMyBuyAuctionList();
-    }
-
-    public void emptyCustLists() {
-        customer.getMySellAuctionList().clear();
-        customer.getMyBuyAuctionList().clear();
-    }
-    //övriga metoder känns inte relevant för admin att accessa
 }

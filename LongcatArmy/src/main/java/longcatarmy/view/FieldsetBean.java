@@ -4,8 +4,8 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.ToggleEvent; 
 
 /**
- *
- * @author k02sthe
+ * Toggles visibility for the About page
+ * @author Henrik Ståhlsparre
  */
 
 public class FieldsetBean {  

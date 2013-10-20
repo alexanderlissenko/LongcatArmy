@@ -5,20 +5,16 @@
 package longcat.auction.src;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
- *
- * @author emesven
+ * "Wrapper" class used for accessing the entire model
+ * 
+ * @author Emelie Svensson
  */
 public class SuperSite {
 
-    //**********************************
     CustomerCatalogue customerCatalogue;
     AuctionCatalogue auctionCatalogue;
-    //**********************************
 
     public SuperSite() {
         customerCatalogue = CustomerCatalogue.getDefault();
@@ -34,16 +30,12 @@ public class SuperSite {
     }
 
     public void createNewAuction(Customer cust, AuctionObject obj) {
-
-        // Customer temp = cust; //Varför temp? **************************************************************
         Customer tmpCust=customerCatalogue.find(cust.getId());
         tmpCust.addMySellAuctionList(obj);
         auctionCatalogue.add(obj);
         customerCatalogue.update(tmpCust);
     }
     public void createNewAuction(Customer cust, AuctionObject obj, String link) {
-
-        // Customer temp = cust; //Varför temp? **************************************************************
         Customer tmpCust=customerCatalogue.find(cust.getId());
         obj.setLink(link);
         tmpCust.addMySellAuctionList(obj);
@@ -51,17 +43,14 @@ public class SuperSite {
         customerCatalogue.update(tmpCust);
     }
 
-    public void doBid(Customer cust, Double price, AuctionObject obj) { //Ska vi använda denna? ja
-
+    public void doBid(Customer cust, Double price, AuctionObject obj) {
         Customer tmpCust=customerCatalogue.find(cust.getId());
         AuctionObject tmpAo = auctionCatalogue.find(obj.getId());
 
         if (price > tmpAo.getPrice()) {
-            
             tmpAo.setPrice(price); 
             auctionCatalogue.update(tmpAo);
             tmpCust.addMyBuyAuctionList(tmpAo);
-           
             customerCatalogue.update(tmpCust);
         }
     }
@@ -103,28 +92,6 @@ public class SuperSite {
         createNewAuction(test4, testobj8,"http://inventorspot.com/files/images/army-cat.img_assist_custom.jpg");
 
         doBid(test1, 10000.0, testobj6);
-        /*
-         auctionCatalogue.add(testobj1);
-         auctionCatalogue.add(testobj2);
-         auctionCatalogue.add(testobj3);
-         auctionCatalogue.add(testobj4);
-         auctionCatalogue.add(testobj5);
-         auctionCatalogue.add(testobj6);
-         auctionCatalogue.add(testobj7);
-        
-         auctionCatalogue.add(testobj8);
-         */
-        //auctionCatalogue.doBid(test1, 1000.1, testobj6);
-
-
-        /*shop.getCustomerRegistry().add(new Customer(new Address("aaa", 1, "aaa"),
-
-         Customer c = shop.getCustomerRegistry().getByName("arne").get(0);
-         c.addProductToCart(shop.getProductCatalogue().getByName("banana").get(0));
-         c.addProductToCart(shop.getProductCatalogue().getByName("apple").get(0));
-         c.addProductToCart(shop.getProductCatalogue().getByName("pear").get(0));
-
-         shop.getOrderBook().add(new PurchaseOrder(c, c.getCart().getAsOrderItems()));*/
-
+        doBid(test1, 1337.0, testobj8);
     }
 }

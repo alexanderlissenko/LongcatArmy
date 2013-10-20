@@ -16,11 +16,8 @@ import longcat.auction.src.Customer;
 
 /**
  *
- * När ska
- *
- * @XmlElement användas?????
+ * Proxy class used for representing Auction objects as Xml
  * @author Alexander Lissenko
- * Inga @XmlElement vid setters /Henrik
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.PROPERTY)
@@ -40,8 +37,8 @@ public class AuctionProxy {
         return obj.getName();
     }
 
-    public void setName(String title) {
-        //setname
+    public void setName(String name) {
+        obj.setName(name);
     }
 
     @XmlElement
@@ -67,18 +64,6 @@ public class AuctionProxy {
         return obj.getExpire();
     }
 
-    public void setExpire(Date expire) {
-        //lägg till setExpire i AuctionObject, alternativt skit i denna metod (inte så viktig)
-    }
-
-    /*@XmlElement
-     public List<HashMap> getBidder(){
-     return obj.getBidder();
-     }*/
-    /*@XmlElement
-     public List<Customer> getFlagList(){
-     return obj.getFlagList();
-     }*/
     @XmlElement
     public Long getId() {
         return obj.getId();

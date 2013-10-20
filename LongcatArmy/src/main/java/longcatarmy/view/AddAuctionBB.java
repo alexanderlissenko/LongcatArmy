@@ -12,14 +12,13 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import longcat.auction.src.AuctionObject;
 import longcat.auction.src.Customer;
-import longcat.auction.src.SuperSiteOld;
 import longcatarmy.src.SuperSiteBean;
 
 /**
- *
+ * Backing bean for Add Auction View
  * @author William Axhav Bratt
  */
-@ConversationScoped
+@ConversationScoped //wont work with other scopes
 @Named("addAuction")
 public class AddAuctionBB implements Serializable{
     
@@ -32,26 +31,20 @@ public class AddAuctionBB implements Serializable{
     @Inject
     SuperSiteBean site;
     
-    public AddAuctionBB()
-    {
-        
+    public AddAuctionBB(){
     }
     
     @PostConstruct
-    public void post()
-    { 
+    public void post(){ 
         cust = site.getCustomerCatalogue().find(Long.parseLong("1"));
     }
     
     
-    public String actOnSelected()
-    {
-        if(imgLink.equals(""))
-        {
+    public String actOnSelected(){
+        if(imgLink.equals("")){
             site.createNewAuction(cust,new AuctionObject(name,info,price,new Date()));
         }
-        else
-        {
+        else{
             site.createNewAuction(cust,new AuctionObject(name,info,price,new Date()),imgLink);
         }
         return "success";
@@ -62,36 +55,31 @@ public class AddAuctionBB implements Serializable{
         this.name = name;
     }
     
-    public String getName()
-    {
+    public String getName(){
         return name;
     }
     
-    public void setLink(String link)
-    {
+    public void setLink(String link){
         this.imgLink = link;
     }
     
-    public String getLink()
-    {
+    public String getLink(){
         return imgLink;
     }
-    public void setPrice(Double price)
-    {
+    
+    public void setPrice(Double price){
         this.price = price;
     }
     
-    public Double getPrice()
-    {
+    public Double getPrice(){
         return price;
     }
-    public void setInfo(String info)
-    {
+    
+    public void setInfo(String info){
         this.info = info;
     }
     
-    public String getInfo()
-    {
+    public String getInfo(){
         return info;
     }
    
