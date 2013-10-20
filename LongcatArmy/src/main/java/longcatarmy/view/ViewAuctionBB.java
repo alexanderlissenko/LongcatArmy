@@ -7,11 +7,12 @@ package longcatarmy.view;
 import longcatarmy.src.SuperSiteBean;
 import java.io.Serializable;
 import java.util.Date;
-import javax.annotation.PostConstruct;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.SessionScoped;  
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.faces.context.FacesContext;
 import longcat.auction.src.AuctionObject;
+import longcat.auction.src.Customer;
 
 /**
  *
@@ -23,59 +24,88 @@ import longcat.auction.src.AuctionObject;
 public class ViewAuctionBB implements Serializable {
     @Inject
     SuperSiteBean site; 
+    
     private Long id;
     private String name;
     private Double price;
     private String info;
     private Date expire;
-    private Double tmpPrice;
+    
     
     
     public ViewAuctionBB(){
         
     }
 
+    public void setAuction() {
+        FacesContext fc = FacesContext.getCurrentInstance();
+        String idString = fc.getExternalContext().getRequestParameterMap().get("id");
+        AuctionObject ao = site.getAuctionCatalogue().find(Long.parseLong(idString));
+        name=ao.getName();
+        price=ao.getPrice();
+        info=ao.getInfo();
+        expire=ao.getExpire();
+    }
+
     public Long getId() {
-        return id;
+        
+        return getIdParam();
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.id = (id);
+    }
+    
+    public Long getIdParam()
+    {
+        FacesContext fc = FacesContext.getCurrentInstance();
+        String idString = fc.getExternalContext().getRequestParameterMap().get("id");
+        return Long.parseLong(idString);
     }
     
     public String getName(){
-        return name;
+        
+         
+        return site.getAuctionCatalogue().find(getIdParam()).getName();
     }
     
-    public void setName(Long id){
-        this.name = site.getAuctionCatalogue().find(this.id).getName();
-        
+    public void setName(String name){
+        this.name = name;
     }
     
     public String getInfo(){
-        return info;
+        return site.getAuctionCatalogue().find(getIdParam()).getInfo();
     }
     
-    public void setInfo(Long id){
-        this.info = site.getAuctionCatalogue().find(this.id).getInfo();
+    public void setInfo(String info){
+        this.info = info;
         
     }
     
     public Double getPrice(){
-        return price;
+        return site.getAuctionCatalogue().find(getIdParam()).getPrice();
     }
     
-    public void setPrice(Long id){
-        this.price = site.getAuctionCatalogue().find(this.id).getPrice();
+    public void setPrice(Double price){
+        this.price = price;
         
     }
     
     public Date getExpire(){
-        return expire;
+        return site.getAuctionCatalogue().find(getIdParam()).getExpire();
     }
     
-    public void setExpire(Long id){
-        this.expire = site.getAuctionCatalogue().find(this.id).getExpire();
+    public void setExpire(Date expire){
+        this.expire = expire;
         
+    }
+    
+    public String onSetBid() {
+        final AuctionObject auctionObject = site.getAuctionCatalogue().find(id);
+        Customer cust = site.getCustomerCatalogue().find(Long.parseLong("1"));
+        site.doBid(cust, price, auctionObject);
+        //FacesContext.getCurrentInstance().addMessage(null, null);
+        
+        return "user";
     }
 }
