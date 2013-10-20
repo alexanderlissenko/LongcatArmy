@@ -82,7 +82,7 @@ public class SuperSite {
         AuctionObject testobj1 = new AuctionObject("Fisk", "Trut", 10.00, today);
         AuctionObject testobj2 = new AuctionObject("Mås", "Stronk", 101.00, today);
         AuctionObject testobj3 = new AuctionObject("Katt", "Våt", 102.00, today);
-        AuctionObject testobj4 = new AuctionObject("Hest", "Bra tänder", 103.00, today);
+        AuctionObject testobj4 = new AuctionObject("Gin-o-tonic häst", "Bra tänder", 103.00, today);
         AuctionObject testobj5 = new AuctionObject("Dawgh", "Rabies", 104.00, today);
         AuctionObject testobj6 = new AuctionObject("Fin-Ko", "Säljare: Einstein", 101.00, today);
         AuctionObject testobj7 = new AuctionObject("Photogenic häst", "Look at how beautiful he is. LOOK AT HIM.", 102.00, today);
