@@ -59,10 +59,10 @@ public class AuctionCatalogueResource {
     @PUT
     @Path("{id}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Response editAuction(@FormParam("name") String name, 
+    public Response update(@PathParam("id") Long id, @FormParam("name") String name, 
             @FormParam("info") String info, @FormParam("price") Double price) {
         try {
-            AuctionObject obj = new AuctionObject(name, info, price);
+            AuctionObject obj = site.getAuctionCatalogue().find(id);
             //AuctionObject obj = new AuctionObject(title, info, price);
             site.getAuctionCatalogue().update(obj);
             AuctionProxy ax = new AuctionProxy(obj);
@@ -75,7 +75,7 @@ public class AuctionCatalogueResource {
     @DELETE
     @Path("{id}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Response deleteAuction(@PathParam("id") Long id) {
+    public Response remove(@PathParam("id") Long id) {
         try {
             site.getAuctionCatalogue().remove(id);
             return Response.ok().build();

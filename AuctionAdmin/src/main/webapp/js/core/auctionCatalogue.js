@@ -19,16 +19,16 @@ AuctionCatalogue.prototype = (function() {
             return $.getJSON(this.baseUri + "/count");
         },
 
-        editAuction: function(auctionObject) {
+        update: function(auctionobject) {
             return $.ajax({
                 type: 'PUT',
-                url: this.baseUri + "/" + auctionObject.id ,
-                data: "name=" + auctionObject.name + "&info=" + auctionObject.info +
-                        "&price=" + auctionObject.price
+                url: this.baseUri + "/" + auctionobject.id ,
+                data: "name=" + auctionobject.name + "&info=" + auctionobject.info +
+                        "&price=" + auctionobject.price
             });
         },
                 
-        deleteAuction: function(id) {
+        remove: function(id) {
             return $.ajax({
                 type: 'DELETE',
                 url: this.baseUri + "/" + id

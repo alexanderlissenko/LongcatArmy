@@ -19,18 +19,17 @@ CustomerCatalogue.prototype = (function() {
             return $.getJSON(this.baseUri + "/count");
         },
         
-        editCustomer: function(customer) {
+        update: function(customer) {
             return $.ajax({
                 type: 'PUT',
                 url: this.baseUri + "/" + customer.id,
                 data: "email=" + customer.email + "&name=" + customer.name +
-                        "&pass=" + customer.pass + "&phone=" + customer.phone +
-                        "&seQuest=" + customer.seQuest + "&address=" +
-                        customer.address + "&access=" + customer.access
+                        "&pass=" + customer.password + "&phone=" + customer.phoneNr +
+                        "&seQuest=" + customer.seqQuest + "&address=" + customer.address
             });
         },
                 
-        deleteCustomer: function(id) {
+        remove: function(id) {
             return $.ajax({
                 type: 'DELETE',
                 url: this.baseUri + "/" + id

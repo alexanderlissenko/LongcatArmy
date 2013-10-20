@@ -59,7 +59,7 @@ public class CustomerCatalogueResource {
     @PUT
     @Path("{id}") //funkar detta??
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Response editCustomer(@FormParam ("email") String email,
+    public Response update(@FormParam ("email") String email,
             @FormParam ("name") String name, @FormParam ("pass") String pass,
             @FormParam ("phone") String phone, @FormParam("seQuest") String seQuest, 
             @FormParam("address") String address, @FormParam("access") Boolean access){
@@ -75,7 +75,7 @@ public class CustomerCatalogueResource {
     
     @DELETE
     @Path("{id}") //funkar detta???
-    public Response deleteCustomer(@PathParam ("id") Long id){
+    public Response remove(@PathParam ("id") Long id){
         try {
             site.getCustomerCatalogue().remove(id);
             return Response.ok().build();
