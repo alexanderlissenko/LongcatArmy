@@ -33,7 +33,7 @@
                                     <p:panel>
                                         <h:panelGrid columns="1">
                                             <h:outputText  value="#{a.name}"/>
-                                            <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="100" width="150"/>
+                                            <h:graphicImage value="#{a.link}" height="100" width="150"/>
                                             <h:outputText value="Current bid: #{a.price}"/>
                                             <h:outputText value="Tid kvar: #{a.expire}"/>
                                             <h:button outcome="success" value="Till objektet">
@@ -49,7 +49,7 @@
                                     <p:panel>
                                         <h:panelGrid columns="1">
                                             <h:outputText  value="#{a.name}"/>
-                                            <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="100" width="150"/>
+                                            <h:graphicImage value="#{a.link}" height="100" width="150"/>
                                             <h:outputText value="Current bid: #{a.price}"/>
                                             <h:outputText value="Tid kvar: #{a.expire}"/>  
                                             <h:button outcome="success" value="Till objektet">

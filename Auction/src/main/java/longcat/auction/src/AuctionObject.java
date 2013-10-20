@@ -30,6 +30,7 @@ public class AuctionObject implements Serializable{
     private Double price;
     @Temporal(TemporalType.DATE)
     private Date expireDate; 
+    private String imgLink;
     //public Customer creator;
     //private HashMap<Customer, Double> bidderMap; //för att kunna presentera listan på smidigt sätt
    // @ManyToOne
@@ -104,6 +105,14 @@ public class AuctionObject implements Serializable{
     
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public String getLink(){
+        return imgLink;
+    }
+     
+    public void setLink(String link){
+        this.imgLink = link;
     }
     
     public String getInfo(){

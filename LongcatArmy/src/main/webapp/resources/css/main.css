@@ -1,9 +1,10 @@
-body,html{
+body,html
+{
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     margin:0;
     padding:0;
     color:#000;
-    background:#000000;
+    background:#FFFFFF;
 }
 h1{
     margin:0;

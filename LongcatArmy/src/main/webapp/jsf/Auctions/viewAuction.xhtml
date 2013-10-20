@@ -21,9 +21,10 @@ and open the template in the editor.
                             <f:facet name="header">
                                 <h:outputText id="name" value="#{viewAuction.name}"/>
                             </f:facet>
-                            <h:graphicImage value="http://images.wikia.com/ghostintheshell/en/images/f/fe/Laughing_man.svg" height="300" width="300"/>
+                            <h:graphicImage value="#{viewAuction.img}" height="300" width="300"/>
+                            <h:outputText value="Info:"/>
                             <h:outputText id="info" value="#{viewAuction.info}"/>
-                            <h:outputText id="expire" value="#{viewAuction.expire}"/>
+                            <h:outputText id="expire" value="Expiring: #{viewAuction.expire}"/>
                             <h:form>
                                 <h:inputHidden id="id" value="#{viewAuction.id}"/>
                                 <h:inputText id="price" value="#{viewAuction.price}"/>

@@ -30,6 +30,7 @@ public class ViewAuctionBB implements Serializable {
     private Double price;
     private String info;
     private Date expire;
+    private String img;
     
     
     
@@ -97,6 +98,15 @@ public class ViewAuctionBB implements Serializable {
     
     public void setExpire(Date expire){
         this.expire = expire;
+        
+    }
+    
+    public String getImg(){
+        return site.getAuctionCatalogue().find(getIdParam()).getLink();
+    }
+    
+    public void setImg(String img){
+        this.img = img;
         
     }
     

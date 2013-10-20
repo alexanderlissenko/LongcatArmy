@@ -15,10 +15,17 @@ public class QuickTests {
     
     public static void main(String[] args)
     {
+        Date temp = new Date();
+        Date subtract = new Date();
         SuperSite site = new SuperSite();
         site.initTestData();
         List<AuctionObject> a = site.auctionCatalogue.getAllAuctions();
         System.out.println(a.get(0).getName());
+        
+        System.out.println(a.get(0).getExpire());
+        //temp.setTime(a.get(0).getExpire().getTime()-subtract.getTime());
+        temp.setTime(600000);
+        System.out.println(temp.getMinutes());
         
         
         System.out.println(site.customerCatalogue.find(Long.parseLong("1")).getMyBuyAuctionList().get(0).getName());

@@ -1,4 +1,5 @@
-body,html{
+body,html
+{
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     margin:0;
     padding:0;
@@ -28,7 +29,7 @@ li{
     background:#FFFFFF;
 }
 #header{
-    padding:5px 10px;
+    padding:25px 45px;
     background:#B2B2B2;
 }
 #nav{
@@ -81,7 +82,7 @@ li{
     background:	#CCCCCC;
 }
 #footer p{
-    margin:0;
+    margin:100;
 }
 #menu ul{
     list-style: none;

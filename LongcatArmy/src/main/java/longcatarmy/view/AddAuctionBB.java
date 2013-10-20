@@ -27,6 +27,7 @@ public class AddAuctionBB implements Serializable{
     String name;
     double price;
     String info;
+    String imgLink;
     
     @Inject
     SuperSiteBean site;
@@ -45,7 +46,14 @@ public class AddAuctionBB implements Serializable{
     
     public String actOnSelected()
     {
-        site.createNewAuction(cust,new AuctionObject(name,info,price,new Date()));
+        if(imgLink.equals(""))
+        {
+            site.createNewAuction(cust,new AuctionObject(name,info,price,new Date()));
+        }
+        else
+        {
+            site.createNewAuction(cust,new AuctionObject(name,info,price,new Date()),imgLink);
+        }
         return "success";
     }  
     
@@ -57,6 +65,16 @@ public class AddAuctionBB implements Serializable{
     public String getName()
     {
         return name;
+    }
+    
+    public void setLink(String link)
+    {
+        this.imgLink = link;
+    }
+    
+    public String getLink()
+    {
+        return imgLink;
     }
     public void setPrice(Double price)
     {
