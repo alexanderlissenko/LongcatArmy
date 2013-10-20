@@ -36,7 +36,7 @@ public class AuctionProxy {
     }
 
     @XmlElement
-    public String getTitle() {
+    public String getName() {
         return obj.getName();
     }
 
@@ -50,7 +50,7 @@ public class AuctionProxy {
     }
 
     public void setInfo(String info) {
-        obj.editInfo(info);
+        obj.setInfo(info);
     }
 
     @XmlElement

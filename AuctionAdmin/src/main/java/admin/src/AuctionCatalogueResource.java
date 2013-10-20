@@ -63,6 +63,9 @@ public class AuctionCatalogueResource {
             @FormParam("info") String info, @FormParam("price") Double price) {
         try {
             AuctionObject obj = site.getAuctionCatalogue().find(id);
+            obj.setName(name);
+            obj.setInfo(info);
+            obj.setPrice(price);
             //AuctionObject obj = new AuctionObject(title, info, price);
             site.getAuctionCatalogue().update(obj);
             AuctionProxy ax = new AuctionProxy(obj);

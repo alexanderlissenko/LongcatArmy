@@ -63,7 +63,7 @@ $(function() {
         for (var i = 0; i < auctionobjects.length; i++) {
             $("#auctionobjects tbody").append('<tr>' +
                     '<td>' + auctionobjects[i].id + '</td>' +
-                    '<td>' + auctionobjects[i].title + '</td>' +
+                    '<td>' + auctionobjects[i].name + '</td>' +
                     '<td>' + auctionobjects[i].info + '</td>' +
                     '<td>' + auctionobjects[i].price + '</td>' +
                     '<td>' + auctionobjects[i].expire + '</td>' +
@@ -73,7 +73,7 @@ $(function() {
             .on('click', function() {
                 var selectedAuctionRow = {};
                 selectedAuctionRow.id = $(this).find('td').eq(0).html();
-                selectedAuctionRow.title = $(this).find('td').eq(1).html();
+                selectedAuctionRow.name = $(this).find('td').eq(1).html();
                 selectedAuctionRow.info = $(this).find('td').eq(2).html();
                 selectedAuctionRow.price = $(this).find('td').eq(3).html();
                 selectedAuctionRow.expire = $(this).find('td').eq(4).html();
@@ -237,7 +237,7 @@ $(function() {
     function getFormDialogDataA() {
         var auctionobject = {};
         auctionobject.id = $("#dialog-form-A #id").val();
-        auctionobject.title = $("#dialog-form-A #atitle").val();
+        auctionobject.name = $("#dialog-form-A #aname").val();
         auctionobject.info = $("#dialog-form-A #ainfo").val();
         auctionobject.price = $("#dialog-form-A #aprice").val();
         auctionobject.expire = $("#dialog-form-A #aexpire").val();
@@ -251,13 +251,14 @@ $(function() {
         customer.name = $("#dialog-form-C #cname").val();
         customer.password = $("#dialog-form-C #cpass").val();
         customer.phoneNr = $("#dialog-form-C #cphone").val();
-        customer.address = $("#dialog-form-C #caddres").val();
+        customer.seqQuest = $("#dialog-form-C #cseqQuest").val();
+        customer.address = $("#dialog-form-C #caddress").val();
         return customer;
     }
 
     function setFormDialogDataA(auctionobject) {
         $("#dialog-form-A #id").val(auctionobject.id);
-        $("#dialog-form-A #atitle").val(auctionobject.title);
+        $("#dialog-form-A #aname").val(auctionobject.name);
         $("#dialog-form-A #ainfo").val(auctionobject.info);
         $("#dialog-form-A #aprice").val(auctionobject.price);
         $("#dialog-form-A #aexpire").val(auctionobject.expire);
@@ -269,13 +270,13 @@ $(function() {
         $("#dialog-form-C #cname").val(customer.name);
         $("#dialog-form-C #cpass").val(customer.password);
         $("#dialog-form-C #cphone").val(customer.phoneNr);
-        $("#dialog-form-C #cseQuest").val(customer.seqQuest);
-        $("#dialog-form #caddress").val(customer.address);
+        $("#dialog-form-C #cseqQuest").val(customer.seqQuest);
+        $("#dialog-form-C #caddress").val(customer.address);
     }
 
     function clearFormDialogDataA() {
         $("#dialog-form-A #id").val("");
-        $("#dialog-form-A #atitle").val("");
+        $("#dialog-form-A #aname").val("");
         $("#dialog-form-A #ainfo").val("");
         $("#dialog-form-A #aprice").val("");
         $("#dialog-form-A #aexpire").val("");
@@ -287,7 +288,7 @@ $(function() {
         $("#dialog-form-C #cname").val("");
         $("#dialog-form-C #cpass").val("");
         $("#dialog-form-C #cphone").val("");
-        $("#dialog-form-C #cseQuest").val("");
-        $("#dialog-form #cadress").val("");
+        $("#dialog-form-C #cseqQuest").val("");
+        $("#dialog-form-C #caddress").val("");
     }
 });

@@ -24,8 +24,8 @@ CustomerCatalogue.prototype = (function() {
                 type: 'PUT',
                 url: this.baseUri + "/" + customer.id,
                 data: "email=" + customer.email + "&name=" + customer.name +
-                        "&pass=" + customer.password + "&phone=" + customer.phoneNr +
-                        "&seQuest=" + customer.seqQuest + "&address=" + customer.address
+                        "&password=" + customer.password + "&phoneNr=" + customer.phoneNr +
+                        "&seqQuest=" + customer.seqQuest + "&address=" + customer.address
             });
         },
                 

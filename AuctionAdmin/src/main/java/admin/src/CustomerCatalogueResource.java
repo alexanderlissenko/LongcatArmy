@@ -59,14 +59,20 @@ public class CustomerCatalogueResource {
     @PUT
     @Path("{id}") //funkar detta??
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Response update(@FormParam ("email") String email,
-            @FormParam ("name") String name, @FormParam ("pass") String pass,
-            @FormParam ("phone") String phone, @FormParam("seQuest") String seQuest, 
-            @FormParam("address") String address, @FormParam("access") Boolean access){
+    public Response update(@PathParam("id") Long id, @FormParam ("email") String email,
+            @FormParam ("name") String name, @FormParam ("password") String password,
+            @FormParam ("phoneNr") String phoneNr, @FormParam("seqQuest") String seqQuest, 
+            @FormParam("address") String address){
         try {
-            Customer newCust = new Customer(email,name,pass,phone,seQuest,address);
-            site.getCustomerCatalogue().update(newCust);
-            CustomerProxy cx = new CustomerProxy(newCust);
+            Customer cust = site.getCustomerCatalogue().find(id);
+            cust.setEmail(email);
+            cust.setName(name);
+            cust.setPassword(password);
+            cust.setPhoneNr(phoneNr);
+            cust.setSeqQuest(seqQuest);
+            cust.setAddress(address);
+            site.getCustomerCatalogue().update(cust);
+            CustomerProxy cx = new CustomerProxy(cust);
             return Response.ok(cx).build();
         } catch (IllegalArgumentException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();

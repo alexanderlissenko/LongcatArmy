@@ -92,6 +92,9 @@ public class Customer implements Serializable {
     public void setPhoneNr(String phoneNr) {
         this.phoneNr = phoneNr;
     }
+    public void setName(String name){
+        this.name = name;
+    }
     public String getSeqQuest() {
         return seqQuest;
     }
